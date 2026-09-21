@@ -23,6 +23,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 │   └── Phase_01_Pathophysiology_and_Biomarkers/
 │       ├── Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md      # 1-to-6-Hour Cascade (86 Sources)
 │       ├── Q1_2_Non_Invasive_Physical_Outputs.md            # Non-Invasive Diagnostic Physics (53 Sources)
+│       ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
 │       ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
 │       ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
 │       └── assets/                                          # Clinical diagrams & charts
@@ -48,7 +49,14 @@ This repository contains the complete systems engineering blueprint, clinical pa
   * **Sudomotor & Thermal**: Cholinergic diaphoresis triggers Galvanic Skin Response (GSR) phasic SCR spikes (1–3s rise time); asymmetrical facial cooling and left jaw thermal drop (+13% diagnostic accuracy).
 * **Verification**: 53 peer-reviewed citations mapped to exact sections, figures, and tables.
 
-### 3. [Phase 1, Question 1.4: Differential Diagnosis & Confounders](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md)
+### 3. [Phase 1, Question 1.3: Demographic & Comorbidity Variations](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md)
+* **Senescent Cardiovascular System**: Arterial stiffening ($PWV > 10\text{ m/s}$) accelerates wave reflections and shortens reflection time, blunting the PPG dicrotic notch. Linear HRV metrics collapse ($SDNN < 40\text{ ms}$), but non-linear fractal scaling (DFA $\alpha_1 \approx 1.0$) is preserved in healthy aging; acute ischemia breaks this scaling ($\alpha_1 \rightarrow 0.5$). Renal clearance decay shifts resting H-FABP baselines upwards, requiring dynamic derivative thresholding ($\frac{d[\text{Biomarker}]}{dt}$).
+* **Diabetic Silent Myocardial Ischemia (SMI)**: Cardiac Autonomic Neuropathy (CAN) destroys unmyelinated C-fibers, abolishing angina pectoris (4x MACE risk) and postganglionic sudomotor sweat surges (flat GSR). Decoupling is intercepted via QTc dispersion ($>460\text{ ms}$), microvolt T-Wave Alternans (TWA), and blunted Heart Rate Recovery ($HRR < 12\text{ bpm}$).
+* **Structural Arrhythmias & Remodeling**: Atrial Fibrillation (AFib) causes beat-to-beat mechanical chaos, obliterating single-beat Seismocardiography (SCG) fiducials; resolved via R-R cycle length binning and 40-beat ensemble averaging. Hypertension/LVH strains produce baseline ST-T deviations and S4 acoustic gallops ($20–40\text{ Hz}$). Heart failure elevates filling pressures, producing S3 gallops ($15–30\text{ Hz}$). Dual-sensor PTT ($\text{PTT}_{\text{true}} = t_{\text{PPG}} - t_{\text{SCG\_AO}}$) eliminates the Pre-Ejection Period (PEP) confounder.
+* **Fairness & Edge Personalization**: Mitigates AI bias against females and minorities using SMOTE oversampling, Adversarial Gradient Reversal debiasing, Demographic Parity, and Equalized Odds. On-device TinyML builds individualized 72-hour rolling $Z$-score baselines ($Z = \frac{x - \mu}{\sigma}$), eliminating generalized population bias on-chip.
+* **Verification**: 72 peer-reviewed citations mapped to exact sections, figures, and tables.
+
+### 4. [Phase 1, Question 1.4: Differential Diagnosis & Confounders](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md)
 * **False-Alarm Eradication**: Eliminates alert fatigue by decoupling lethal cardiac events from benign confounders:
   * **Severe Panic Attack**: Hyperventilation blows off $CO_2$ (respiratory alkalosis), but $SpO_2$ remains locked at $98\%–100\%$. In ischemia, pulmonary congestion degrades $SpO_2$ ($90\%–94\%$) despite rapid breathing.
   * **Exercise Tachycardia**: Heart rate scales with IMU movement wattage; QRS is narrow ($<0.12\text{s}$). In VTach, heart rate is 170+ bpm at near-zero motion with wide QRS ($>0.14\text{s}$).
@@ -57,7 +65,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 * **Transfer Entropy ($T_{\text{SpO2} \rightarrow \text{HR}}$)**: Mathematical detection of systemic decomplexification.
 * **Verification**: 58 peer-reviewed citations mapped to exact sections, figures, and tables.
 
-### 4. [Phase 1, Question 1.5: Chronobiological Architecture & Sleep Decoupling](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_5_Circadian_Sleep_Adaptations.md)
+### 5. [Phase 1, Question 1.5: Chronobiological Architecture & Sleep Decoupling](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_5_Circadian_Sleep_Adaptations.md)
 * **Morning Vulnerability**: PAI-1 peaks at ~6:30 AM, suppressing natural clot-dissolving fibrinolysis at the same time morning cortisol and catecholamines surge.
 * **Streaming Cosinor Model**: Replaces rigid static thresholds with dynamic 24-hour sinusoidal baselines ($f(t) = M + A \cos(2\pi t / \tau + \phi)$) computed on-chip with $\mathcal{O}(N)$ linear complexity.
 * **Sleep Gating**: Multitask learning classifies NREM vs. REM sleep; software gating widens rate thresholds during REM autonomic storms and shifts diagnostic weight to 1D-CNN ECG QRS morphology.

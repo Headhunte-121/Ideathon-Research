@@ -22,7 +22,7 @@ Every question from your expanded master questionnaire is systematically documen
 | :--- | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Pathophysiology & Biomarkers** | **Q1.1**: 1-to-6-Hour Pre-Infarction Cascade | **COMPLETED** (86 Sources) | [Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.2**: Non-Invasive Physical Outputs | **COMPLETED** (53 Sources) | [Q1_2_Non_Invasive_Physical_Outputs.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_2_Non_Invasive_Physical_Outputs.md) |
-| Phase 1 | Pathophysiology & Biomarkers | **Q1.3**: Demographic Variations (Age/Sex/Diabetes) | *Ready for Input* | `./Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md` |
+| Phase 1 | Pathophysiology & Biomarkers | **Q1.3**: Demographic Variations (Age/Sex/Diabetes) | **COMPLETED** (72 Sources) | [Q1_3_Demographic_Variations.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.4**: Differential Diagnosis & Confounders | **COMPLETED** (58 Sources) | [Q1_4_Differential_Diagnosis_Confounders.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.5**: Circadian & Sleep Stage Adaptations | **COMPLETED** (41 Sources) | [Q1_5_Circadian_Sleep_Adaptations.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_5_Circadian_Sleep_Adaptations.md) |
 | **Phase 2** | **Signal Acquisition (Physics)** | **Q2.1 - Q2.5**: Sensing Modalities, Sweet Spots, Sampling Rates | *Ready for Input* | `./Phase_02_Signal_Acquisition_Physics/` |
