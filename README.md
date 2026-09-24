@@ -28,6 +28,9 @@ This repository contains the complete systems engineering blueprint, clinical pa
 │       ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
 │       ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
 │       └── assets/                                          # Clinical diagrams & charts
+│   └── Phase_02_Signal_Acquisition_Physics/
+│       ├── Q2_1_Sensing_Modalities_Biomarker_Mapping.md     # Transduction Physics (50 Sources)
+│       └── assets/                                          # Hardware schematics
 └── README.md                                  # This project overview
 ```
 
@@ -72,6 +75,16 @@ This repository contains the complete systems engineering blueprint, clinical pa
 * **Sleep Gating**: Multitask learning classifies NREM vs. REM sleep; software gating widens rate thresholds during REM autonomic storms and shifts diagnostic weight to 1D-CNN ECG QRS morphology.
 * **OSA Discrimination**: Cardiorespiratory Phase-Coupling (CPC) and Electrocardiogram-Derived Respiration (EDR) separate cyclical $0.01–0.04\text{ Hz}$ sleep apnea loops from monotonic ischemic collapse.
 * **Verification**: 41 peer-reviewed citations mapped to exact sections, figures, and tables.
+
+### 6. [Phase 2, Question 2.1: Physical Sensing Modalities & Biomarker Mapping](Research_Dossier/Phase_02_Signal_Acquisition_Physics/Q2_1_Sensing_Modalities_Biomarker_Mapping.md)
+* **Zero-Blindspot Transduction**: Maps the 5 core physical sensing modalities directly to Phase 1's visceral biomarkers:
+  * **Electrical (Biopotential & EDA)**: TI ADS1292R ($500\text{ Hz}, 24\text{-bit}$) captures microvolt ST injury currents and T-wave alternans (TWA, $5–20\ \mu\text{V}$); dry sternal electrodes measure sudomotor cold sweats ($1–3\text{s}$ rise time).
+  * **Mechanical (SCG & GCG)**: ST LSM6DSOX 6-axis IMU ($200\text{ Hz}$) detects lusitropic pump failure (Aortic Opening [AO] amplitude drop $>50\%$) and provides the kinematic motion denominator.
+  * **Optical (Multi-Wavelength PPG)**: ADI MAX86141 Red/IR/Green ($100\text{ Hz}$) detects microvascular stiffening ($\text{RMR} < 30\%$) and hypoxic desaturations ($SpO_2$).
+  * **Acoustic (Phonocardiography)**: PVDF piezoelectric film transducers capture sub-audible S3 ($15–30\text{ Hz}$) and S4 ($20–40\text{ Hz}$) gallops, marking elevated left ventricular filling pressure ($\text{LVEDP} > 20\text{ mmHg}$).
+  * **Bio-Impedance (Thoracic Bio-Z)**: High-frequency tetrapolar current injection ($50–100\text{ kHz}$) detects base impedance ($Z_0$) decay from pulmonary capillary fluid accumulation and tracks breath-by-breath tachypnea ($\Delta Z_{\text{resp}}$).
+* **PEP-Free True PTT**: Fuses mechanical SCG AO with optical PPG foot arrival ($\text{PTT}_{\text{true}} = t_{\text{PPG}} - t_{\text{SCG\_AO}}$), completely eliminating Pre-Ejection Period (PEP) error.
+* **Verification**: 50 peer-reviewed citations mapped to exact sections, figures, and tables.
 
 ---
 
