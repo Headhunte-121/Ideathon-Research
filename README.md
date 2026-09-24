@@ -20,16 +20,18 @@ This repository contains the complete systems engineering blueprint, clinical pa
 ├── Sensor_Evaluation_Deep_Dive_Framework.md   # Component-level Hardware Scorecard & COTS Comparison
 ├── Research_Dossier/                          # Peer-Reviewed Modular Research Knowledge Base
 │   ├── README.md                              # Master Tracking Registry for all 12 Phases
-│   └── Phase_01_Pathophysiology_and_Biomarkers/
-│       ├── Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md      # 1-to-6-Hour Cascade (86 Sources)
-│       │   └── Q1_1_Key_Takeaways.md                        # Plain-English Takeaways
-│       ├── Q1_2_Non_Invasive_Physical_Outputs.md            # Non-Invasive Diagnostic Physics (53 Sources)
-│       ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
-│       ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
-│       ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
-│       ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
-│       ├── Clinical_Realities_Hospital_Barriers_and_MI_Types.md # Hospital Barriers & 5 MI Types
-│       └── assets/                                          # Clinical diagrams & charts
+│   ├── Takeaways/                             # Plain-English Executive Takeaways (No Complex Jargon)
+│   │   └── Q1_1_Takeaway.md                   # 1.1 Deep-Dive Systems Takeaway
+│   ├── Phase_01_Pathophysiology_and_Biomarkers/
+│   │   ├── 1.1_Pre_Infarction_Cascade/        # Q1.1 Dedicated Research Folder
+│   │   │   ├── Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md # 1-to-6-Hour Cascade (86 Sources)
+│   │   │   └── Clinical_Realities_Hospital_Barriers_and_MI_Types.md # Hospital Barriers & 5 MI Types
+│   │   ├── Q1_2_Non_Invasive_Physical_Outputs.md            # Non-Invasive Diagnostic Physics (53 Sources)
+│   │   ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
+│   │   ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
+│   │   ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
+│   │   ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
+│   │   └── assets/                                          # Clinical diagrams & charts
 │   └── Phase_02_Signal_Acquisition_Physics/
 │       ├── Q2_1_Sensing_Modalities_Biomarker_Mapping.md     # Transduction Physics (50 Sources)
 │       └── assets/                                          # Hardware schematics
@@ -40,7 +42,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 
 ## 🔬 Key Research Modules Completed
 
-### 1. [Phase 1, Question 1.1: The 1-to-6-Hour Pre-Infarction Cascade](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md)
+### 1. [Phase 1, Question 1.1: The 1-to-6-Hour Pre-Infarction Cascade](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) ([Plain-English Takeaway](Research_Dossier/Takeaways/Q1_1_Takeaway.md))
 * **Biological Proof**: Disproves the myth that heart attacks happen without warning.
 * **Timeline**: Maps the sequential progression: Plaque destabilization $\rightarrow$ Autonomic storm ($T-3\text{h}$, SDNN $< 50\text{ ms}$) $\rightarrow$ Metabolic acidosis & lusitropic stiffening ($T-2\text{h}$) $\rightarrow$ Compensatory Tachypnea ($RR > 20\text{ bpm}$) $\rightarrow$ Subendocardial ECG shifts ($T-1\text{h}$).
 * **Biomarkers**: Proves traditional Troponin is a late necrosis marker, while early pre-necrotic markers (IMA, GPBB, H-FABP) elevate within 10 to 60 minutes.
