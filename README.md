@@ -22,6 +22,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 │   ├── README.md                              # Master Tracking Registry for all 12 Phases
 │   └── Phase_01_Pathophysiology_and_Biomarkers/
 │       ├── Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md      # 1-to-6-Hour Cascade (86 Sources)
+│       │   └── Q1_1_Key_Takeaways.md                        # Plain-English Takeaways
 │       ├── Q1_2_Non_Invasive_Physical_Outputs.md            # Non-Invasive Diagnostic Physics (53 Sources)
 │       ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
 │       ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)

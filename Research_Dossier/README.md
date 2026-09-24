@@ -20,7 +20,7 @@ Every question from your expanded master questionnaire is systematically documen
 
 | Phase | Domain | Question ID & Topic | Status | File Link |
 | :--- | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Pathophysiology & Biomarkers** | **Q1.1**: 1-to-6-Hour Pre-Infarction Cascade | **COMPLETED** (86 Sources) | [Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) |
+| **Phase 1** | **Pathophysiology & Biomarkers** | **Q1.1**: 1-to-6-Hour Pre-Infarction Cascade | **COMPLETED** (86 Sources) | [Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) ([Takeaways](./Phase_01_Pathophysiology_and_Biomarkers/Q1_1_Key_Takeaways.md)) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.2**: Non-Invasive Physical Outputs | **COMPLETED** (53 Sources) | [Q1_2_Non_Invasive_Physical_Outputs.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_2_Non_Invasive_Physical_Outputs.md) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.3**: Demographic Variations (Age/Sex/Diabetes) | **COMPLETED** (72 Sources) | [Q1_3_Demographic_Variations.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md) |
 | Phase 1 | Pathophysiology & Biomarkers | **Q1.4**: Differential Diagnosis & Confounders | **COMPLETED** (58 Sources) | [Q1_4_Differential_Diagnosis_Confounders.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md) |
