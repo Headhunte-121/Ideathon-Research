@@ -68,17 +68,15 @@ These are the customizable engineering, product, aesthetic, and business options
 
 ---
 
-### Choice 1: The Physical Form Factor
-* **Option A: The Magnetic Snap-to-Skin Pendant (Jewelry / Lifestyle Focus)**:
-  * Worn as a sleek titanium/ceramic pendant on a minimalist neck cord.
-  * Magnetically locks flush against a concealed, micro-thin silicone dock on the breastbone.
-  * *Advantage*: High consumer appeal; removes hospital patient stigma; completely solves the 1,500 milli-g pendulum swinging noise.
-* **Option B: Contoured Biowearable Sternal Pod (Abbott Lingo / Dexcom Focus)**:
-  * A coin-sized electronic puck that snaps directly into a lightweight, breathable hydrocolloid adhesive patch.
-  * *Advantage*: Extremely low profile under tight clothing; 100% stable mechanical coupling.
-* **Option C: Smart Athleisure / Base Layer (Whoop AnyWear Focus)**:
-  * Dry conductive fabric electrodes seamlessly knitted into an undershirt, compression top, or sports bra, with a snap-on sternal pod.
-  * *Advantage*: Zero sticky tape; fits everyday clothing habits.
+### Choice 1: The Physical Form Factor & System Architecture
+* 🌟 **[OFFICIALLY SELECTED BY TEAM] Option D: The Dual-Node BAN Ecosystem (Sentry Pendant + Companion PulseBand)**:
+  * **System Reference**: 📄 [`Dual_Node_Pendant_and_Wristband_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md)
+  * **Chest Pendant**: 38 mm sleek tech pendant mounted on an adjustable tension cord (100% GLUE-FREE, ZERO ECG electrodes). Houses ultra-low-noise 6-axis IMU (LSM6DSOX) for Seismocardiography (SCG) mechanical ejection tracking.
+  * **Wristband**: Minimalist bracelet with optical PPG (MAX30102 / MAX86141) for $SpO_2$, pulse rate, PRV, arm-motion filtering, and haptic alert/display.
+  * **Why Selected**: 100% adhesive-free comfort; ultra-affordable ₹820 BOM; captures mechanical contractility collapse 1-3 hours early; solves user interface and PTT blood pressure tracking without sticky chest patches.
+* **Option A: The Magnetic Snap-to-Skin Pendant (Jewelry / Lifestyle Focus)**
+* **Option B: Contoured Biowearable Sternal Pod (Abbott Lingo / Dexcom Focus)**
+* **Option C: Smart Athleisure / Base Layer (Whoop AnyWear Focus)**
 
 ---
 

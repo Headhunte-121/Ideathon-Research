@@ -176,23 +176,21 @@ c:/College/Ideathon/
   * 📄 Anatomical Optimization Addendum: [`Anatomical_Optimization_for_Cardiovascular_Telemetry.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Anatomical_Optimization_for_Cardiovascular_Telemetry.md)
   * 🖼️ Anatomical Diagram Asset: [`optimal_anatomical_landmarks_telemetry.png`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/assets/optimal_anatomical_landmarks_telemetry.png)
 * **Form Factor Trade-Offs & Architecture Rules**:
+  * 🌟 **Team Architecture Blueprint**: [`Dual_Node_Pendant_and_Wristband_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md) *(Locked Team Selection)*
   * 💡 Pendant vs Adhesive Patch Analysis: [`Form_Factor_Evaluation_Pendant_vs_Patch.md`](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md)
   * 🔒 Locked Science vs Open Choices: [`Master_Fixed_vs_Flexible_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md)
 
 #### 🔬 Candidate Evidence & Key Insights Available for the Team:
-* **Why Freely Hanging Pendants Fail**: Walking creates $500\text{ to }1,500\text{ milli-g}$ of pendulum swing noise ($100\times$ larger than cardiac SCG), breaks skin contact, and leaks ambient light.
+* **The Selected Dual-Node Ecosystem (Pendant + PulseBand)**:
+  * **Chest Node**: 38 mm Sentry Pendant mounted on an adjustable tension cord (100% GLUE-FREE, ZERO ECG electrodes). Houses ultra-low-noise 6-axis IMU (LSM6DSOX) for Seismocardiography (SCG) mechanical contractility and Aortic Opening (AO) force tracking.
+  * **Wrist Node**: Companion PulseBand with optical PPG (MAX30102 / MAX86141) measuring $SpO_2$, pulse rate, PRV, arm-motion filtering, and a haptic display interface.
+  * **Dual-Node PTT**: Time difference between sternal aortic valve opening ($t_{\text{AO}}$) and radial pulse arrival ($t_{\text{wrist}}$) delivers continuous cuffless arterial stiffness.
 * **Why Traditional Hospital Patches Fail**: Low adherence—patients hate wearing large, itchy, white adhesive medical tape in social/work settings.
-* **The Winning Compromise (Snap-to-Skin Sentry Pod)**:
-  * Sleek lifestyle exterior (looks like a tech pendant/pod).
-  * Concealed micro-thin (1.2 mm) silicone dock adhering flush to the lower sternum.
-  * Neodymium magnetic lock (4.5 N pull force) securing solid bone coupling, eliminating pendulum motion, and preventing ambient light ingress.
-  * Snap-off recharging: Pod lifts off in 1 second to recharge on a nightstand dock without peeling adhesive from skin.
-* **The Anatomical Sweet Spot**: Mid-to-lower sternal body (4th Intercostal Space / LLSB) directly over the right ventricle and aortic root; offers maximal bone acoustic transmission and resilient core perfusion ($71.3\%$ flow preserved during cardiogenic shock vs $<5\%$ at wrist).
+* **The Anatomical Sweet Spot**: Mid-to-lower sternal body (4th Intercostal Space / LLSB) directly over the right ventricle and aortic root; offers maximal bone acoustic transmission.
 
 #### ✍️ `[Team Decision & Customization Slot - Module 2]`:
-*(Team members handling Hardware / Industrial Design: Select device naming, enclosure materials, dock design, and lifestyle aesthetics.)*
-* **Device Form Factor Decision**: `[ Team to select: Magnetic Snap Pod vs Flexible Patch vs Hybrid ]`
-* **Industrial Design / Material Choices**: `[ Team to fill / customize ]`
+* **Device Form Factor Decision**: **OFFICIALLY SELECTED**: Dual-Node Body Area Network (Sentry Pendant + Companion PulseBand, No ECG, Zero Glue).
+* **Industrial Design / Material Choices**: `[ Team to fill: Titanium rim vs Zirconia ceramic vs Polycarbonate ]`
 * **Anatomical Placement Diagram for Poster**: `[ Team to select ]`
 
 ---
@@ -213,9 +211,14 @@ c:/College/Ideathon/
   * 🟡 Product Translation (How & Why): [`Q2_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_3_Product_Translation.md)
   * 🔵 Deep Digitization Vault: [`Q2_3_Quantitative_Digitization_Architecture.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.3_Sampling_Frequencies_Bit_Resolutions/Q2_3_Quantitative_Digitization_Architecture.md)
   * 🖼️ FIFO & DMA Architecture Asset: [`embedded_event_driven_fifo_architecture.png`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/assets/embedded_event_driven_fifo_architecture.png)
-* **Upcoming in Phase 2**:
-  * ⏳ *Q2.4: Optical Skin Tone & Melanin Inclusivity (Fitzpatrick I-VI)* $\rightarrow$ *[Queued]*
-  * ⏳ *Q2.5: Long-Term Skin-Electrode Impedance Drift & Hydrogel Physics* $\rightarrow$ *[Queued]*
+* **Optical Skin Tone & Melanin Inclusivity across Fitzpatrick Types I-VI (Q2.4)**:
+  * 🟢 Plain-English Takeaway: [`Q2_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q2_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_4_Product_Translation.md)
+  * 🔵 Deep Optical Physics Vault: [`Q2_4_Optical_Skin_Tone_Melanin_Inclusivity.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.4_Optical_Skin_Tone_Melanin_Inclusivity/Q2_4_Optical_Skin_Tone_Melanin_Inclusivity.md)
+* **Skin-Electrode Interface Physics & Impedance Drift (Q2.5)**:
+  * 🟢 Plain-English Takeaway: [`Q2_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q2_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_5_Product_Translation.md)
+  * 🔵 Deep Interface Physics Vault: [`Q2_5_Skin_Electrode_Interface_Impedance.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.5_Skin_Electrode_Interface_Impedance/Q2_5_Skin_Electrode_Interface_Impedance.md)
 
 #### 🔬 Candidate Evidence & Key Insights Available for the Team:
 * **The 5 Synchronized Sensing Channels**:
@@ -471,4 +474,6 @@ Every completed question across our repository is hyperlinked below across its 3
 | **Phase 2** | **Q2.1: Sensor Modalities** | Embedded Hardware | [Q2.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_1_Takeaway.md) | [Q2.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_1_Product_Translation.md) | [Phase 2.1 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.1_Sensing_Modalities_Biomarker_Mapping/Q2_1_Sensing_Modalities_Biomarker_Mapping.md) |
 | **Phase 2** | **Q2.2: Anatomical Sweet Spots**| Biomedical / Mechanical| [Q2.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_2_Takeaway.md) | [Q2.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_2_Product_Translation.md) | [Phase 2.2 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Q2_2_Anatomical_Sweet_Spots.md) |
 | **Phase 2** | **Q2.3: Digitization & FIFO** | Firmware / Embedded | [Q2.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_3_Takeaway.md) | [Q2.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_3_Product_Translation.md) | [Phase 2.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.3_Sampling_Frequencies_Bit_Resolutions/Q2_3_Quantitative_Digitization_Architecture.md) |
+| **Phase 2** | **Q2.4: Optical Skin Tone** | Optical / Biomedical | [Q2.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_4_Takeaway.md) | [Q2.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_4_Product_Translation.md) | [Phase 2.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.4_Optical_Skin_Tone_Melanin_Inclusivity/Q2_4_Optical_Skin_Tone_Melanin_Inclusivity.md) |
+| **Phase 2** | **Q2.5: Skin-Electrode Interface** | Materials / Hardware | [Q2.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_5_Takeaway.md) | [Q2.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_5_Product_Translation.md) | [Phase 2.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.5_Skin_Electrode_Interface_Impedance/Q2_5_Skin_Electrode_Interface_Impedance.md) |
 | **Phases 3–12**| **Upcoming Research Roadmap** | All Team Members | [Master Questionnaire](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) | [Sensor Evaluation Scorecard](file:///c:/College/Ideathon/Sensor_Evaluation_Deep_Dive_Framework.md) | [Research Dossier Directory](file:///c:/College/Ideathon/Research_Dossier/) |

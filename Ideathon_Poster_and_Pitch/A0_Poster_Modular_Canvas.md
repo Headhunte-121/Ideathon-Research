@@ -120,16 +120,18 @@
 * **Domain Lead**: Biomedical / Mechanical
 * **Status**: ✅ **COMPLETED RESEARCH**
 * **Direct Evidence Links**:
+  * 🌟 [Dual-Node Architecture Blueprint](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md) *(Locked Team Selection)*
   * 🟢 [Q2.2 Takeaway Summary](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_2_Takeaway.md)
   * 🟡 [Q2.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_2_Product_Translation.md)
   * 🔵 [Phase 2.2 Deep Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Q2_2_Anatomical_Sweet_Spots.md)
   * 💡 [Form Factor Evaluation Study](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md)
   * 🖼️ Anatomical Diagram: [`optimal_anatomical_landmarks_telemetry.png`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/assets/optimal_anatomical_landmarks_telemetry.png)
 * **Suggested Candidate Bullet Points**:
-  * Sternal Body / LLSB (4th Intercostal Space): Provides direct rigid bone acoustic window to aortic root and right ventricle.
-  * Shock Resilience: During cardiogenic shock, peripheral wrist vessels constrict (>95% pulse signal lost); sternal vessels retain 71.3% perfusion.
-  * Form Factor Breakthrough: Reusable titanium/ceramic pod magnetically docks (4.5 N pull force) to an ultra-thin (1.2 mm) concealed silicone skin dock. Eliminates pendulum swing noise while enabling 1-second snap-off recharging.
-* **Suggested Visual**: Anatomical placement diagram showing sternal 8cm dipole axis and magnetic dock cross-section.
+  * *Dual-Node BAN Innovation*: Sternal Sentry Pendant (Chest Node) + Companion PulseBand (Wrist Node) linked via BLE 5.3.
+  * *100% Glue-Free Mounting*: Sentry Pendant held against lower sternal bone via soft tension cord (0.8 N preload) or compression undershirt pocket. Zero skin adhesives, zero skin irritation.
+  * *Sternal Sweet Spot*: 4th Intercostal Space / LLSB directly over right ventricle and aortic root; captures pure mechanical cardiac recoil micro-vibrations (SCG).
+  * *Pulse Transit Time (PTT)*: Synchronized delay between aortic valve opening on chest ($t_{\text{AO}}$) and radial pulse arrival on wrist ($t_{\text{wrist}}$) delivers continuous cuffless blood pressure and arterial stiffness.
+* **Suggested Visual**: Dual-node diagram showing chest pendant and wristband communicating via BLE 5.3 with PTT pulse wave propagation.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select candidate points and write finalized Block 4 text here ]
@@ -137,22 +139,27 @@
 
 ---
 
-### BLOCK 5: COTS Sensor Bill of Materials (BOM) & Modalities (Phase 2.1)
+### BLOCK 5: Sensor Bill of Materials (BOM) & Dual-Node Hardware (Phase 2.1)
 * **Domain Lead**: Embedded Hardware
 * **Status**: ✅ **COMPLETED RESEARCH**
 * **Direct Evidence Links**:
-  * 🟢 [Q2.1 Takeaway Summary](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_1_Takeaway.md)
-  * 🟡 [Q2.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_1_Product_Translation.md)
-  * 🔵 [Phase 2.1 Deep Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.1_Sensing_Modalities_Biomarker_Mapping/Q2_1_Sensing_Modalities_Biomarker_Mapping.md)
+  * 🌟 [Dual-Node Architecture Blueprint](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md)
+  * 🟢 [Q2.1 Takeaway Summary](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_1_Takeaway.md) | 🔵 [Phase 2.1 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.1_Sensing_Modalities_Biomarker_Mapping/Q2_1_Sensing_Modalities_Biomarker_Mapping.md)
+  * 🟢 [Q2.4 Melanin Inclusivity Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_4_Takeaway.md) | 🔵 [Phase 2.4 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.4_Optical_Skin_Tone_Melanin_Inclusivity/Q2_4_Optical_Skin_Tone_Melanin_Inclusivity.md)
+  * 🟢 [Q2.5 Electrode Physics Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_5_Takeaway.md) | 🔵 [Phase 2.5 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.5_Skin_Electrode_Interface_Impedance/Q2_5_Skin_Electrode_Interface_Impedance.md)
   * 🖼️ Modalities Matrix: [`sensing_modalities_viability_matrix.png`](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/assets/sensing_modalities_viability_matrix.png)
-* **Suggested Candidate Table**:
-  | Subsystem | Component | Package | Active Power | Advantage |
+* **Suggested Candidate Bullet Points**:
+  * *Zero-Glue Biological Justification (Q2.5)*: Traditional Ag/AgCl hydrogel patches hit the "Day-5 Desiccation Wall" where water loss spikes contact impedance from $10\text{ k}\Omega$ to $>500\text{ k}\Omega$, collapsing CMRR below $65\text{ dB}$ and causing a 15–25% incidence of MARSI skin tears in elderly patients. Shifting to solid-state sternal SCG ($F = m \cdot a$) eliminates all adhesives and drying liquids.
+  * *Fitzpatrick I–VI Optical Inclusivity (Q2.4)*: Dynamic closed-loop LED current control ($12\text{--}48\text{ mA}$) and programmable TIA gain eliminate occult hypoxemia bias, keeping SpO2 error $A_{\text{rms}} \le 1.6\%$ across all skin tones.
+* **Suggested Candidate Table (Dual-Node Ecosystem - Total BOM ~₹820 / $10)**:
+  | Node | Subsystem | Component | Package | Advantage & Function |
   | :--- | :--- | :--- | :--- | :--- |
-  | **ECG / Bio-Z** | TI **ADS1292R** | 32-QFN | $670\ \mu\text{W}$ | 24-bit $\Delta\Sigma$ ADC; integrated impedance engine |
-  | **SCG / IMU** | ST **LSM6DSOX** | 14-LGA | $0.55\ \text{mA}$ | $60\ \mu\text{g}/\sqrt{\text{Hz}}$ noise floor; Machine Learning Core |
-  | **PPG / $SpO_2$**| ADI **MAX86141**| 20-WLCSP| $1.2\ \text{mA}$ | 19-bit ADC; $>90\text{ dB}$ ambient light rejection |
-  | **Acoustic PCG**| Knowles **SPH0645**| MEMS | $600\ \mu\text{A}$ | Direct 24-bit I2S digital audio output |
-  | **MCU & BLE** | Nordic **nRF5340** | 94-aQFN | $3.2\ \text{mA}$ | Dual-core Cortex-M33 (128/64 MHz); BLE 5.3 |
+  | **Pendant (Chest)** | **SCG / Kinematics** | ST **LSM6DSOX** | 14-LGA ($2.5\times 3\text{ mm}$) | $60\ \mu\text{g}/\sqrt{\text{Hz}}$ ultra-low noise; AO ejection force & LVET |
+  | **Pendant (Chest)** | **Pendant Brain/BLE** | Nordic **nRF5340** | 94-aQFN ($7\times 7\text{ mm}$) | Dual-core Cortex-M33 (128/64 MHz); BLE 5.3 Isochronous Sync |
+  | **Pendant (Chest)** | **Pendant Battery** | 150 mAh LiPo Cell | Micro-pouch | 5 to 7 days continuous mechanical telemetry |
+  | **PulseBand (Wrist)**| **PPG / $SpO_2$** | ADI **MAX30102** | 14-OESIP ($5.6\times 3.3\text{ mm}$) | Dual-wavelength Red/IR pulse oximetry & peripheral pulse wave |
+  | **PulseBand (Wrist)**| **Wrist Brain/BLE** | Nordic **nRF52840**| 73-aQFN ($7\times 7\text{ mm}$) | BLE 5.3 peripheral controller; arm gesture motion filtering |
+  | **PulseBand (Wrist)**| **Display & Haptics** | 0.96" OLED + Motor | Modular | User alert screen & 30-second false-alarm cancellation interface |
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select candidate table/specs and write finalized Block 5 text here ]
