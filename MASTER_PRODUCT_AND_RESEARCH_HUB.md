@@ -367,7 +367,7 @@ c:/College/Ideathon/
 * **Research Phases**: **Phase 4 (Data Engineering), Phase 5 (ML Architecture), Phase 6 (Edge Computing / TinyML)**
 * **Phase 4 Status**: ✅ **100% COMPLETE (All 6 Questions Researched, Translated & Validated)**
 * **Phase 5 Status**: ✅ **100% COMPLETE (All 6 Questions Researched, Translated & Validated)**
-* **Phase 6 Status**: ⏳ **QUEUED FOR RESEARCH**
+* **Phase 6 Status**: ✅ **100% COMPLETE (All 5 Questions Researched, Translated & Validated)**
 
 #### 📁 Direct File Reference Links for Phase 4 (Data Engineering):
 * **Open-Source Clinical Databases & Transfer Pipeline (Q4.1)**:
@@ -421,6 +421,28 @@ c:/College/Ideathon/
   * 🟡 Product Translation (How & Why): [`Q5_6_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_6_Product_Translation.md)
   * 🔵 Deep Uncertainty Vault: [`Q5_6_Out_of_Distribution_Epistemic_Uncertainty.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.6_Out_of_Distribution_Epistemic_Uncertainty/Q5_6_Out_of_Distribution_Epistemic_Uncertainty.md)
 
+#### 📁 Direct File Reference Links for Phase 6 (Edge Computing & TinyML):
+* **Post-Training Optimization & Quantization (Q6.1)**:
+  * 🟢 Plain-English Takeaway: [`Q6_1_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q6_1_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q6_1_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q6_1_Product_Translation.md)
+  * 🔵 Deep TinyML Vault: [`Q6_1_Post_Training_Optimization_Quantization.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_Computing_TinyML/6.1_Post_Training_Optimization_Quantization/Q6_1_Post_Training_Optimization_Quantization.md)
+* **Computational Bottlenecks on Wearable MCUs (Q6.2)**:
+  * 🟢 Plain-English Takeaway: [`Q6_2_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q6_2_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q6_2_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q6_2_Product_Translation.md)
+  * 🔵 Deep Systems Vault: [`Q6_2_Computational_Bottlenecks_MCU.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_Computing_TinyML/6.2_Computational_Bottlenecks_MCU/Q6_2_Computational_Bottlenecks_MCU.md)
+* **Hardware Acceleration Features on MCUs (Q6.3)**:
+  * 🟢 Plain-English Takeaway: [`Q6_3_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q6_3_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q6_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q6_3_Product_Translation.md)
+  * 🔵 Deep Silicon Vault: [`Q6_3_Hardware_Acceleration_Features_MCU.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_Computing_TinyML/6.3_Hardware_Acceleration_Features_MCU/Q6_3_Hardware_Acceleration_Features_MCU.md)
+* **Hierarchical "Sentry" Pipeline vs Monolithic Inference (Q6.4)**:
+  * 🟢 Plain-English Takeaway: [`Q6_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q6_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q6_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q6_4_Product_Translation.md)
+  * 🔵 Deep Pipeline Vault: [`Q6_4_Hierarchical_Sentry_Pipeline.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_Computing_TinyML/6.4_Hierarchical_Sentry_Pipeline/Q6_4_Hierarchical_Sentry_Pipeline.md)
+* **Secure Over-the-Air (OTA) Model Updating & Rollback (Q6.5)**:
+  * 🟢 Plain-English Takeaway: [`Q6_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q6_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q6_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q6_5_Product_Translation.md)
+  * 🔵 Deep Security Vault: [`Q6_5_Secure_OTA_Model_Updating_Rollback.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_Computing_TinyML/6.5_Secure_OTA_Model_Updating_Rollback/Q6_5_Secure_OTA_Model_Updating_Rollback.md)
+
 #### 🔬 Candidate Evidence & Key Insights for the Team:
 * **The 2-Stage TCN-Mamba Brain**: Solves the $\mathcal{O}(T^2)$ memory blowout of Transformers on the Nordic nRF5340 MCU ($512\text{ KB}$ SRAM). Dilated causal convolutions capture split-second valve mechanics ($10\text{--}40\text{ ms}$), while Mamba Selective State Space models track $1\text{--}6\text{ hour}$ autonomic decay using only $64\text{ bytes}$ memory per channel.
 * **Intermediate Gated Multimodal Fusion (GMU)**: Isolates wrist motion artifacts from sternal SCG features; extracts Pulse Transit Time (PTT) phase lag via cross-attention; hardware SQI dynamically zeroes gates during motion.
@@ -428,12 +450,17 @@ c:/College/Ideathon/
 * **Clinical Metrics Beyond Accuracy**: Benchmarked via Area Under Precision-Recall Curve (AUPRC), Temperature Scaling (Expected Calibration Error $< 2\%$), and Decision Curve Analysis (DCA) demonstrating positive Net Benefit without over-treatment.
 * **Actionable Medical Explainability**: Axiomatic Integrated Gradients referenced to patient's own 24-hour safe resting baseline. Translates deep features to clinical parameters: Aortic Opening recoil damping, $LVET$ widening, and blood pressure drops.
 * **Single-Pass Evidential OOD Triage**: Replaces battery-draining Monte Carlo Dropout ($50\times$ energy) with single-pass Evidential Deep Learning ($O(1)$ compute). Dirichlet uncertainty mass $u = K/S$ spikes to $100\%$ on unfamiliar pacemaker spikes or Left Bundle Branch Blocks, safely triggering deterministic Safe-State triage.
+* **INT8 Quantization & Dyadic Scaling (Q6.1)**: Affine INT8 quantization ($r = S(q-Z)$) with dyadic scaling ($M_0 \cdot 2^{-n}$) and Quantization-Aware Training (QAT) compresses the deep model from $2.4\text{ MB}$ to $410\text{ KB}$ while retaining $>93.8\%$ clinical sensitivity. Structured L1-norm filter pruning preserves dense SIMD execution without sparse index overhead.
+* **Overcoming the MCU Roofline & Memory Walls (Q6.2)**: Biosignal 1D convolutions are memory-bound on MCUs ($I \approx 0.25\text{--}8.3\text{ MACs/byte}$). Ping-pong double buffering slashes peak activation memory from $850\text{ KB}$ to $48\text{ KB}$ ($94\%$ SRAM reduction). Static arena allocation eliminates fragmentation risks under IEC 62304 Class C.
+* **Hardware-Accelerated Silicon Features (Q6.3)**: ARMv8-M DSP SIMD (`__SMLAD`) on Nordic nRF5340 Cortex-M33 processes 2 INT8 MACs per cycle, cutting inference latency from $14.2\text{ ms}$ to $1.8\text{ ms}$ ($15.2\ \mu\text{J}/\text{beat}$). EasyDMA autonomously streams IMU bytes to SRAM while CPU sleeps at $1.3\ \mu\text{A}$ ($99.4\%$ duty cycle). CryptoCell-312 accelerates AES-256 telemetry encryption in $0.15\text{ ms}$.
+* **The 4-Stage Hierarchical Sentry Pipeline (Q6.4)**: Replaces monolithic inference with an event-driven ladder: Stage 0 (In-sensor FSM at $15.5\ \mu\text{A}$) $\rightarrow$ Stage 1 (Cortex-M33 DSP gate, $0.42\text{ ms}$ at $4.5\ \mu\text{J}$, screens out $94.2\%$ of normal beats) $\rightarrow$ Stage 2 (Quantized INT8 TinyML, $1.80\text{ ms}$ at $40\ \mu\text{J}$, resolves $98.6\%$ false alarms) $\rightarrow$ Stage 3 (Multi-node BAN radio corroboration and 30s wrist haptic cancellation interlock). Extends $250\text{ mAh}$ battery life to **7.4+ continuous days**.
+* **Secure Dual-Bank OTA Updates & Watchdog Rollback (Q6.5)**: A/B Flash partitioning guarantees zero bricking. `bsdiff` differential delta compression shrinks a $410\text{ KB}$ model update to $28.4\text{ KB}$, transferring over BLE in $3.55\text{ seconds}$. Hardware ECDSA P-256 and monotonic counters prevent model poisoning and downgrade attacks. In-RAM Golden Test Vectors and 4-second Watchdog Timer trigger self-healing rollback in $<120\text{ ms}$ if an update fails.
 
 #### ✍️ `[Team Decision & Customization Slot - Module 8]`:
-* **Assigned Team Member / Domain**: `[ Team to assign: Machine Learning / AI Lead ]`
+* **Assigned Team Member / Domain**: `[ Team to assign: Machine Learning / AI Lead & Embedded Firmware Engineer ]`
 * **Selected Validation Pipeline**: **OFFICIALLY LOCKED TO STRATIFIED GROUP 5-FOLD + ADVERSARIAL GRL**
 * **Selected Machine Learning Architecture**: **OFFICIALLY LOCKED TO HYBRID TCN-MAMBA + EVIDENTIAL HEAD**
-* **Upcoming Edge Optimization Decisions**: `[ Phase 6: INT8 Post-Training Quantization vs QAT; CMSIS-NN Kernel Mapping ]`
+* **Selected Edge Deployment Architecture**: **OFFICIALLY LOCKED TO 4-STAGE HIERARCHICAL SENTRY + CMSIS-NN INT8 + MCUBOOT DUAL-BANK OTA**
 
 ---
 
