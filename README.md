@@ -28,6 +28,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 │       ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
 │       ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
 │       ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
+│       ├── Clinical_Realities_Hospital_Barriers_and_MI_Types.md # Hospital Barriers & 5 MI Types
 │       └── assets/                                          # Clinical diagrams & charts
 │   └── Phase_02_Signal_Acquisition_Physics/
 │       ├── Q2_1_Sensing_Modalities_Biomarker_Mapping.md     # Transduction Physics (50 Sources)
