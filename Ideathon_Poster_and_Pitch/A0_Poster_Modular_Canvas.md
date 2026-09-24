@@ -191,14 +191,21 @@
 
 ### BLOCK 7: Signal Processing, Noise & Motion Denoising (Phase 3)
 * **Domain Lead**: DSP / Biomedical
-* **Status**: ⏳ **QUEUED FOR RESEARCH** (See [`Master_Research_Questionnaire_Expanded.md`](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) Phase 3)
-* **Target Research Scope**:
-  * *Analog AFE Filtering*: Passive RC anti-aliasing + active instrumentation notch filters.
-  * *Adaptive Motion Cancellation*: Dual-IMU Normalized Least Mean Squares (NLMS) filter subtracting torso walking cadence from cardiac SCG.
-  * *Real-Time SQI*: Sub-milliwatt Signal Quality Index gating uncorrupted frames.
+* **Status**: ✅ **COMPLETED (Phase 3: Q3.1 through Q3.5 Fully Synthesized)**
+* **Direct Evidence Links**:
+  * 🟢 [Q3.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_1_Takeaway.md) | [Q3.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_2_Takeaway.md) | [Q3.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_3_Takeaway.md) | [Q3.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_4_Takeaway.md) | [Q3.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_5_Takeaway.md)
+  * 🟡 [Q3.1 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_1_Product_Translation.md) | [Q3.2 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_2_Product_Translation.md) | [Q3.3 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_3_Product_Translation.md) | [Q3.4 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_4_Product_Translation.md) | [Q3.5 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_5_Product_Translation.md)
+  * 🔵 [Phase 3 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/)
+* **Suggested Candidate Bullet Points**:
+  * *The Walking Noise Reality*: Footstrike impact transients ($1.5\text{ to }3.0\text{ g}$) occur at $1\text{--}2\text{ Hz}$, overlapping heart rate frequencies and swamping cardiac SCG micro-vibrations by $50\times\text{ to }100\times$ ($SNR = -20\text{ dB}$).
+  * *Dual-Node NLMS Motion Cancellation (Route 3)*: Wristband IMU captures pure arm swings and footstep cadence as noise reference $x(n)$; on-device Normalized Least Mean Squares (NLMS) filter subtracts walking shockwaves, boosting sternal SCG clarity by $>26\text{ dB}$ consuming just $18.2\ \mu\text{W}$ ($14.2\ \mu\text{s}$ latency).
+  * *Route 1 Digital DSP & On-Chip Rejection*: On-chip hardware anti-aliasing ($400\text{ Hz}$ LPF on LSM6DSOX) and $>90\text{ dB}$ ambient optical subtraction (MAX86141) strip static and lamp flicker; ARM CMSIS-DSP firmware handles bandpass filtering ($1\text{--}45\text{ Hz}$), keeping hardware sleek and under ₹820 BOM.
+  * *Postural Gravity Normalization*: Continuous static gravity vector tracking ($0.05\text{ Hz}$) and tri-axial kinetic energy ($a_{\text{kinetic}} = \sqrt{a_x^2 + a_y^2 + a_z^2}$) prevent normal $48\%$ stroke volume drops upon standing or sleeping in Left Lateral Recumbent position from triggering false alarms.
+  * *Sub-Milliwatt Signal Quality Index (SQI)*: Real-time higher-order Kurtosis/Skewness, spectral band energy, and template matching run in $<100\ \mu\text{s}$ consuming $<35\ \mu\text{W}$. Multi-Tier Gated Degradation suppresses noisy alarms while maintaining emergency cardiac arrest sentry surveillance 24/7.
+* **Suggested Visual**: Dual-IMU NLMS adaptive cancellation diagram showing wrist reference subtracting footstrike shockwaves from sternal SCG + 3-Tier SQI Gating flowchart.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
-  [ Team to research Phase 3 and fill finalized Block 7 text here ]
+  [ Team to review candidate points and write finalized Block 7 text here ]
   ```
 
 ---

@@ -325,20 +325,40 @@ c:/College/Ideathon/
 ### MODULE 7: Signal Processing, Noise & Motion Artifacts (Phase 3)
 * **Ideathon Evaluation Role**: Explains how clean waveforms are extracted during real-world walking and motion (Pillar 3: Feasibility).
 * **Research Phase**: **Phase 3 (Analog & Digital Signal Processing)**
-* **Current Status**: ⏳ **QUEUED FOR RESEARCH (Questions Mapped in Questionnaire)**
+* **Current Status**: **IN PROGRESS — Q3.1, Q3.2, Q3.3 & Q3.4 COMPLETED (Available on Disk)**
 
-#### 🎯 Upcoming Research Scope & Questions to Tackle:
-* **Target Questionnaire Reference**: [`Master_Research_Questionnaire_Expanded.md`](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) $\rightarrow$ **Phase 3**:
-  * *Q3.1*: Sources of signal degradation (motion artifacts, baseline wander, electromyographic noise).
-  * *Q3.2*: Mandatory analog front-end (AFE) hardware filtering stages.
-  * *Q3.3*: Digital signal processing algorithms (Wavelet Denoising, NLMS adaptive filters).
-  * *Q3.4*: Morphological vs positional artifact discrimination (postural shifts vs true ST-elevation).
-  * *Q3.5*: Real-time Signal Quality Index (SQI) architecture running under sub-milliwatt constraints.
+#### 📁 Direct File Reference Links:
+* **Sources of Signal Degradation & Motion Artifacts (Q3.1)**:
+  * 🟢 Plain-English Takeaway: [`Q3_1_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_1_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q3_1_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_1_Product_Translation.md)
+  * 🔵 Deep Noise & Physics Vault: [`Q3_1_Signal_Degradation_Sources.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.1_Signal_Degradation_Sources/Q3_1_Signal_Degradation_Sources.md)
+* **Mandatory Analog Front-End (AFE) Filtering (Q3.2)**:
+  * 🟢 Plain-English Takeaway: [`Q3_2_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_2_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q3_2_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_2_Product_Translation.md)
+  * 🔵 Deep AFE Filtering Vault: [`Q3_2_Mandatory_Analog_Filtering_AFE.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.2_Mandatory_Analog_Filtering_AFE/Q3_2_Mandatory_Analog_Filtering_AFE.md)
+* **Digital Signal Processing Algorithms — NLMS vs RLS vs Wavelets (Q3.3)**:
+  * 🟢 Plain-English Takeaway: [`Q3_3_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_3_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q3_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_3_Product_Translation.md)
+  * 🔵 Deep Algorithmic Vault: [`Q3_3_Digital_Signal_Processing_Algorithms.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.3_Digital_Signal_Processing_Algorithms/Q3_3_Digital_Signal_Processing_Algorithms.md)
+* **Morphological vs Positional Artifact Discrimination (Q3.4)**:
+  * 🟢 Plain-English Takeaway: [`Q3_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q3_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_4_Product_Translation.md)
+* **Real-Time Sub-Milliwatt Signal Quality Index (SQI) Architecture (Q3.5)**:
+  * 🟢 Plain-English Takeaway: [`Q3_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q3_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_5_Product_Translation.md)
+  * 🔵 Deep Real-Time SQI Vault: [`Q3_5_Real_Time_Signal_Quality_Index.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.5_Real_Time_Signal_Quality_Index/Q3_5_Real_Time_Signal_Quality_Index.md)
+* **Phase 3 Status**: **100% COMPLETE (All 5 Questions Fully Researched & Validated)**
+
+#### 🔬 Candidate Evidence & Key Insights Available for the Team:
+* **Selected Route 1+3 Architecture**: Modern Digital DSP on MCU + Dual-Node Adaptive Motion Subtraction.
+* **The Walking Noise Reality**: Heel-strikes generate $1.5\text{ to }3.0\text{ g}$ shockwaves at $1\text{--}2\text{ Hz}$, swamping the heart's tiny $0.01\text{--}0.05\text{ g}$ mechanical pumping vibration ($SNR = -20\text{ dB}$).
+* **Dual-IMU Cancellation**: Wristband IMU captures pure arm swings and footstep cadence; on-device NLMS adaptive filter subtracts this reference from the sternal IMU, boosting SNR by $>26\text{ dB}$.
+* **On-Chip Front-End Rejection**: On-chip hardware anti-aliasing in ST LSM6DSOX ($400\text{ Hz}$ LPF) and ambient light cancellation in MAX86141 ($>90\text{ dB}$) strip out high-frequency static and 100/120 Hz lamp flicker before code execution.
+* **Postural Normalization**: Gravity vector tracking ($0.05\text{ Hz}$) prevents normal $48\%$ stroke volume drops upon standing from triggering false alarms.
 
 #### ✍️ `[Team Decision & Customization Slot - Module 7]`:
-* **Target Research File Location**: `Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/`
+* **Selected Filtering Architecture**: **OFFICIALLY LOCKED TO ROUTE 1+3** (Digital DSP + Dual-Node Motion Cancellation).
 * **Assigned Team Member / Domain**: `[ Team to assign: DSP / Firmware Engineer ]`
-* **Content Status**: `[ Blank - To be researched and filled ]`
 
 ---
 
@@ -476,4 +496,9 @@ Every completed question across our repository is hyperlinked below across its 3
 | **Phase 2** | **Q2.3: Digitization & FIFO** | Firmware / Embedded | [Q2.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_3_Takeaway.md) | [Q2.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_3_Product_Translation.md) | [Phase 2.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.3_Sampling_Frequencies_Bit_Resolutions/Q2_3_Quantitative_Digitization_Architecture.md) |
 | **Phase 2** | **Q2.4: Optical Skin Tone** | Optical / Biomedical | [Q2.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_4_Takeaway.md) | [Q2.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_4_Product_Translation.md) | [Phase 2.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.4_Optical_Skin_Tone_Melanin_Inclusivity/Q2_4_Optical_Skin_Tone_Melanin_Inclusivity.md) |
 | **Phase 2** | **Q2.5: Skin-Electrode Interface** | Materials / Hardware | [Q2.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_5_Takeaway.md) | [Q2.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_5_Product_Translation.md) | [Phase 2.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.5_Skin_Electrode_Interface_Impedance/Q2_5_Skin_Electrode_Interface_Impedance.md) |
-| **Phases 3–12**| **Upcoming Research Roadmap** | All Team Members | [Master Questionnaire](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) | [Sensor Evaluation Scorecard](file:///c:/College/Ideathon/Sensor_Evaluation_Deep_Dive_Framework.md) | [Research Dossier Directory](file:///c:/College/Ideathon/Research_Dossier/) |
+| **Phase 3** | **Q3.1: Signal Degradation** | DSP / Firmware | [Q3.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_1_Takeaway.md) | [Q3.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_1_Product_Translation.md) | [Phase 3.1 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.1_Signal_Degradation_Sources/Q3_1_Signal_Degradation_Sources.md) |
+| **Phase 3** | **Q3.2: Mandatory Analog Filtering** | Hardware / Circuits | [Q3.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_2_Takeaway.md) | [Q3.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_2_Product_Translation.md) | [Phase 3.2 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.2_Mandatory_Analog_Filtering_AFE/Q3_2_Mandatory_Analog_Filtering_AFE.md) |
+| **Phase 3** | **Q3.3: DSP Algorithms (NLMS/RLS/DWT)**| DSP / Firmware | [Q3.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_3_Takeaway.md) | [Q3.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_3_Product_Translation.md) | [Phase 3.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.3_Digital_Signal_Processing_Algorithms/Q3_3_Digital_Signal_Processing_Algorithms.md) |
+| **Phase 3** | **Q3.4: Postural Disambiguation** | Biomechanics / DSP | [Q3.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_4_Takeaway.md) | [Q3.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_4_Product_Translation.md) | [Phase 3.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.4_Morphological_vs_Positional_Artifact_Discrimination/Q3_4_Morphological_vs_Positional_Artifact_Discrimination.md) |
+| **Phase 3** | **Q3.5: Real-Time Sub-mW SQI** | Embedded / Algorithms | [Q3.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_5_Takeaway.md) | [Q3.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_5_Product_Translation.md) | [Phase 3.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.5_Real_Time_Signal_Quality_Index/Q3_5_Real_Time_Signal_Quality_Index.md) |
+| **Phases 4–12**| **Upcoming Research Roadmap** | All Team Members | [Master Questionnaire](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) | [Sensor Evaluation Scorecard](file:///c:/College/Ideathon/Sensor_Evaluation_Deep_Dive_Framework.md) | [Research Dossier Directory](file:///c:/College/Ideathon/Research_Dossier/) |
