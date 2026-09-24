@@ -26,6 +26,7 @@ This repository contains the complete systems engineering blueprint, clinical pa
 │       ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
 │       ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
 │       ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
+│       ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
 │       └── assets/                                          # Clinical diagrams & charts
 └── README.md                                  # This project overview
 ```
