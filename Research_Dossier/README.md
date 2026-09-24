@@ -3,32 +3,36 @@
 
 ---
 
-> **Project**: Autonomous Sternal IoT Patch for Early Prediction of Sudden Cardiac Arrest (SCA) & Acute Ischemia  
-> **Master Framework**: [Master_Research_Questionnaire_Expanded.md](../Master_Research_Questionnaire_Expanded.md)  
+> **Project**: Autonomous Sternal IoT Wearable for Early Prediction of Sudden Cardiac Arrest (SCA) & Acute Ischemia  
+> **Master Product Hub**: [MASTER_PRODUCT_AND_RESEARCH_HUB.md](../MASTER_PRODUCT_AND_RESEARCH_HUB.md) *(Start here for product features, specs, and status)*  
+> **Plain-English Takeaways**: [Takeaways Directory](./Takeaways/) *(5-minute fast learning summaries)*  
+> **Master Systems Framework**: [Master_Research_Questionnaire_Expanded.md](../Master_Research_Questionnaire_Expanded.md)  
 > **Hardware Scorecard**: [Sensor_Evaluation_Deep_Dive_Framework.md](../Sensor_Evaluation_Deep_Dive_Framework.md)  
-> **Architecture Blueprint**: [Cardiac_Arrest_Detection_Master_Architecture.md](../Cardiac_Arrest_Detection_Master_Architecture.md)
 
 ---
 
+### 📚 Research Organization: The 4-Tier Architecture
+1. **Tier 1 (Master Product Hub)**: If you want to know what our device is, what we have built, and where everything references from, open [`MASTER_PRODUCT_AND_RESEARCH_HUB.md`](../MASTER_PRODUCT_AND_RESEARCH_HUB.md).
+2. **Tier 2 (Plain-English Takeaways)**: If you want quick, jargon-free 5-minute reads of individual questions, open the [`Takeaways/`](./Takeaways/) folder.
+3. **Tier 2.5 (Product Translations & System Implementations)**: If you want detailed engineering explanations of how and why each scientific finding is used in our device, open the [`Product_Translations/`](./Product_Translations/) folder.
+4. **Tier 3 (Deep-Dive Research Vault)**: If you need to inspect raw academic citations, mathematical derivations, and clinical trial matrices, browse the dedicated phase subfolders below.
+
+
 ### Research Progress & Question Registry
 
-Every question from your expanded master questionnaire is systematically documented in this directory tree. Each document contains:
-1. Full peer-reviewed clinical / systems synthesis.
-2. Verified figures, diagrams, and data tables.
-3. Explicit **Section-to-Source Verification Index** mapping every statement to exact academic sources.
-4. Annotated Bibliography with direct source hyperlinks.
+Every question from your expanded master questionnaire is systematically documented in this directory tree:
 
-| Phase | Domain | Question ID & Topic | Status | File Link |
-| :--- | :--- | :--- | :--- | :--- |
-| **Phase 1** | **Pathophysiology & Biomarkers** | **Q1.1**: 1-to-6-Hour Pre-Infarction Cascade | **COMPLETED** (86 Sources) | [Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md](./Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) ([Plain-English Takeaway](./Takeaways/Q1_1_Takeaway.md)) |
-| Phase 1 | Pathophysiology & Biomarkers | **Q1.2**: Non-Invasive Physical Outputs | **COMPLETED** (53 Sources) | [Q1_2_Non_Invasive_Physical_Outputs.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_2_Non_Invasive_Physical_Outputs.md) |
-| Phase 1 | Pathophysiology & Biomarkers | **Q1.3**: Demographic Variations (Age/Sex/Diabetes) | **COMPLETED** (72 Sources) | [Q1_3_Demographic_Variations.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md) |
-| Phase 1 | Pathophysiology & Biomarkers | **Q1.4**: Differential Diagnosis & Confounders | **COMPLETED** (58 Sources) | [Q1_4_Differential_Diagnosis_Confounders.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md) |
-| Phase 1 | Pathophysiology & Biomarkers | **Q1.5**: Circadian & Sleep Stage Adaptations | **COMPLETED** (41 Sources) | [Q1_5_Circadian_Sleep_Adaptations.md](./Phase_01_Pathophysiology_and_Biomarkers/Q1_5_Circadian_Sleep_Adaptations.md) |
-| **Phase 1** | **Pathophysiology & Biomarkers** | **Phase 1 Executive Summary (Plain English)** | **COMPLETE SYNTHESIS** (310 Sources) | [Phase_01_Executive_Summary_Plain_English.md](./Phase_01_Pathophysiology_and_Biomarkers/Phase_01_Executive_Summary_Plain_English.md) |
-| **Phase 1** | **Clinical Context** | **Hospital Adoption Barriers & 5 MI Types** | **CLINICAL DEFENSE** | [Clinical_Realities_Hospital_Barriers_and_MI_Types.md](./Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Clinical_Realities_Hospital_Barriers_and_MI_Types.md) |
-| **Phase 2** | **Signal Acquisition (Physics)** | **Q2.1**: Physical Sensing Modalities Mapping | **COMPLETED** (50 Sources) | [Q2_1_Sensing_Modalities_Biomarker_Mapping.md](./Phase_02_Signal_Acquisition_Physics/Q2_1_Sensing_Modalities_Biomarker_Mapping.md) |
-| Phase 2 | Signal Acquisition (Physics) | **Q2.2 - Q2.5**: Sweet Spots, Sampling Rates, Skin Tone, Contact Impedance | *Ready for Input* | `./Phase_02_Signal_Acquisition_Physics/` |
+| Phase | Domain | Question ID & Topic | Status | Takeaway (Tier 2) | Product Translation (Tier 2.5) | Deep Research Vault (Tier 3) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Phase 1** | **Pathophysiology** | **Q1.1**: 1-to-6-Hour Pre-Infarction Cascade | **COMPLETED** | [Q1_1_Takeaway.md](./Takeaways/Q1_1_Takeaway.md) | [Q1_1_Product_Translation.md](./Product_Translations/Q1_1_Product_Translation.md) | [Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md](./Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) |
+| Phase 1 | Pathophysiology | **Q1.2**: Non-Invasive Physical Outputs | **COMPLETED** | [Q1_2_Takeaway.md](./Takeaways/Q1_2_Takeaway.md) | [Q1_2_Product_Translation.md](./Product_Translations/Q1_2_Product_Translation.md) | [Q1_2_Non_Invasive_Physical_Outputs.md](./Phase_01_Pathophysiology_and_Biomarkers/1.2_Non_Invasive_Physical_Outputs/Q1_2_Non_Invasive_Physical_Outputs.md) |
+| Phase 1 | Pathophysiology | **Q1.3**: Demographic Variations (Diabetics/Age/Sex) | **COMPLETED** | [Q1_3_Takeaway.md](./Takeaways/Q1_3_Takeaway.md) | [Q1_3_Product_Translation.md](./Product_Translations/Q1_3_Product_Translation.md) | [Q1_3_Demographic_Variations.md](./Phase_01_Pathophysiology_and_Biomarkers/1.3_Demographic_Variations/Q1_3_Demographic_Variations.md) |
+| Phase 1 | Pathophysiology | **Q1.4**: Differential Diagnosis & Confounders | **COMPLETED** | [Q1_4_Takeaway.md](./Takeaways/Q1_4_Takeaway.md) | [Q1_4_Product_Translation.md](./Product_Translations/Q1_4_Product_Translation.md) | [Q1_4_Differential_Diagnosis_Confounders.md](./Phase_01_Pathophysiology_and_Biomarkers/1.4_Differential_Diagnosis_Confounders/Q1_4_Differential_Diagnosis_Confounders.md) |
+| Phase 1 | Pathophysiology | **Q1.5**: Circadian & Sleep Adaptations | **COMPLETED** | [Q1_5_Takeaway.md](./Takeaways/Q1_5_Takeaway.md) | [Q1_5_Product_Translation.md](./Product_Translations/Q1_5_Product_Translation.md) | [Q1_5_Circadian_Sleep_Adaptations.md](./Phase_01_Pathophysiology_and_Biomarkers/1.5_Circadian_Sleep_Adaptations/Q1_5_Circadian_Sleep_Adaptations.md) |
+| **Phase 2** | **Signal Acquisition** | **Q2.1**: Physical Sensing Modalities Mapping | **COMPLETED** | [Q2_1_Takeaway.md](./Takeaways/Q2_1_Takeaway.md) | [Q2_1_Product_Translation.md](./Product_Translations/Q2_1_Product_Translation.md) | [Q2_1_Sensing_Modalities_Biomarker_Mapping.md](./Phase_02_Signal_Acquisition_Physics/2.1_Sensing_Modalities_Biomarker_Mapping/Q2_1_Sensing_Modalities_Biomarker_Mapping.md) |
+| **Phase 2** | **Signal Acquisition** | **Q2.2**: Anatomical Sweet Spots & Telemetry | **COMPLETED** | [Q2_2_Takeaway.md](./Takeaways/Q2_2_Takeaway.md) | [Q2_2_Product_Translation.md](./Product_Translations/Q2_2_Product_Translation.md) | [Q2_2_Anatomical_Sweet_Spots.md](./Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Q2_2_Anatomical_Sweet_Spots.md) |
+| **Phase 2** | **Signal Acquisition** | **Q2.3**: Sampling Frequencies, Bit Resolutions & Hardware FIFO | **COMPLETED** | [Q2_3_Takeaway.md](./Takeaways/Q2_3_Takeaway.md) | [Q2_3_Product_Translation.md](./Product_Translations/Q2_3_Product_Translation.md) | [Q2_3_Quantitative_Digitization_Architecture.md](./Phase_02_Signal_Acquisition_Physics/2.3_Sampling_Frequencies_Bit_Resolutions/Q2_3_Quantitative_Digitization_Architecture.md) |
+| Phase 2 | Signal Acquisition | **Q2.4 - Q2.5**: Optical Melanophore Attenuation & Contact Impedance Dynamics | *Queued* | - | - | `./Phase_02_Signal_Acquisition_Physics/` |
 | **Phase 3** | **Signal Processing (Noise)** | **Q3.1 - Q3.5**: Analog AFE, Wavelet DSP, NLMS Adaptive Filters | *Ready for Input* | `./Phase_03_Analog_Digital_Signal_Processing/` |
 | **Phase 4** | **Data Engineering** | **Q4.1 - Q4.6**: Clinical Databases, Pre-Event Labeling, Leakage Prevention | *Ready for Input* | `./Phase_04_Data_Engineering_Preprocessing/` |
 | **Phase 5** | **Machine Learning Architecture** | **Q5.1 - Q5.6**: Multivariate Forecasting, Multimodal Fusion, Explainable AI | *Ready for Input* | `./Phase_05_Machine_Learning_Architecture/` |

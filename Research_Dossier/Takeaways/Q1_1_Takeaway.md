@@ -64,7 +64,21 @@ When one of these vessels begins to clog, the heart goes through five clear stag
 
 ---
 
-## 3. How This Information Selects the Hardware Sensors
+## 3. How This Helps Us: Direct Engineering & Project Value
+
+Question 1.1 provides the foundational justification for our entire device:
+
+1. **Scientifically Proves Our Operating Runway**: It proves that predicting a heart attack is biologically possible. Because the heart undergoes a measurable 1-to-6-hour physical struggle before permanent cell death, our patch has a defined multi-hour window to detect the crisis and dispatch emergency help.
+2. **Dictates Our Exact Hardware Selection**: Knowing the heart's breakdown sequence tells us exactly what chips to put on the patch:
+   - To catch Stage 2 (Adrenaline surge at $T-3\text{h}$): We need an **ECG Chip (ADS1292R)** to track the collapse of natural beat-to-beat rhythm flexibility (HRV).
+   - To catch Stage 3 (Heart muscle stiffening at $T-2\text{h}$): We need a **High-Precision Accelerometer (LSM6DSOX)** to feel the 50% drop in physical chest pumping strength.
+   - To catch Stage 4 (Rapid breathing and oxygen drop at $T-1\text{h}$): We need an **Optical Pulse & Oxygen Sensor (MAX86141)** to measure fast chest breathing and falling blood oxygen.
+3. **Programs Our False-Alarm Prevention Logic**: It tells our software engineers to verify events in chronological order (electrical timing $\rightarrow$ mechanical pumping drop $\rightarrow$ breathing/oxygen decline) rather than relying on simple, noisy heart rate thresholds.
+4. **Identifies Our First Clinical Market**: Medical data shows that **Type 3 MI** (patients who collapse before hospital blood tests can be drawn) and **Type 4 MI** (patients recovering from stent surgery in the first 30 days) are the exact high-risk groups our patch is built to protect.
+
+---
+
+## 4. Hardware Sensor Mapping: Catching Each Stage
 
 Each step of the heart's struggle produces a physical signal that can be picked up by a specific electronic chip on a chest patch:
 
@@ -76,7 +90,7 @@ Each step of the heart's struggle produces a physical signal that can be picked 
 
 ---
 
-## 4. How the Detection Software Works
+## 5. How the Detection Software Works
 
 A common mistake in simple health monitors is sounding an alarm whenever a person's heart beats fast. But a fast heart rate also happens when someone exercises, gets excited, or drinks coffee.
 

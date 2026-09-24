@@ -1,105 +1,134 @@
-# Autonomous Medical IoT Sternal Patch: Early Prediction of Sudden Cardiac Arrest (SCA) & Acute Ischemia
+# Autonomous Medical IoT Sternal Wearable: Early Prediction of Sudden Cardiac Arrest (SCA) & Acute Ischemia
 
-> **Ideathon Research & Systems Architecture Knowledge Base**  
-> An exhaustive, judge-ready, peer-reviewed engineering dossier designing an autonomous wearable system for the **1-to-6-hour pre-infarction ischemic window**.
-
----
-
-## 📌 Project Overview
-Sudden Cardiac Arrest (SCA) and Acute Myocardial Infarction (AMI) are rarely instantaneous events. In the 1 to 6 hours preceding total coronary occlusion, the human body undergoes a deterministic series of metabolic, autonomic, and hemodynamic shifts known as the **Ischemic Cascade**.
-
-This repository contains the complete systems engineering blueprint, clinical pathophysiological research, multi-biomarker decoupling rules, and hardware evaluation framework for an autonomous medical IoT device.
+> **Target Event**: College Medical IoT Ideathon  
+> **Core Clinical Mission**: Intercept sudden cardiac arrest (SCA) and acute myocardial ischemia during the **1-to-6-hour pre-infarction countdown** before irreversible cellular necrosis occurs.
 
 ---
 
-## 📂 Repository Structure
+## 🧭 Project Architecture: How to Navigate This Repository
+
+To keep our massive research easily understandable, the repository is organized into **four distinct layers**:
 
 ```
-.
-├── Master_Research_Questionnaire_Expanded.md  # 12-Phase Master Systems Architecture Framework
-├── Sensor_Evaluation_Deep_Dive_Framework.md   # Component-level Hardware Scorecard & COTS Comparison
-├── Research_Dossier/                          # Peer-Reviewed Modular Research Knowledge Base
-│   ├── README.md                              # Master Tracking Registry for all 12 Phases
-│   ├── Takeaways/                             # Plain-English Executive Takeaways (No Complex Jargon)
-│   │   └── Q1_1_Takeaway.md                   # 1.1 Deep-Dive Systems Takeaway
-│   ├── Phase_01_Pathophysiology_and_Biomarkers/
-│   │   ├── 1.1_Pre_Infarction_Cascade/        # Q1.1 Dedicated Research Folder
-│   │   │   ├── Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md # 1-to-6-Hour Cascade (86 Sources)
-│   │   │   └── Clinical_Realities_Hospital_Barriers_and_MI_Types.md # Hospital Barriers & 5 MI Types
-│   │   ├── Q1_2_Non_Invasive_Physical_Outputs.md            # Non-Invasive Diagnostic Physics (53 Sources)
-│   │   ├── Q1_3_Demographic_Variations.md                   # Demographics & Comorbidities (72 Sources)
-│   │   ├── Q1_4_Differential_Diagnosis_Confounders.md       # Multi-Biomarker Decoupling (58 Sources)
-│   │   ├── Q1_5_Circadian_Sleep_Adaptations.md               # Chronobiology & Sleep Gating (41 Sources)
-│   │   ├── Phase_01_Executive_Summary_Plain_English.md      # Plain-English Synthesis (310 Sources)
-│   │   └── assets/                                          # Clinical diagrams & charts
-│   └── Phase_02_Signal_Acquisition_Physics/
-│       ├── Q2_1_Sensing_Modalities_Biomarker_Mapping.md     # Transduction Physics (50 Sources)
-│       └── assets/                                          # Hardware schematics
-└── README.md                                  # This project overview
+===================================================================================================================
+                                      4-TIER PROJECT REPOSITORY ARCHITECTURE
+===================================================================================================================
+
+  TIER 1: MASTER PRODUCT HUB (Start Here)
+  └── 📄 [MASTER_PRODUCT_AND_RESEARCH_HUB.md](file:///c:/College/Ideathon/MASTER_PRODUCT_AND_RESEARCH_HUB.md)
+      • The single central window into the entire project.
+      • Explains what our device is, what we have actually discovered/built, and how it works.
+      • Maps every product feature directly to its quick takeaway, engineering translation, and deep research.
+
+  TIER 2: PLAIN-ENGLISH TAKEAWAYS (Fast Learning)
+  └── 📂 [Research_Dossier/Takeaways/](file:///c:/College/Ideathon/Research_Dossier/Takeaways/)
+      • 5-minute, jargon-free summaries written in everyday language.
+      • Purely informative, heart-centered, with zero fluff or pitch-coaching.
+
+  TIER 2.5: PRODUCT TRANSLATIONS & SYSTEM IMPLEMENTATIONS (The Engineering Bridge)
+  └── 📂 [Research_Dossier/Product_Translations/](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/)
+      • Explains in deep detail how each scientific finding translates into our product idea.
+      • Documents how we use each sensor/algorithm, and why we chose it over alternatives.
+
+  TIER 3: DEEP-DIVE RESEARCH VAULT (The Evidence Base)
+  └── 📂 [Research_Dossier/](file:///c:/College/Ideathon/Research_Dossier/)
+      • In-depth 50+ page technical dossiers organized in dedicated subfolders.
+      • Contains the mathematical derivations, circuit schematics, clinical trials, and 300+ peer-reviewed papers.
+      • Reserved for when judges, clinicians, or technical evaluators demand exact line-level proof.
+
+===================================================================================================================
 ```
 
 ---
 
-## 🔬 Key Research Modules Completed
+## 🎯 Quick Navigation & Key Deliverables
 
-### 1. [Phase 1, Question 1.1: The 1-to-6-Hour Pre-Infarction Cascade](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) ([Plain-English Takeaway](Research_Dossier/Takeaways/Q1_1_Takeaway.md))
-* **Biological Proof**: Disproves the myth that heart attacks happen without warning.
-* **Timeline**: Maps the sequential progression: Plaque destabilization $\rightarrow$ Autonomic storm ($T-3\text{h}$, SDNN $< 50\text{ ms}$) $\rightarrow$ Metabolic acidosis & lusitropic stiffening ($T-2\text{h}$) $\rightarrow$ Compensatory Tachypnea ($RR > 20\text{ bpm}$) $\rightarrow$ Subendocardial ECG shifts ($T-1\text{h}$).
-* **Biomarkers**: Proves traditional Troponin is a late necrosis marker, while early pre-necrotic markers (IMA, GPBB, H-FABP) elevate within 10 to 60 minutes.
-* **Verification**: 86 peer-reviewed citations mapped to exact sections, figures, and tables.
+### 💡 Product Architecture & Design (The Device)
+* 🌟 **Master Product Knowledge Hub**: [`MASTER_PRODUCT_AND_RESEARCH_HUB.md`](file:///c:/College/Ideathon/MASTER_PRODUCT_AND_RESEARCH_HUB.md) — What the device is, what we've proven, and where every fact references back to.
+* **Locked Science vs. Open Team Choices**: [`Product_Design/Master_Fixed_vs_Flexible_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md) — Separates non-negotiable biophysics from open team design choices.
+* **Form Factor Feasibility Analysis**: [`Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md`](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md) — Why smartwatches and loose pendants fail, and why the Magnetic Snap-to-Skin Pendant succeeds.
 
-### 2. [Phase 1, Question 1.2: Non-Invasive Diagnostic Physics](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_2_Non_Invasive_Physical_Outputs.md)
-* **Surface Transduction**: Maps visceral ischemia into 5 external physical domains:
-  * **Electrodynamics**: Injury currents causing ST-depression and T-wave inversion; SDNN $< 50\text{ ms}$ autonomic collapse; EDR uncoupling.
-  * **Kinematics & Micro-Vibrations (SCG / GCG)**: Diastolic stiffness attenuates Seismocardiographic Aortic Opening (AO) amplitude by $>50\%$ (higher sensitivity than exercise ECG: 61.1% vs 44.2%) and amplifies Rapid Filling (RF) waves by $>20\%$.
-  * **Opto-Vascular (PPG)**: UK Biobank (114,884 subjects) validates systolic area flattening; Respiratory Modulation Response ($\text{RMR} < 30\%$) predicts significant CAD with 93% Positive Predictive Value.
-  * **Transdermal Infrared Spectrophotometry (ISS)**: Bloodless wrist optical hs-cTnI detection (AUC 0.90–0.92 in 5 min; OR 4.69 for stenosis); sweat STAMBP proteomics.
-  * **Sudomotor & Thermal**: Cholinergic diaphoresis triggers Galvanic Skin Response (GSR) phasic SCR spikes (1–3s rise time); asymmetrical facial cooling and left jaw thermal drop (+13% diagnostic accuracy).
-* **Verification**: 53 peer-reviewed citations mapped to exact sections, figures, and tables.
-
-### 3. [Phase 1, Question 1.3: Demographic & Comorbidity Variations](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_3_Demographic_Variations.md)
-* **Senescent Cardiovascular System**: Arterial stiffening ($PWV > 10\text{ m/s}$) accelerates wave reflections and shortens reflection time, blunting the PPG dicrotic notch. Linear HRV metrics collapse ($SDNN < 40\text{ ms}$), but non-linear fractal scaling (DFA $\alpha_1 \approx 1.0$) is preserved in healthy aging; acute ischemia breaks this scaling ($\alpha_1 \rightarrow 0.5$). Renal clearance decay shifts resting H-FABP baselines upwards, requiring dynamic derivative thresholding ($\frac{d[\text{Biomarker}]}{dt}$).
-* **Diabetic Silent Myocardial Ischemia (SMI)**: Cardiac Autonomic Neuropathy (CAN) destroys unmyelinated C-fibers, abolishing angina pectoris (4x MACE risk) and postganglionic sudomotor sweat surges (flat GSR). Decoupling is intercepted via QTc dispersion ($>460\text{ ms}$), microvolt T-Wave Alternans (TWA), and blunted Heart Rate Recovery ($HRR < 12\text{ bpm}$).
-* **Structural Arrhythmias & Remodeling**: Atrial Fibrillation (AFib) causes beat-to-beat mechanical chaos, obliterating single-beat Seismocardiography (SCG) fiducials; resolved via R-R cycle length binning and 40-beat ensemble averaging. Hypertension/LVH strains produce baseline ST-T deviations and S4 acoustic gallops ($20–40\text{ Hz}$). Heart failure elevates filling pressures, producing S3 gallops ($15–30\text{ Hz}$). Dual-sensor PTT ($\text{PTT}_{\text{true}} = t_{\text{PPG}} - t_{\text{SCG\_AO}}$) eliminates the Pre-Ejection Period (PEP) confounder.
-* **Fairness & Edge Personalization**: Mitigates AI bias against females and minorities using SMOTE oversampling, Adversarial Gradient Reversal debiasing, Demographic Parity, and Equalized Odds. On-device TinyML builds individualized 72-hour rolling $Z$-score baselines ($Z = \frac{x - \mu}{\sigma}$), eliminating generalized population bias on-chip.
-* **Verification**: 72 peer-reviewed citations mapped to exact sections, figures, and tables.
-
-### 4. [Phase 1, Question 1.4: Differential Diagnosis & Confounders](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_4_Differential_Diagnosis_Confounders.md)
-* **False-Alarm Eradication**: Eliminates alert fatigue by decoupling lethal cardiac events from benign confounders:
-  * **Severe Panic Attack**: Hyperventilation blows off $CO_2$ (respiratory alkalosis), but $SpO_2$ remains locked at $98\%–100\%$. In ischemia, pulmonary congestion degrades $SpO_2$ ($90\%–94\%$) despite rapid breathing.
-  * **Exercise Tachycardia**: Heart rate scales with IMU movement wattage; QRS is narrow ($<0.12\text{s}$). In VTach, heart rate is 170+ bpm at near-zero motion with wide QRS ($>0.14\text{s}$).
-  * **Vasovagal Syncope**: Driven by a paradoxical parasympathetic storm (HF surge, bradycardia/asystole), the exact inverse of pre-SCA adrenergic surge.
-  * **Epileptic Seizure**: Ictal tachycardia precedes motor convulsions by $\sim 5\text{s}$, followed by rhythmic 3-axis shaking.
-* **Transfer Entropy ($T_{\text{SpO2} \rightarrow \text{HR}}$)**: Mathematical detection of systemic decomplexification.
-* **Verification**: 58 peer-reviewed citations mapped to exact sections, figures, and tables.
-
-### 5. [Phase 1, Question 1.5: Chronobiological Architecture & Sleep Decoupling](Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/Q1_5_Circadian_Sleep_Adaptations.md)
-* **Morning Vulnerability**: PAI-1 peaks at ~6:30 AM, suppressing natural clot-dissolving fibrinolysis at the same time morning cortisol and catecholamines surge.
-* **Streaming Cosinor Model**: Replaces rigid static thresholds with dynamic 24-hour sinusoidal baselines ($f(t) = M + A \cos(2\pi t / \tau + \phi)$) computed on-chip with $\mathcal{O}(N)$ linear complexity.
-* **Sleep Gating**: Multitask learning classifies NREM vs. REM sleep; software gating widens rate thresholds during REM autonomic storms and shifts diagnostic weight to 1D-CNN ECG QRS morphology.
-* **OSA Discrimination**: Cardiorespiratory Phase-Coupling (CPC) and Electrocardiogram-Derived Respiration (EDR) separate cyclical $0.01–0.04\text{ Hz}$ sleep apnea loops from monotonic ischemic collapse.
-* **Verification**: 41 peer-reviewed citations mapped to exact sections, figures, and tables.
-
-### 6. [Phase 2, Question 2.1: Physical Sensing Modalities & Biomarker Mapping](Research_Dossier/Phase_02_Signal_Acquisition_Physics/Q2_1_Sensing_Modalities_Biomarker_Mapping.md)
-* **Zero-Blindspot Transduction**: Maps the 5 core physical sensing modalities directly to Phase 1's visceral biomarkers:
-  * **Electrical (Biopotential & EDA)**: TI ADS1292R ($500\text{ Hz}, 24\text{-bit}$) captures microvolt ST injury currents and T-wave alternans (TWA, $5–20\ \mu\text{V}$); dry sternal electrodes measure sudomotor cold sweats ($1–3\text{s}$ rise time).
-  * **Mechanical (SCG & GCG)**: ST LSM6DSOX 6-axis IMU ($200\text{ Hz}$) detects lusitropic pump failure (Aortic Opening [AO] amplitude drop $>50\%$) and provides the kinematic motion denominator.
-  * **Optical (Multi-Wavelength PPG)**: ADI MAX86141 Red/IR/Green ($100\text{ Hz}$) detects microvascular stiffening ($\text{RMR} < 30\%$) and hypoxic desaturations ($SpO_2$).
-  * **Acoustic (Phonocardiography)**: PVDF piezoelectric film transducers capture sub-audible S3 ($15–30\text{ Hz}$) and S4 ($20–40\text{ Hz}$) gallops, marking elevated left ventricular filling pressure ($\text{LVEDP} > 20\text{ mmHg}$).
-  * **Bio-Impedance (Thoracic Bio-Z)**: High-frequency tetrapolar current injection ($50–100\text{ kHz}$) detects base impedance ($Z_0$) decay from pulmonary capillary fluid accumulation and tracks breath-by-breath tachypnea ($\Delta Z_{\text{resp}}$).
-* **PEP-Free True PTT**: Fuses mechanical SCG AO with optical PPG foot arrival ($\text{PTT}_{\text{true}} = t_{\text{PPG}} - t_{\text{SCG\_AO}}$), completely eliminating Pre-Ejection Period (PEP) error.
-* **Verification**: 50 peer-reviewed citations mapped to exact sections, figures, and tables.
+### 🏆 Ideathon Competition Pitch & Poster
+* **A0 Poster Modular Canvas**: [`Ideathon_Poster_and_Pitch/A0_Poster_Modular_Canvas.md`](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/A0_Poster_Modular_Canvas.md) — Blank 12-phase canvas with candidate points and tables for the team to pick and customize.
+* **Master Pitch & Poster Guide**: [`Ideathon_Poster_and_Pitch/Master_Pitch_and_Poster_Guide.md`](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/Master_Pitch_and_Poster_Guide.md) — Exact poster copy, domain ownership breakdown, and verbal pitch scripts.
 
 ---
 
-## 🛠️ Master Frameworks
+## 📋 Master Product Knowledge Map (What We Have Proven So Far)
 
-* **[Master Research Questionnaire (12 Phases)](Master_Research_Questionnaire_Expanded.md)**: The end-to-end systems architecture roadmap covering biology, physics, noise DSP, machine learning, TinyML, wireless IoT, power budgets, regulatory (CDSCO/FDA), and pitch economics.
-* **[Sensor Evaluation Deep Dive Framework](Sensor_Evaluation_Deep_Dive_Framework.md)**: Hardware scorecard evaluating communication protocols, clock synchronization (PAT), power budgets, and physical packaging for COTS components (ADS1292R, MAX86141, LSM6DSOX, TMP117).
+| What Our Product Does | Plain-English Takeaway (Tier 2) | Product Translation & Implementation (Tier 2.5) | In-Depth Research Vault (Tier 3) |
+| :--- | :--- | :--- | :--- |
+| **Detects the 1-to-6-Hour Countdown** | [Q1.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_1_Takeaway.md) | [Q1.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_1_Product_Translation.md) | [Phase 1.1 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.1_Pre_Infarction_Cascade/Q1_1_Pre_Infarction_Cascade_1_to_6_Hours.md) |
+| **6-Channel Chest Sensing** | [Q1.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_2_Takeaway.md) | [Q1.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_2_Product_Translation.md) | [Phase 1.2 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.2_Non_Invasive_Physical_Outputs/Q1_2_Non_Invasive_Physical_Outputs.md) |
+| **Protects Diabetics & Elderly** | [Q1.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_3_Takeaway.md) | [Q1.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_3_Product_Translation.md) | [Phase 1.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.3_Demographic_Variations/Q1_3_Demographic_Variations.md) |
+| **Eliminates False Alarms** | [Q1.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_4_Takeaway.md) | [Q1.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_4_Product_Translation.md) | [Phase 1.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.4_Differential_Diagnosis_Confounders/Q1_4_Differential_Diagnosis_Confounders.md) |
+| **Adapts to Sleep & Morning Vulnerability** | [Q1.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_5_Takeaway.md) | [Q1.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_5_Product_Translation.md) | [Phase 1.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.5_Circadian_Sleep_Adaptations/Q1_5_Circadian_Sleep_Adaptations.md) |
+| **Hardware Microchip Architecture** | [Q2.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_1_Takeaway.md) | [Q2.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_1_Product_Translation.md) | [Phase 2.1 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.1_Sensing_Modalities_Biomarker_Mapping/Q2_1_Sensing_Modalities_Biomarker_Mapping.md) |
+| **Sternal Sweet Spot & Motion Cancelling** | [Q2.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_2_Takeaway.md) | [Q2.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_2_Product_Translation.md) | [Phase 2.2 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Q2_2_Anatomical_Sweet_Spots.md) |
+| **Digitization Physics & Hardware FIFO Sleep** | [Q2.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q2_3_Takeaway.md) | [Q2.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q2_3_Product_Translation.md) | [Phase 2.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.3_Sampling_Frequencies_Bit_Resolutions/Q2_3_Quantitative_Digitization_Architecture.md) |
+| **Magnetic Snap-to-Skin Form Factor** | [Form Factor Study](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md) | [Master Architecture](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md) | [Phase 2.2 Telemetry Addendum](file:///c:/College/Ideathon/Research_Dossier/Phase_02_Signal_Acquisition_Physics/2.2_Anatomical_Sweet_Spots/Anatomical_Optimization_for_Cardiovascular_Telemetry.md) |
 
 ---
 
-## 👥 Authors & Project Context
-* **Project**: Autonomous Sternal IoT Patch for Early Prediction of Sudden Cardiac Arrest (SCA) & Acute Ischemia
-* **Lead Researcher**: Headhunte-121
-* **Event**: College Ideathon Competition
+## 📁 Repository Directory Structure
+
+```
+c:/College/Ideathon/
+├── MASTER_PRODUCT_AND_RESEARCH_HUB.md           <-- 🌟 Master Single Source of Truth & Reference Hub
+├── README.md                                    <-- Master Repository Overview & 3-Tier Navigation (This File)
+├── AGENTS.md                                    <-- Persistent Agent Guidelines & Protocols
+├── Master_Research_Questionnaire_Expanded.md    <-- 12-Phase Systems Engineering Roadmap
+├── Sensor_Evaluation_Deep_Dive_Framework.md     <-- Hardware Component Scorecard
+│
+├── Ideathon_Poster_and_Pitch/                   <-- 🎯 Live Competition Deliverables
+│   ├── A0_Poster_Modular_Canvas.md              <-- A0 Canvas: Blank Blocks with Suggested Candidate Points
+│   └── Master_Pitch_and_Poster_Guide.md         <-- Master Guide: Exact Poster Copy, Pitch Scripts, & Domain Guides
+│
+├── Product_Design/                              <-- 💡 Product Concepts & Architecture Decisions
+│   ├── Master_Fixed_vs_Flexible_Architecture.md <-- Master Source of Truth: Locked Science vs Open Team Choices
+│   └── Form_Factor_Evaluation_Pendant_vs_Patch.md <-- Biomechanical Feasibility Analysis
+│
+└── Research_Dossier/                            <-- 🔬 Research Knowledge Base
+    ├── README.md                                <-- Research Progress Registry & Status Tracker
+    │
+    ├── Takeaways/                               <-- 🟢 TIER 2: PLAIN-ENGLISH TAKEAWAYS (5-Min Reads)
+    │   ├── Q1_1_Takeaway.md                     <-- 1.1 Pre-Infarction Countdown Takeaway
+    │   ├── Q1_2_Takeaway.md                     <-- 1.2 Non-Invasive Physical Outputs Takeaway
+    │   ├── Q1_3_Takeaway.md                     <-- 1.3 Demographic & Comorbidity Variations Takeaway
+    │   ├── Q1_4_Takeaway.md                     <-- 1.4 Differential Diagnosis & Confounders Takeaway
+    │   ├── Q1_5_Takeaway.md                     <-- 1.5 Circadian & Sleep Stage Adaptations Takeaway
+    │   ├── Q2_1_Takeaway.md                     <-- 2.1 Physical Sensing Modalities Takeaway
+    │   ├── Q2_2_Takeaway.md                     <-- 2.2 Anatomical Sweet Spots & SNR Optimization Takeaway
+    │   └── Q2_3_Takeaway.md                     <-- 2.3 Digitization Physics & FIFO Takeaway
+    │
+    ├── Product_Translations/                    <-- 🟡 TIER 2.5: PRODUCT IMPLEMENTATIONS (The Engineering Bridge)
+    │   ├── Q1_1_Product_Translation.md          <-- How & Why 1.1 is implemented
+    │   ├── Q1_2_Product_Translation.md          <-- How & Why 1.2 is implemented
+    │   ├── Q1_3_Product_Translation.md          <-- How & Why 1.3 is implemented
+    │   ├── Q1_4_Product_Translation.md          <-- How & Why 1.4 is implemented
+    │   ├── Q1_5_Product_Translation.md          <-- How & Why 1.5 is implemented
+    │   ├── Q2_1_Product_Translation.md          <-- How & Why 2.1 is implemented
+    │   ├── Q2_2_Product_Translation.md          <-- How & Why 2.2 is implemented
+    │   └── Q2_3_Product_Translation.md          <-- How & Why 2.3 is implemented
+    │
+    ├── Phase_01_Pathophysiology_and_Biomarkers/ <-- 🔵 TIER 3: DEEP RESEARCH VAULT
+    │   ├── 1.1_Pre_Infarction_Cascade/          <-- Q1.1 Dedicated Folder (86 Sources)
+    │   ├── 1.2_Non_Invasive_Physical_Outputs/   <-- Q1.2 Dedicated Folder (53 Sources)
+    │   ├── 1.3_Demographic_Variations/          <-- Q1.3 Dedicated Folder (72 Sources)
+    │   ├── 1.4_Differential_Diagnosis_Confounders/ <-- Q1.4 Dedicated Folder (58 Sources)
+    │   └── 1.5_Circadian_Sleep_Adaptations/     <-- Q1.5 Dedicated Folder (41 Sources)
+    │
+    └── Phase_02_Signal_Acquisition_Physics/     <-- 🟣 TIER 3: DEEP RESEARCH VAULT
+        ├── 2.1_Sensing_Modalities_Biomarker_Mapping/ <-- Q2.1 Dedicated Folder (57 Sources)
+        ├── 2.2_Anatomical_Sweet_Spots/          <-- Q2.2 Dedicated Folder (56 Sources)
+        ├── 2.3_Sampling_Frequencies_Bit_Resolutions/ <-- Q2.3 Dedicated Folder (49 Sources)
+        └── assets/                              <-- Sensor diagrams, FIFO architectures & telemetry placement maps
+```
+
+---
+
+## 📈 Systems Engineering Progress Tracker
+
+* **Phase 1: Pathophysiology & Biomarker Discovery**: `[100% COMPLETE & VERIFIED]` (310 citations, 5 takeaways, 5 product translations, 5 question folders)
+* **Phase 2: Signal Acquisition Physics**: `[IN PROGRESS]` (Q2.1, Q2.2, Q2.3 complete: 162 citations, 3 takeaways, 3 product translations, 3 question folders)
+* **Phases 3–12**: `[QUEUED]` (DSP, Data Preprocessing, ML/TinyML, Edge Computing, Telemetry, Power/Mechanical, Regulatory, Usability, Failsafes, Market Strategy)
