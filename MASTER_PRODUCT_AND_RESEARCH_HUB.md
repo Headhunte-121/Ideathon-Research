@@ -365,17 +365,47 @@ c:/College/Ideathon/
 ### MODULE 8: Data Engineering, AI Models & TinyML (Phases 4, 5, 6)
 * **Ideathon Evaluation Role**: Details the machine learning architecture, training data, and on-chip edge optimization (Pillar 3: Feasibility).
 * **Research Phases**: **Phase 4 (Data Engineering), Phase 5 (ML Architecture), Phase 6 (Edge Computing / TinyML)**
-* **Current Status**: ⏳ **QUEUED FOR RESEARCH (Questions Mapped in Questionnaire)**
+* **Phase 4 Status**: ✅ **100% COMPLETE (All 6 Questions Researched, Translated & Validated)**
+* **Phases 5 & 6 Status**: ⏳ **QUEUED FOR RESEARCH**
 
-#### 🎯 Upcoming Research Scope & Questions to Tackle:
-* **Phase 4 (The Data)**: Open clinical databases (PhysioNet PTB-XL, European ST-T, MIMIC-III), pre-event window labeling protocols, and patient-wise data leakage prevention.
-* **Phase 5 (The Brain)**: Multivariate time-series neural networks (1D-CNN, Temporal Convolutional Networks, Transformers), multimodal feature fusion, and severe class imbalance loss functions.
-* **Phase 6 (The Edge Limits)**: INT8 quantization, SRAM/Flash budgeting on Cortex-M33, and the multi-tier Hierarchical Sentry pipeline.
+#### 📁 Direct File Reference Links for Phase 4 (Data Engineering):
+* **Open-Source Clinical Databases & Transfer Pipeline (Q4.1)**:
+  * 🟢 Plain-English Takeaway: [`Q4_1_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_1_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_1_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_1_Product_Translation.md)
+  * 🔵 Deep Clinical Vault: [`Q4_1_Open_Source_Clinical_Databases.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.1_Open_Source_Clinical_Databases/Q4_1_Open_Source_Clinical_Databases.md)
+* **Pre-Event Window Labeling & Forecasting Horizons (Q4.2)**:
+  * 🟢 Plain-English Takeaway: [`Q4_2_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_2_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_2_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_2_Product_Translation.md)
+  * 🔵 Deep Forecasting Vault: [`Q4_2_Pre_Event_Window_Labeling.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.2_Pre_Event_Window_Labeling/Q4_2_Pre_Event_Window_Labeling.md)
+* **Time-Synchronization & Multi-Rate Alignment (Q4.3)**:
+  * 🟢 Plain-English Takeaway: [`Q4_3_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_3_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_3_Product_Translation.md)
+  * 🔵 Deep Timing & Drift Vault: [`Q4_3_Time_Synchronization_Multi_Rate_Alignment.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.3_Time_Synchronization_Multi_Rate_Alignment/Q4_3_Time_Synchronization_Multi_Rate_Alignment.md)
+* **Handling Missing Data, Drops & Sensor Liftoff (Q4.4)**:
+  * 🟢 Plain-English Takeaway: [`Q4_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_4_Product_Translation.md)
+  * 🔵 Deep Imputation Vault: [`Q4_4_Missing_Data_Dropped_Packets.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.4_Missing_Data_Dropped_Packets/Q4_4_Missing_Data_Dropped_Packets.md)
+* **Patient-Wise Splitting & Data Leakage Prevention (Q4.5)**:
+  * 🟢 Plain-English Takeaway: [`Q4_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_5_Product_Translation.md)
+  * 🔵 Deep Validation Vault: [`Q4_5_Patient_Wise_Splitting_Leakage_Prevention.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.5_Patient_Wise_Splitting_Leakage_Prevention/Q4_5_Patient_Wise_Splitting_Leakage_Prevention.md)
+* **Label Noise & Inter-Annotator Doctor Disagreement (Q4.6)**:
+  * 🟢 Plain-English Takeaway: [`Q4_6_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_6_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q4_6_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_6_Product_Translation.md)
+  * 🔵 Deep Bayesian Label Vault: [`Q4_6_Label_Noise_Annotator_Variability.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.6_Label_Noise_Annotator_Variability/Q4_6_Label_Noise_Annotator_Variability.md)
+
+#### 🔬 Candidate Evidence & Key Insights for the Team:
+* **The 3-Stage Transfer Learning Engine**: Exploits $>40,000$ hospital patients (PTB-XL, European ST-T, MIMIC-IV) for core cardiac timing and hemodynamics, then fine-tunes on synchronized SCG datasets (CEBS & SCG-RHC) so our zero-ECG patch forecasts ischemia using mechanical vibrations alone.
+* **3-Zone Clinical Operation + Minute Countdown**: Replaces naive binary alerts with Quiescent ($>3\text{h}$), Incubation ($1\text{--}3\text{h}$, gentle haptic wrist tap), and Critical ($<60\text{m}$, 911 dispatch) states, accompanied by a continuous DeepSurv survival countdown.
+* **Microsecond BAN Synchronization**: Eliminates $\pm 20\text{ ppm}$ crystal clock drift ($1.7\text{ s/day}$) via BLE 5.3 connection event hardware anchor timestamps ($<80\ \mu\text{s}$ jitter), restricting continuous blood pressure error to $<0.2\text{ mmHg}$. Polyphase FIR filters convert $104\text{ Hz} \rightarrow 100\text{ Hz}$ with linear phase.
+* **3-Tier Failsafe for Data Gaps**: Micro-drops ($<250\text{ ms}$) bridged via splines; ambulatory scratches ($0.25\text{--}10\text{ s}$) handled via attention masks ($-\infty$ weight) to stop false flatline alarms; extended liftoffs ($>10\text{ s}$) trigger cross-modal wristband takeover.
+* **Zero-Leakage Guarantee**: Rejects flawed beat-wise splitting (which produces fake 99% accuracy that collapses to 52%). Uses Stratified Group 5-Fold validation by Patient ID combined with an adversarial Gradient Reversal Layer ($I(\mathbf{z}; S) \rightarrow 0$) that purges individual chest anatomy fingerprints.
+* **Bayesian Doctor Consensus**: Resolves 2-to-5-minute cardiologist disagreements using Dawid-Skene reliability modeling, 45-second Gaussian boundary smoothing, and entropy-dampened loss, boosting PR-AUC by $+11.6\%$.
 
 #### ✍️ `[Team Decision & Customization Slot - Module 8]`:
-* **Target Research File Locations**: `Phase_04_Data_Engineering/`, `Phase_05_Machine_Learning/`, `Phase_06_Edge_Computing/`
 * **Assigned Team Member / Domain**: `[ Team to assign: Machine Learning / AI Lead ]`
-* **Content Status**: `[ Blank - To be researched and filled ]`
+* **Selected Validation Pipeline**: **OFFICIALLY LOCKED TO STRATIFIED GROUP 5-FOLD + ADVERSARIAL GRL**
+* **Upcoming AI Architecture Decisions**: `[ Phase 5: 1D-CNN vs TCN vs Transformers; Phase 6: INT8 Quantization ]`
 
 ---
 
@@ -501,4 +531,10 @@ Every completed question across our repository is hyperlinked below across its 3
 | **Phase 3** | **Q3.3: DSP Algorithms (NLMS/RLS/DWT)**| DSP / Firmware | [Q3.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_3_Takeaway.md) | [Q3.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_3_Product_Translation.md) | [Phase 3.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.3_Digital_Signal_Processing_Algorithms/Q3_3_Digital_Signal_Processing_Algorithms.md) |
 | **Phase 3** | **Q3.4: Postural Disambiguation** | Biomechanics / DSP | [Q3.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_4_Takeaway.md) | [Q3.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_4_Product_Translation.md) | [Phase 3.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.4_Morphological_vs_Positional_Artifact_Discrimination/Q3_4_Morphological_vs_Positional_Artifact_Discrimination.md) |
 | **Phase 3** | **Q3.5: Real-Time Sub-mW SQI** | Embedded / Algorithms | [Q3.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q3_5_Takeaway.md) | [Q3.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q3_5_Product_Translation.md) | [Phase 3.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_03_Analog_Digital_Signal_Processing/3.5_Real_Time_Signal_Quality_Index/Q3_5_Real_Time_Signal_Quality_Index.md) |
-| **Phases 4–12**| **Upcoming Research Roadmap** | All Team Members | [Master Questionnaire](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) | [Sensor Evaluation Scorecard](file:///c:/College/Ideathon/Sensor_Evaluation_Deep_Dive_Framework.md) | [Research Dossier Directory](file:///c:/College/Ideathon/Research_Dossier/) |
+| **Phase 4** | **Q4.1: Clinical Waveform Databases** | Data Science / ML | [Q4.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_1_Takeaway.md) | [Q4.1 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_1_Product_Translation.md) | [Phase 4.1 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.1_Open_Source_Clinical_Databases/Q4_1_Open_Source_Clinical_Databases.md) |
+| **Phase 4** | **Q4.2: Pre-Event Window Labeling** | ML / Clinical Triage | [Q4.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_2_Takeaway.md) | [Q4.2 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_2_Product_Translation.md) | [Phase 4.2 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.2_Pre_Event_Window_Labeling/Q4_2_Pre_Event_Window_Labeling.md) |
+| **Phase 4** | **Q4.3: Time Synchronization & Drift** | Embedded / DSP | [Q4.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_3_Takeaway.md) | [Q4.3 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_3_Product_Translation.md) | [Phase 4.3 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.3_Time_Synchronization_Multi_Rate_Alignment/Q4_3_Time_Synchronization_Multi_Rate_Alignment.md) |
+| **Phase 4** | **Q4.4: Missing Data & Liftoff** | Firmware / Robust AI | [Q4.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_4_Takeaway.md) | [Q4.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_4_Product_Translation.md) | [Phase 4.4 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.4_Missing_Data_Dropped_Packets/Q4_4_Missing_Data_Dropped_Packets.md) |
+| **Phase 4** | **Q4.5: Patient-Wise Leakage** | ML / Clinical Trials | [Q4.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_5_Takeaway.md) | [Q4.5 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_5_Product_Translation.md) | [Phase 4.5 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.5_Patient_Wise_Splitting_Leakage_Prevention/Q4_5_Patient_Wise_Splitting_Leakage_Prevention.md) |
+| **Phase 4** | **Q4.6: Doctor Label Ambiguity** | Clinical AI / Bayesian | [Q4.6 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_6_Takeaway.md) | [Q4.6 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_6_Product_Translation.md) | [Phase 4.6 Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.6_Label_Noise_Annotator_Variability/Q4_6_Label_Noise_Annotator_Variability.md) |
+| **Phases 5–12**| **Upcoming Research Roadmap** | All Team Members | [Master Questionnaire](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) | [Sensor Evaluation Scorecard](file:///c:/College/Ideathon/Sensor_Evaluation_Deep_Dive_Framework.md) | [Research Dossier Directory](file:///c:/College/Ideathon/Research_Dossier/) |

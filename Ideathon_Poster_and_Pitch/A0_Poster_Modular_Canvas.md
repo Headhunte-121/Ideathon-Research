@@ -210,16 +210,24 @@
 
 ---
 
-### BLOCK 8: Edge AI, TinyML & Hierarchical Sentry Pipeline (Phases 4, 5, 6)
+### BLOCK 8: Data Engineering, AI Models & TinyML (Phases 4, 5, 6)
 * **Domain Lead**: Machine Learning / Edge AI
-* **Status**: ⏳ **QUEUED FOR RESEARCH** (See [`Master_Research_Questionnaire_Expanded.md`](file:///c:/College/Ideathon/Master_Research_Questionnaire_Expanded.md) Phases 4, 5, 6)
-* **Suggested Candidate Architecture**:
-  * *Stage 0 (Quiescent Surveillance - 95% of Day)*: Low-power ECG (250 Hz) + IMU hardware activity classifier ($4\ \mu\text{A}$). Total draw $<1.5\ \text{mW}$.
-  * *Stage 1 (Diagnostic Burst - Event-Driven)*: Triggered on autonomic HRV crash ($SDNN < 50\text{ ms}$). Wakes 500 Hz SCG, PPG, and Bio-Z for 60 seconds to measure AO peak force decay and lung fluid $Z_0$.
-  * *Stage 2 (Emergency Escalation)*: INT8 1D-CNN neural network verifies microvolt ST-shifts and T-wave alternans $\rightarrow$ triggers local haptics and cellular dispatch.
+* **Status**: ⚡ **PHASE 4 COMPLETE (Data Engineering Synthesized; Phases 5-6 Queued)**
+* **Direct Evidence Links**:
+  * 🟢 [Q4.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_1_Takeaway.md) | [Q4.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_2_Takeaway.md) | [Q4.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_3_Takeaway.md) | [Q4.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_4_Takeaway.md) | [Q4.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_5_Takeaway.md) | [Q4.6 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_6_Takeaway.md)
+  * 🟡 [Phase 4 Translations Directory](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/)
+  * 🔵 [Phase 4 Deep Data Engineering Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/)
+* **Suggested Candidate Bullet Points**:
+  * *3-Stage Cross-Modal Transfer Learning*: Overcomes the "No ECG Electrodes" dilemma by pre-training temporal 1D-CNN encoders on $>40,000$ hospital patients (PTB-XL, European ST-T, MIMIC-IV) and fine-tuning on synchronized SCG datasets (CEBS & SCG-RHC) to detect mechanical Aortic Opening (AO) force decay.
+  * *3-Zone Clinical Operation + Minute Countdown*: Replaces naive binary alerts with Quiescent ($>3\text{h}$), Incubation ($1\text{--}3\text{h}$, gentle haptic wrist tap), and Critical ($<60\text{m}$, 911 dispatch) states, accompanied by a continuous DeepSurv survival countdown.
+  * *Microsecond BLE 5.3 Clock Discipline*: Hardware radio anchor timestamps eliminate $\pm 20\text{ ppm}$ quartz crystal drift ($1.7\text{ s/day}$), locking timing error to $<80\ \mu\text{s}$ and restricting continuous PTT blood pressure error to $<0.2\text{ mmHg}$. Polyphase FIR filters convert $104\text{ Hz} \rightarrow 100\text{ Hz}$ with linear phase.
+  * *3-Tier Failsafe for Data Gaps*: Micro-drops ($<250\text{ ms}$) bridged via splines; ambulatory scratches ($0.25\text{--}10\text{ s}$) handled via attention masks ($-\infty$ weight) to stop false flatline alarms; extended liftoffs ($>10\text{ s}$) trigger cross-modal wristband takeover.
+  * *Zero-Leakage Guarantee*: Rejects flawed beat-wise splitting (which produces fake 99% accuracy that collapses to 52%). Uses Stratified Group 5-Fold validation by Patient ID combined with an adversarial Gradient Reversal Layer ($I(\mathbf{z}; S) \rightarrow 0$) that purges individual chest anatomy fingerprints.
+  * *Bayesian Doctor Consensus*: Resolves 2-to-5-minute cardiologist disagreements using Dawid-Skene reliability modeling, 45-second Gaussian boundary smoothing, and entropy-dampened loss, boosting PR-AUC by $+11.6\%$.
+* **Suggested Visual**: 3-Stage Transfer Learning flowchart + 3-Zone Pre-Event Timeline + Adversarial GRL architecture diagram.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
-  [ Team to research Phases 4-6 and fill finalized Block 8 text here ]
+  [ Team to review candidate points and write finalized Block 8 text here ]
   ```
 
 ---
