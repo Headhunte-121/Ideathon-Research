@@ -465,17 +465,43 @@ c:/College/Ideathon/
 ---
 
 ### MODULE 9: IoT Networking, Cloud & Emergency Dispatch (Phase 7)
-* **Ideathon Evaluation Role**: Details automated cellular failover and zero-touch emergency response (Pillars 3 & 4: Feasibility & Value).
+* **Ideathon Evaluation Role**: Details automated cellular failover, multi-node BAN protocol physics, dead-zone offline survival, and zero-touch emergency rescue response (Pillars 3 & 4: Feasibility & Value).
 * **Research Phase**: **Phase 7 (IoT Communications & Cloud Infrastructure)**
-* **Current Status**: ⏳ **QUEUED FOR RESEARCH (Questions Mapped in Questionnaire)**
+* **Current Status**: ✅ **100% COMPLETE (All 5 Questions Researched, Translated & Validated)**
 
-#### 🎯 Upcoming Research Scope & Questions to Tackle:
-* Distributed edge-to-phone-to-cloud architecture, Bluetooth Low Energy (BLE 5.3) power states, automated 911 / emergency dispatcher geolocation APIs, and end-to-end HIPAA/GDPR encryption.
+#### 📁 Direct File Reference Links for Phase 7:
+* **Distributed vs Centralized Processing in BAN (Q7.1)**:
+  * 🟢 Plain-English Takeaway: [`Q7_1_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q7_1_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q7_1_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q7_1_Product_Translation.md)
+  * 🔵 Deep Network Physics Vault: [`Q7_1_Distributed_vs_Centralized_Processing.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_07_IoT_Communications_Networking/7.1_Distributed_vs_Centralized_Processing/Q7_1_Distributed_vs_Centralized_Processing.md)
+* **BAN Wireless Protocols Evaluation (Q7.2)**:
+  * 🟢 Plain-English Takeaway: [`Q7_2_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q7_2_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q7_2_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q7_2_Product_Translation.md)
+  * 🔵 Deep Wireless Protocols Vault: [`Q7_2_BAN_Wireless_Protocols_Evaluation.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_07_IoT_Communications_Networking/7.2_BAN_Wireless_Protocols_Evaluation/Q7_2_BAN_Wireless_Protocols_Evaluation.md)
+* **Secure Zero-Touch Emergency Escalation to Cellular Networks (Q7.3)**:
+  * 🟢 Plain-English Takeaway: [`Q7_3_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q7_3_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q7_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q7_3_Product_Translation.md)
+  * 🔵 Deep Escalation Vault: [`Q7_3_Secure_Emergency_Escalation_Cellular.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_07_IoT_Communications_Networking/7.3_Secure_Emergency_Escalation_Cellular/Q7_3_Secure_Emergency_Escalation_Cellular.md)
+* **Store-and-Forward Architecture in Network Dead Zones (Q7.4)**:
+  * 🟢 Plain-English Takeaway: [`Q7_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q7_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q7_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q7_4_Product_Translation.md)
+  * 🔵 Deep Offline Fault-Tolerance Vault: [`Q7_4_Store_and_Forward_Network_Dead_Zones.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_07_IoT_Communications_Networking/7.4_Store_and_Forward_Network_Dead_Zones/Q7_4_Store_and_Forward_Network_Dead_Zones.md)
+* **Bystander & Automated External Defibrillator (AED) Integration (Q7.5)**:
+  * 🟢 Plain-English Takeaway: [`Q7_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q7_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q7_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q7_5_Product_Translation.md)
+  * 🔵 Deep Bystander & AED Rescue Vault: [`Q7_5_Bystander_and_Smart_AED_Integration.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_07_IoT_Communications_Networking/7.5_Bystander_and_Smart_AED_Integration/Q7_5_Bystander_and_Smart_AED_Integration.md)
+
+#### 🔬 Candidate Evidence & Key Insights for the Team:
+* **The Thermodynamic Energy Asymmetry ($\eta \approx 250\times$)**: Radiating 1 bit over 2.4 GHz BLE costs $15\text{--}23.4\text{ nJ/bit}$, whereas executing a 32-bit DSP MAC on Cortex-M33 costs only $0.06\text{--}0.17\text{ nJ/MAC}$. Streaming continuous raw PPG/IMU data from wrist to chest exhausts battery in $<18\text{ hours}$ and suffers up to $28\%$ packet loss from body shadowing ($-40\text{ dB}$ fading).
+* **Hybrid Edge Partitioning (The 16-Byte Token)**: Node B (PulseBand) processes PPG locally, extracting a 16-byte summary packet ($t_{\text{wrist\_PPG}}, \text{PRV}, SpO_2, \text{SQI}$) transmitted once per second ($1\text{ Hz}$). This slashes RF energy by $99.4\%$ ($0.003\text{ mW}$ vs $0.624\text{ mW}$), extending battery life to $>7.4\text{ days}$. BLE connection anchor capture achieves sub-millisecond clock synchronization ($\pm 18.2\ \mu\text{s}$) for precise Pulse Transit Time (PTT) tracking.
+* **BLE 5.3 Superiority over Zigbee, UWB & ANT+**: BLE 5.3 2M PHY delivers $88\ \mu\text{s}$ bursts ($2.06\ \mu\text{J}$). Coded PHY ($S=8$) adds $+8\text{ dB}$ link margin to punch through body shadowing during sleep. Connection Subrating permits $11\ \mu\text{A}$ baseline idle while snapping to $15\text{ ms}$ high-throughput emergency streaming in $<15\text{ ms}$.
+* **Zero-Touch Background OS Survivability**: Syncope strikes in $8\text{--}15\text{ seconds}$; brain death starts in $4\text{ minutes}$. iOS CoreBluetooth State Preservation (`CBCentralManagerOptionRestoreIdentifierKey`) and Critical Alerts entitlement wake background apps and bypass physical mute/DND switches. Android Foreground Services with Doze whitelisting ensure continuous availability. Telematics leverage eCall MSD (CEN EN 15722) + NENA NG911 JSON-LD and Twilio SIP voice calls, signed via hardware ECDSA P-256 to prevent swatting.
+* **Offline Fault-Tolerance in Network Dead Zones**: 2.0 MB SPI NOR Flash 3-tier priority queue protects Priority 0 collapse data as IMMUTABLE. Heatshrink LZSS ($C_r = 0.35$) stores $72+\text{ hours}$ of data. In cellular dead zones (subways, flights), a $2,730\text{ Hz}$ resonant piezoelectric buzzer ($>85\text{ dBA}$ matching human ear resonance) cuts through transit noise, while an open BLE distress beacon (+8 dBm) alerts nearby smartphones.
+* **Crowdsourced First Responders & Smart AED Integration**: PulsePoint and GoodSAM APIs geofence verified off-duty CPR volunteers within $500\text{ meters}$, reaching victims in $90\text{--}150\text{ seconds}$ (beating the $8\text{--}12\text{ minute}$ ambulance transit time and lifting survival from $7.8\%$ to $24.2\%$). Cloud APIs remotely unlock the nearest smart IoT AED cabinet (Avive, HeartSine, Ositech) within $300\text{ meters}$. Sentry Pendant sternal IMU double-integrates vertical acceleration ($\iint a_z dt^2$) with velocity zero-crossing clamping, providing real-time CPR coaching ($5\text{--}6\text{ cm}$ depth target, $\pm 2.2\text{ mm}$ accuracy, $110\text{ BPM}$ acoustic metronome).
 
 #### ✍️ `[Team Decision & Customization Slot - Module 9]`:
-* **Target Research File Location**: `Research_Dossier/Phase_07_IoT_Communications_Networking/`
-* **Assigned Team Member / Domain**: `[ Team to assign: Cloud & IoT Engineer ]`
-* **Content Status**: `[ Blank - To be researched and filled ]`
+* **Assigned Team Member / Domain**: `[ Team to assign: Cloud & IoT Systems Engineer ]`
+* **Selected Network Topology**: **OFFICIALLY LOCKED TO HYBRID EDGE-PARTITIONED BAN (16-BYTE TOKEN @ 1 HZ) + DUAL-PHY BLE 5.3 + AUTOMATED CROWDSOURCED DISPATCH & SMART AED RESCUE**
 
 ---
 
