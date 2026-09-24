@@ -366,7 +366,8 @@ c:/College/Ideathon/
 * **Ideathon Evaluation Role**: Details the machine learning architecture, training data, and on-chip edge optimization (Pillar 3: Feasibility).
 * **Research Phases**: **Phase 4 (Data Engineering), Phase 5 (ML Architecture), Phase 6 (Edge Computing / TinyML)**
 * **Phase 4 Status**: ✅ **100% COMPLETE (All 6 Questions Researched, Translated & Validated)**
-* **Phases 5 & 6 Status**: ⏳ **QUEUED FOR RESEARCH**
+* **Phase 5 Status**: ✅ **100% COMPLETE (All 6 Questions Researched, Translated & Validated)**
+* **Phase 6 Status**: ⏳ **QUEUED FOR RESEARCH**
 
 #### 📁 Direct File Reference Links for Phase 4 (Data Engineering):
 * **Open-Source Clinical Databases & Transfer Pipeline (Q4.1)**:
@@ -394,18 +395,45 @@ c:/College/Ideathon/
   * 🟡 Product Translation (How & Why): [`Q4_6_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q4_6_Product_Translation.md)
   * 🔵 Deep Bayesian Label Vault: [`Q4_6_Label_Noise_Annotator_Variability.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/4.6_Label_Noise_Annotator_Variability/Q4_6_Label_Noise_Annotator_Variability.md)
 
+#### 📁 Direct File Reference Links for Phase 5 (Machine Learning Architecture):
+* **Multivariate Time-Series Forecasting (Q5.1)**:
+  * 🟢 Plain-English Takeaway: [`Q5_1_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_1_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_1_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_1_Product_Translation.md)
+  * 🔵 Deep Algorithmic Vault: [`Q5_1_Multivariate_TimeSeries_Forecasting_Architectures.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.1_Multivariate_TimeSeries_Forecasting_Architectures/Q5_1_Multivariate_TimeSeries_Forecasting_Architectures.md)
+* **Multimodal Sensor Fusion Strategies (Q5.2)**:
+  * 🟢 Plain-English Takeaway: [`Q5_2_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_2_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_2_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_2_Product_Translation.md)
+  * 🔵 Deep Fusion Vault: [`Q5_2_Multimodal_Sensor_Fusion_Strategies.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.2_Multimodal_Sensor_Fusion_Strategies/Q5_2_Multimodal_Sensor_Fusion_Strategies.md)
+* **Rare Event Learning & Extreme Imbalance (Q5.3)**:
+  * 🟢 Plain-English Takeaway: [`Q5_3_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_3_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_3_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_3_Product_Translation.md)
+  * 🔵 Deep Imbalance Vault: [`Q5_3_Rare_Event_Class_Imbalance.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.3_Rare_Event_Class_Imbalance/Q5_3_Rare_Event_Class_Imbalance.md)
+* **Clinical Performance Metrics Beyond Accuracy (Q5.4)**:
+  * 🟢 Plain-English Takeaway: [`Q5_4_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_4_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_4_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_4_Product_Translation.md)
+  * 🔵 Deep Evaluation Vault: [`Q5_4_Clinical_Performance_Metrics.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.4_Clinical_Performance_Metrics/Q5_4_Clinical_Performance_Metrics.md)
+* **Explainable AI & Clinical Interpretability (Q5.5)**:
+  * 🟢 Plain-English Takeaway: [`Q5_5_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_5_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_5_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_5_Product_Translation.md)
+  * 🔵 Deep XAI Vault: [`Q5_5_Explainability_Clinical_Interpretability_XAI.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.5_Explainability_Clinical_Interpretability_XAI/Q5_5_Explainability_Clinical_Interpretability_XAI.md)
+* **Out-of-Distribution & Epistemic Uncertainty (Q5.6)**:
+  * 🟢 Plain-English Takeaway: [`Q5_6_Takeaway.md`](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q5_6_Takeaway.md)
+  * 🟡 Product Translation (How & Why): [`Q5_6_Product_Translation.md`](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q5_6_Product_Translation.md)
+  * 🔵 Deep Uncertainty Vault: [`Q5_6_Out_of_Distribution_Epistemic_Uncertainty.md`](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Machine_Learning_Architecture/5.6_Out_of_Distribution_Epistemic_Uncertainty/Q5_6_Out_of_Distribution_Epistemic_Uncertainty.md)
+
 #### 🔬 Candidate Evidence & Key Insights for the Team:
-* **The 3-Stage Transfer Learning Engine**: Exploits $>40,000$ hospital patients (PTB-XL, European ST-T, MIMIC-IV) for core cardiac timing and hemodynamics, then fine-tunes on synchronized SCG datasets (CEBS & SCG-RHC) so our zero-ECG patch forecasts ischemia using mechanical vibrations alone.
-* **3-Zone Clinical Operation + Minute Countdown**: Replaces naive binary alerts with Quiescent ($>3\text{h}$), Incubation ($1\text{--}3\text{h}$, gentle haptic wrist tap), and Critical ($<60\text{m}$, 911 dispatch) states, accompanied by a continuous DeepSurv survival countdown.
-* **Microsecond BAN Synchronization**: Eliminates $\pm 20\text{ ppm}$ crystal clock drift ($1.7\text{ s/day}$) via BLE 5.3 connection event hardware anchor timestamps ($<80\ \mu\text{s}$ jitter), restricting continuous blood pressure error to $<0.2\text{ mmHg}$. Polyphase FIR filters convert $104\text{ Hz} \rightarrow 100\text{ Hz}$ with linear phase.
-* **3-Tier Failsafe for Data Gaps**: Micro-drops ($<250\text{ ms}$) bridged via splines; ambulatory scratches ($0.25\text{--}10\text{ s}$) handled via attention masks ($-\infty$ weight) to stop false flatline alarms; extended liftoffs ($>10\text{ s}$) trigger cross-modal wristband takeover.
-* **Zero-Leakage Guarantee**: Rejects flawed beat-wise splitting (which produces fake 99% accuracy that collapses to 52%). Uses Stratified Group 5-Fold validation by Patient ID combined with an adversarial Gradient Reversal Layer ($I(\mathbf{z}; S) \rightarrow 0$) that purges individual chest anatomy fingerprints.
-* **Bayesian Doctor Consensus**: Resolves 2-to-5-minute cardiologist disagreements using Dawid-Skene reliability modeling, 45-second Gaussian boundary smoothing, and entropy-dampened loss, boosting PR-AUC by $+11.6\%$.
+* **The 2-Stage TCN-Mamba Brain**: Solves the $\mathcal{O}(T^2)$ memory blowout of Transformers on the Nordic nRF5340 MCU ($512\text{ KB}$ SRAM). Dilated causal convolutions capture split-second valve mechanics ($10\text{--}40\text{ ms}$), while Mamba Selective State Space models track $1\text{--}6\text{ hour}$ autonomic decay using only $64\text{ bytes}$ memory per channel.
+* **Intermediate Gated Multimodal Fusion (GMU)**: Isolates wrist motion artifacts from sternal SCG features; extracts Pulse Transit Time (PTT) phase lag via cross-attention; hardware SQI dynamically zeroes gates during motion.
+* **Asymmetric Loss & Bayes Optimal Threshold**: Rejects naive 99.9% accuracy models that miss heart attacks. Class-Balanced Effective Sample Volume ($E_n$) and Asymmetric negative margin shifting ($p_m = \max(p-0.05, 0)$) eliminate easy negative gradients. Threshold calibrated to $\tau^* \approx 2.0\%$ under $C_{\text{FN}} = 50 \cdot C_{\text{FP}}$.
+* **Clinical Metrics Beyond Accuracy**: Benchmarked via Area Under Precision-Recall Curve (AUPRC), Temperature Scaling (Expected Calibration Error $< 2\%$), and Decision Curve Analysis (DCA) demonstrating positive Net Benefit without over-treatment.
+* **Actionable Medical Explainability**: Axiomatic Integrated Gradients referenced to patient's own 24-hour safe resting baseline. Translates deep features to clinical parameters: Aortic Opening recoil damping, $LVET$ widening, and blood pressure drops.
+* **Single-Pass Evidential OOD Triage**: Replaces battery-draining Monte Carlo Dropout ($50\times$ energy) with single-pass Evidential Deep Learning ($O(1)$ compute). Dirichlet uncertainty mass $u = K/S$ spikes to $100\%$ on unfamiliar pacemaker spikes or Left Bundle Branch Blocks, safely triggering deterministic Safe-State triage.
 
 #### ✍️ `[Team Decision & Customization Slot - Module 8]`:
 * **Assigned Team Member / Domain**: `[ Team to assign: Machine Learning / AI Lead ]`
 * **Selected Validation Pipeline**: **OFFICIALLY LOCKED TO STRATIFIED GROUP 5-FOLD + ADVERSARIAL GRL**
-* **Upcoming AI Architecture Decisions**: `[ Phase 5: 1D-CNN vs TCN vs Transformers; Phase 6: INT8 Quantization ]`
+* **Selected Machine Learning Architecture**: **OFFICIALLY LOCKED TO HYBRID TCN-MAMBA + EVIDENTIAL HEAD**
+* **Upcoming Edge Optimization Decisions**: `[ Phase 6: INT8 Post-Training Quantization vs QAT; CMSIS-NN Kernel Mapping ]`
 
 ---
 
