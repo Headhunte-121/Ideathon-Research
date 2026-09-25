@@ -210,21 +210,22 @@
 
 ---
 
-### BLOCK 8: Data Engineering, AI Models & TinyML (Phases 4, 5, 6)
+### BLOCK 8: Data Engineering, Edge AI & TinyML Pipeline (Phases 4, 5, 6)
 * **Domain Lead**: Machine Learning / Edge AI
-* **Status**: ⚡ **PHASE 4 COMPLETE (Data Engineering Synthesized; Phases 5-6 Queued)**
+* **Status**: ✅ **COMPLETED RESEARCH (Phases 4, 5, 6 Fully Synthesized)**
 * **Direct Evidence Links**:
-  * 🟢 [Q4.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_1_Takeaway.md) | [Q4.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_2_Takeaway.md) | [Q4.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_3_Takeaway.md) | [Q4.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_4_Takeaway.md) | [Q4.5 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_5_Takeaway.md) | [Q4.6 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q4_6_Takeaway.md)
-  * 🟡 [Phase 4 Translations Directory](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/)
-  * 🔵 [Phase 4 Deep Data Engineering Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/)
+  * 🟢 [Phase 4 Takeaways Suite](file:///c:/College/Ideathon/Research_Dossier/Takeaways/) (Q4.1 through Q4.6)
+  * 🟢 [Phase 5 Takeaways Suite](file:///c:/College/Ideathon/Research_Dossier/Takeaways/) (Q5.1 through Q5.5)
+  * 🟢 [Phase 6 Takeaways Suite](file:///c:/College/Ideathon/Research_Dossier/Takeaways/) (Q6.1 through Q6.5)
+  * 🟡 [Product Translations Directory](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/)
+  * 🔵 [Phase 4 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_04_Data_Engineering_Preprocessing/) | [Phase 5 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_05_Feature_Engineering_Biomarkers/) | [Phase 6 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_06_Edge_ML_Architecture/)
 * **Suggested Candidate Bullet Points**:
-  * *3-Stage Cross-Modal Transfer Learning*: Overcomes the "No ECG Electrodes" dilemma by pre-training temporal 1D-CNN encoders on $>40,000$ hospital patients (PTB-XL, European ST-T, MIMIC-IV) and fine-tuning on synchronized SCG datasets (CEBS & SCG-RHC) to detect mechanical Aortic Opening (AO) force decay.
-  * *3-Zone Clinical Operation + Minute Countdown*: Replaces naive binary alerts with Quiescent ($>3\text{h}$), Incubation ($1\text{--}3\text{h}$, gentle haptic wrist tap), and Critical ($<60\text{m}$, 911 dispatch) states, accompanied by a continuous DeepSurv survival countdown.
-  * *Microsecond BLE 5.3 Clock Discipline*: Hardware radio anchor timestamps eliminate $\pm 20\text{ ppm}$ quartz crystal drift ($1.7\text{ s/day}$), locking timing error to $<80\ \mu\text{s}$ and restricting continuous PTT blood pressure error to $<0.2\text{ mmHg}$. Polyphase FIR filters convert $104\text{ Hz} \rightarrow 100\text{ Hz}$ with linear phase.
-  * *3-Tier Failsafe for Data Gaps*: Micro-drops ($<250\text{ ms}$) bridged via splines; ambulatory scratches ($0.25\text{--}10\text{ s}$) handled via attention masks ($-\infty$ weight) to stop false flatline alarms; extended liftoffs ($>10\text{ s}$) trigger cross-modal wristband takeover.
-  * *Zero-Leakage Guarantee*: Rejects flawed beat-wise splitting (which produces fake 99% accuracy that collapses to 52%). Uses Stratified Group 5-Fold validation by Patient ID combined with an adversarial Gradient Reversal Layer ($I(\mathbf{z}; S) \rightarrow 0$) that purges individual chest anatomy fingerprints.
-  * *Bayesian Doctor Consensus*: Resolves 2-to-5-minute cardiologist disagreements using Dawid-Skene reliability modeling, 45-second Gaussian boundary smoothing, and entropy-dampened loss, boosting PR-AUC by $+11.6\%$.
-* **Suggested Visual**: 3-Stage Transfer Learning flowchart + 3-Zone Pre-Event Timeline + Adversarial GRL architecture diagram.
+  * *3-Stage Cross-Modal Transfer Learning*: Solves the "No Wet ECG Electrodes" challenge by pre-training temporal 1D-CNN encoders on >40,000 hospital patients (PTB-XL, European ST-T, MIMIC-IV) and fine-tuning on synchronized SCG datasets (CEBS & SCG-RHC) to detect mechanical Aortic Opening (AO) force decay.
+  * *Edge AI Architecture*: Hybrid Temporal 1D-CNN + Bidirectional LSTM + Multi-Head Self-Attention model ($142\text{k}$ parameters) extracts multi-scale morphology, beat-to-beat mechanical jitter, and long-range trend degradation.
+  * *Sub-Milliwatt TinyML Execution*: Post-Training Quantization (PTQ) to int8 via CMSIS-NN; runs on Nordic nRF5340 application core (Cortex-M33 @ 128 MHz) with $<42\text{ ms}$ inference latency, consuming just $1.64\text{ mA}$ burst current ($<180\text{ KB}$ Flash, $<64\text{ KB}$ RAM footprint).
+  * *Zero-Data Leakage Guarantee*: Rejects flawed beat-wise splitting (which inflates accuracy to 99% before crashing to 52%). Uses Stratified Group 5-Fold validation by Patient ID combined with an adversarial Gradient Reversal Layer ($I(\mathbf{z}; S) \rightarrow 0$) that strips individual chest anatomical acoustic fingerprints.
+  * *3-Zone Risk Engine + Countdown*: Quiescent ($>3\text{h}$), Incubation ($1\text{--}3\text{h}$, gentle haptic wrist tap), and Critical ($<60\text{m}$, audible tone + 911 dispatch) states with continuous DeepSurv pre-infarction countdown.
+* **Suggested Visual**: Hybrid 1D-CNN-BiLSTM-Attention architecture diagram + Nordic nRF5340 dual-core IPC execution flow + 3-Zone clinical risk timeline.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to review candidate points and write finalized Block 8 text here ]
@@ -232,20 +233,20 @@
 
 ---
 
-### BLOCK 9: Clinical False-Alarm Elimination Logic (Phase 1.4)
+### BLOCK 9: Clinical False-Alarm Elimination Logic (Phase 1.4 & Phase 9.1)
 * **Domain Lead**: Clinical / Firmware
 * **Status**: ✅ **COMPLETED RESEARCH**
 * **Direct Evidence Links**:
-  * 🟢 [Q1.4 Takeaway Summary](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_4_Takeaway.md)
-  * 🟡 [Q1.4 Product Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_4_Product_Translation.md)
-  * 🔵 [Phase 1.4 Deep Research Dossier](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.4_Differential_Diagnosis_Confounders/Q1_4_Differential_Diagnosis_Confounders.md)
+  * 🟢 [Q1.4 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q1_4_Takeaway.md) | [Q9.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q9_1_Takeaway.md)
+  * 🟡 [Q1.4 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q1_4_Product_Translation.md) | [Q9.1 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q9_1_Product_Translation.md)
+  * 🔵 [Phase 1.4 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_01_Pathophysiology_and_Biomarkers/1.4_Differential_Diagnosis_Confounders/Q1_4_Differential_Diagnosis_Confounders.md) | [Phase 9.1 Deep Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_09_Clinical_Safety_Regulatory_Viability/9.1_Alarm_Fatigue_Calibration/Q9_1_Alarm_Fatigue_Calibration.md)
 * **Suggested Candidate Bullet Points**:
   * *Solving Alarm Fatigue*: Over 72% of hospital telemetry alarms are false; single-biomarker wearables cry wolf on panic and workouts.
   * *Multi-Modal Decoupling Rules*:
-    * Panic Attacks: Tachycardia + hyperventilation, but thoracic bio-impedance is dry ($Z_0$ normal) and $SpO_2 \ge 99\%$ $\rightarrow$ Alarm suppressed.
-    * Intense Exercise: Corroborated by high IMU cadence; cardiac contractility increases rather than decays $\rightarrow$ Alarm suppressed.
-    * Vasovagal Syncope: Bradycardia without ST-deviation or lung fluid $\rightarrow$ Alarm suppressed.
-  * *30-Second Patient Interlock*: Tactile cancellation window prevents false EMS calls.
+    * *Panic Attacks*: Heart rate surges to $140\text{ bpm}$ with hyperventilation, but thoracic bio-impedance is dry ($Z_0$ normal), $SpO_2 \ge 99\%$, and SCG mechanical contractility is hyperdynamic ($\uparrow\text{AO}$) $\rightarrow$ Alarm suppressed.
+    * *Intense Exercise*: High IMU cadence ($>120\text{ spm}$); wrist NLMS subtracts motion noise; cardiac contractility increases rather than decays $\rightarrow$ Alarm suppressed.
+    * *Vasovagal Syncope*: Rapid bradycardia without mechanical stiffening or lung fluid $\rightarrow$ Classified as benign syncope.
+  * *30-Second Patient Interlock*: Azoteq capacitive touch cancel slider on wristband allows conscious users to dismiss benign false alarms before external cellular dispatch.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select candidate points and write finalized Block 9 text here ]
@@ -257,16 +258,17 @@
 
 ### BLOCK 10: Head-to-Head Competitive Moat Matrix
 * **Domain Lead**: Business / Market Strategy
-* **Status**: ✅ **COMPLETED RESEARCH (Synthesized across Phases 1 & 2)**
+* **Status**: ✅ **COMPLETED RESEARCH (Verified across all 12 Phases)**
 * **Suggested Candidate Comparison Table**:
-  | Feature | Sternal Sentry | Apple Watch Ultra 2 | Whoop 4.0 / Oura | Hospital Holter | iRhythm Zio | Zoll LifeVest |
+  | Feature | Sternal Sentry + PulseBand | Apple Watch Ultra 2 | Whoop 4.0 / Oura | Hospital Holter | iRhythm Zio Patch | ZOLL LifeVest |
   | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
   | **Early Warning Window** | **1 to 6 Hours Pre-Infarction**| None (Hour 0) | None (Recovery) | None (Retrospective) | None (Retrospective) | None (Post-arrest shock) |
-  | **Anatomical Site** | **Sternal Breastbone** | Wrist | Wrist / Finger | Multi-wire Chest | Left Pectoral | Chest Harness |
-  | **Mechanical SCG (Pump Stiffening)**| ✅ **Yes (AO Force)** | ❌ Impossible at wrist | ❌ No mechanical | ❌ No mechanical | ❌ No mechanical | ❌ No mechanical |
-  | **Pulmonary Fluid (Bio-Z)** | ✅ **Yes ($Z_0$ Impedance)** | ❌ No lung access | ❌ No lung access | ❌ No Bio-Z | ❌ No Bio-Z | ❌ No Bio-Z |
+  | **Anatomical Site** | **Dual-Node: Sternum + Wrist** | Wrist only | Wrist / Finger | Multi-wire Chest | Left Pectoral | Heavy Chest Harness |
+  | **Skin Adhesive / Glue** | ❌ **ZERO GLUE (Soft Cord/Dock)**| ❌ Strap (wrist only) | ❌ Band (wrist only) | ⚠️ Sticky Hydrogel Pads| ⚠️ Acrylic Adhesive Pad | ⚠️ Elastic Belt + Gel |
+  | **Mechanical SCG (Pump Stiffening)**| ✅ **Yes (Aortic Opening Force)**| ❌ Impossible at wrist | ❌ No mechanical | ❌ No mechanical | ❌ No mechanical | ❌ No mechanical |
+  | **Continuous Cuffless BP (PTT)**| ✅ **Yes (Sternal-to-Radial PTT)**| ❌ No PTT | ❌ No PTT | ❌ No PTT | ❌ No PTT | ❌ No PTT |
   | **Ischemia Perfusion Resilience** | ✅ **High (71.3% sternal flow)**| ❌ Fails (>95% wrist drop)| ❌ Fails (>95% drop) | ✅ High (wires) | ✅ High (chest) | ✅ High (dry pads) |
-  | **Real-Time Decision Latency** | **<1 Second On-Chip** | Arrhythmia only | None | **2 to 7 Days (Mailed)** | **7 to 14 Days (Mailed)**| Real-time shock |
+  | **Decision Latency & Action** | **<42 ms On-Chip $\rightarrow$ 911 SOS**| Arrhythmia alert only | Sleep recovery score | **2 to 7 Days (Mailed)** | **7 to 14 Days (Mailed)**| Defibrillates post-VF |
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select competitor comparison table and write finalized Block 10 text here ]
@@ -276,12 +278,15 @@
 
 ### BLOCK 11: Market Beachhead, Health Economics & Reimbursement (Phase 12)
 * **Domain Lead**: Health Economics / Business
-* **Status**: ⏳ **CANDIDATE FRAMEWORKS COMPILED / OPEN FOR TEAM DECISION**
+* **Status**: ✅ **COMPLETED RESEARCH (Phase 12: Q12.1, Q12.2, Q12.3 Fully Synthesized)**
+* **Direct Evidence Links**:
+  * 🟢 [Q12.1 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q12_1_Takeaway.md) | [Q12.2 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q12_2_Takeaway.md) | [Q12.3 Takeaway](file:///c:/College/Ideathon/Research_Dossier/Takeaways/Q12_3_Takeaway.md)
+  * 🟡 [Q12.1 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q12_1_Product_Translation.md) | [Q12.2 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q12_2_Product_Translation.md) | [Q12.3 Translation](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/Q12_3_Product_Translation.md)
+  * 🔵 [Phase 12.1 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_12_Health_Economics_Market_Pitch/12.1_Health_Economics_Cost_Per_QALY/Q12_1_Cost_Per_QALY_Health_Economics.md) | [Phase 12.2 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_12_Health_Economics_Market_Pitch/12.2_Beachhead_Target_Market_TAM/Q12_2_Initial_Beachhead_Target_Market_TAM.md) | [Phase 12.3 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_12_Health_Economics_Market_Pitch/12.3_Unit_Economics_Business_Model/Q12_3_Sustainable_Unit_Economics_Business_Model.md)
 * **Suggested Candidate Points**:
-  * *Beachhead Market*: Post-PCI (stent discharge) patients (1.8M US discharges/year). 30% of acute re-infarctions occur within 30 days.
-  * *Established US Medicare Reimbursement*: Billed under existing Remote Patient Monitoring (RPM) CPT Codes:
-    * CPT 99453 (Setup: $19) + CPT 99454 (Daily Telemetry: $56/mo) + CPT 99457 (Clinical Review: $51/mo). Prescribing clinics earn ~$107–$148/patient/month.
-  * *Hospital ROI under HRRP*: Medicare penalizes hospitals for 30-day readmissions. Preventing just 5 emergency readmissions per 100 post-stent patients saves an institution >$250,000 in uncompensated ICU care.
+  * *Health Economics & Cost per QALY (Q12.1)*: Markov modeling demonstrates a **Dominant ICER ($-\$64,025/\text{QALY}$)**. Converting unannounced OHCA into elective catheterization saves **$\$437,400\text{ per patient}$** over 5 years and adds **$+6.45\text{ QALYs}$**. Medicare HRRP shield prevents $\$2.33\text{M}$ in 30-day readmission penalties ($10.9\times\text{ ROI}$) for a 400-bed hospital.
+  * *Initial Beachhead TAM (Q12.2)*: Rejects the retail D2C consumer trap ($<0.1\%$ prevalence collapses PPV to $<2\%$). Focuses on 3 ultra-high-risk hospital discharge cohorts: (1) Post-PCI 30-day stent thrombosis peak (Days 3–14), (2) 40-to-90-day guideline-mandated ICD Waiting Gap ($2.1\%\text{--}4.5\%$ SCA risk in LVEF $\le 35\%$), and (3) Diabetic silent ischemia. Total Addressable Market: $\$144\text{B}$; Serviceable Addressable Market: $\$3.06\text{B}$ (6.8M annual patients); SOM Beachhead: $\$49.0\text{M ARR}$ in Year 3.
+  * *Sustainable Unit Economics & Medicare Reimbursement (Q12.3)*: Kit BOM COGS is **$\$33.50$** (Pendant $\$18.50$, PulseBand $\$15.00$); reusable silicone allows 6 patient cycles, reducing hardware cost to **$\$5.58/\text{patient}$**. Billed under active 2024 Medicare RPM codes (CPT 99453 [\$19.65], CPT 99454 [\$46.50], CPT 99457 [\$48.13]) generating $\$114.28/\text{month}$. B2B2C turnkey fee of $\$65/\text{month}$ leaves prescribing clinics with **$\$49.28/\text{month}$ recurring profit per patient** ($43.1\%$ margin; $\$295\text{k/yr}$ for 500 patients).
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select market sizing and write finalized Block 11 text here ]
@@ -289,17 +294,24 @@
 
 ---
 
-### BLOCK 12: Regulatory Clearance Strategy & 3-Phase Clinical Roadmap (Phases 9–11)
-* **Domain Lead**: Clinical / Regulatory
-* **Status**: ⏳ **CANDIDATE FRAMEWORKS COMPILED / OPEN FOR TEAM DECISION**
-* **Suggested Candidate Milestones**:
-  * *US FDA Clearance*: Class II 510(k) Premarket Notification as Software as a Medical Device (SaMD), citing predicates iRhythm Zio Patch (K121319) and Bardy CAM (K172883).
-  * *India CDSCO*: Class C Medical Device under MDR 2017.
-  * *3-Phase Trial Roadmap*:
-    * Phase A (Months 1-6): Retrospective training on PhysioNet PTB-XL (AUROC > 0.92 target).
-    * Phase B (Months 7-12): 50-patient in-hospital Cardiac Care Unit (CCU) telemetry validation.
-    * Phase C (Months 13-24): 300-patient multi-center post-PCI discharge ambulatory study.
+### BLOCK 12: Regulatory Clearance Strategy, Safe-State Architecture & Clinical Roadmap (Phases 9–11)
+* **Domain Lead**: Clinical / Regulatory / Systems Reliability
+* **Status**: ✅ **COMPLETED RESEARCH (Phases 9, 10, 11 Fully Synthesized)**
+* **Direct Evidence Links**:
+  * 🟢 [Phase 9 Takeaways](file:///c:/College/Ideathon/Research_Dossier/Takeaways/) | [Phase 10 Takeaways](file:///c:/College/Ideathon/Research_Dossier/Takeaways/) | [Phase 11 Takeaways](file:///c:/College/Ideathon/Research_Dossier/Takeaways/)
+  * 🟡 [Product Translations Directory](file:///c:/College/Ideathon/Research_Dossier/Product_Translations/)
+  * 🔵 [Phase 9 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_09_Clinical_Safety_Regulatory_Viability/) | [Phase 10 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_10_Human_Factors_Ergonomics/) | [Phase 11 Vault](file:///c:/College/Ideathon/Research_Dossier/Phase_11_Failure_Modes_Failsafes/)
+* **Suggested Candidate Milestones & Safety Architecture**:
+  * *Regulatory Pathway (Q9.2)*: US FDA Class II 510(k) Premarket Notification as Software as a Medical Device (SaMD), citing predicates iRhythm Zio (K121319) and ZOLL LifeVest (K140817); India CDSCO Class C Medical Device under MDR 2017.
+  * *Patient Adherence & Ergonomics (Q10.1–Q10.3)*: 100% Zero-Glue silicone dock/pendant avoids the 15–25% MARSI skin tear rate; non-intrusive pendant form factor prevents cardiophobia and sleep disruption; Azoteq capacitive touch 30-second cancellation interface stops false 911 calls.
+  * *Deterministic Safe-State Architecture (Q11.1–Q11.2)*: ISO 14971 / IEC 60812 FMEA, 9-clock I2C bus recovery, P-MOSFET sensor power cycling, IEC 62304 Class C TrustZone hardware security, 4.0s–8.0s Windowed Watchdog on independent 32.768 kHz LFRC, and zero-heap MISRA-C:2012 Rule 21.3 compliance.
+  * *Supercapacitor "Dying Gasp" SOS (Q11.3)*: Murata 47 mF / 5.5V supercapacitor (DMF3Z5R5H474M3DTA0) stores $158.2\text{ mJ}$ ($10.18\times$ required margin); automatically isolates via P-FET upon battery drop, powering BLE 5.3 Coded PHY Long Range (+8 dBm) SOS beacon and 75 dB resonant acoustic buzzer even at 0% main battery.
+  * *3-Phase Trial Roadmap (Q9.5)*:
+    * Phase A (Months 1–6): In-silico validation on PTB-XL & MIMIC-IV ($N > 40,000$, target AUROC $> 0.92$).
+    * Phase B (Months 7–12): 50-patient in-hospital Cardiac Care Unit (CCU) telemetry trial during balloon angioplasty.
+    * Phase C (Months 13–24): 300-patient multi-center post-PCI ambulatory trial across US and Indian hospitals.
 * **✍️ `[Team Final Poster Text - Fill / Customize Here]`**:
   ```markdown
   [ Team to select regulatory pathway and write finalized Block 12 text here ]
   ```
+
