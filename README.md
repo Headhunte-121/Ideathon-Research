@@ -44,11 +44,14 @@ To keep our massive research easily understandable, the repository is organized 
 ## 🎯 Quick Navigation & Key Deliverables
 
 ### 💡 Product Architecture & Design (The Device)
+* 🔒 **Official Team Decisions Log**: [`Product_Design/OFFICIAL_TEAM_DECISIONS_LOG.md`](file:///c:/College/Ideathon/Product_Design/OFFICIAL_TEAM_DECISIONS_LOG.md) — The single master ledger recording all 11 officially locked engineering, clinical, UX, and economic decisions.
 * 🌟 **Master Product Knowledge Hub**: [`MASTER_PRODUCT_AND_RESEARCH_HUB.md`](file:///c:/College/Ideathon/MASTER_PRODUCT_AND_RESEARCH_HUB.md) — What the device is, what we've proven, and where every fact references back to.
+* 📄 **Dual-Node Modular Architecture Blueprint**: [`Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md) — Detailed specifications for the Sternal Sentry Pod and Companion PulseBand.
 * **Locked Science vs. Open Team Choices**: [`Product_Design/Master_Fixed_vs_Flexible_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md) — Separates non-negotiable biophysics from open team design choices.
-* **Form Factor Feasibility Analysis**: [`Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md`](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md) — Why smartwatches and loose pendants fail, and why the Magnetic Snap-to-Skin Pendant succeeds.
+* **Form Factor Feasibility Analysis**: [`Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md`](file:///c:/College/Ideathon/Product_Design/Form_Factor_Evaluation_Pendant_vs_Patch.md) — Why smartwatches and loose pendants fail, and why the Modular Sentry Pod succeeds.
 
 ### 🏆 Ideathon Competition Pitch & Poster
+* 📄 **Official Competition Abstract**: [`Ideathon_Poster_and_Pitch/Official_Competition_Abstract.md`](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/Official_Competition_Abstract.md) — Stage-accurate 430-word academic abstract & 100-word portal summary.
 * **A0 Poster Modular Canvas**: [`Ideathon_Poster_and_Pitch/A0_Poster_Modular_Canvas.md`](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/A0_Poster_Modular_Canvas.md) — Blank 12-phase canvas with candidate points and tables for the team to pick and customize.
 * **Master Pitch & Poster Guide**: [`Ideathon_Poster_and_Pitch/Master_Pitch_and_Poster_Guide.md`](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/Master_Pitch_and_Poster_Guide.md) — Exact poster copy, domain ownership breakdown, and verbal pitch scripts.
 

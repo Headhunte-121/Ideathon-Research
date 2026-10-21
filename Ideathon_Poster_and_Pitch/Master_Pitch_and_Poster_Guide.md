@@ -5,6 +5,7 @@
 
 > **Purpose**: This guide provides the competitive delivery strategy, domain ownership assignments, 3-minute pitch script options, and the knockout judge defense cheat sheet for the College Medical IoT Ideathon.  
 > **Team Protocol**: Like the rest of the repository, script blocks and domain roles are structured as customizable blueprints so each team member can own their presentation section.  
+> **Official Abstract**: 📄 [Official Competition Abstract (430 words)](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/Official_Competition_Abstract.md)  
 > **Repository Path**: `c:/College/Ideathon/Ideathon_Poster_and_Pitch/Master_Pitch_and_Poster_Guide.md`
 
 ---

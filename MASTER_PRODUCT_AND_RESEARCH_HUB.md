@@ -108,7 +108,9 @@ c:/College/Ideathon/
 │       └── assets/                      <-- Schematics, anatomical diagrams, FIFO architectures
 │
 ├── Product_Design/                      <-- 💡 Product Concepts, Trade-Off Studies & Fixed vs Flexible Rules
+│   ├── OFFICIAL_TEAM_DECISIONS_LOG.md   <-- 🔒 Master Ledger of All 11 Officially Locked Decisions
 │   ├── Master_Fixed_vs_Flexible_Architecture.md
+│   ├── Dual_Node_Pendant_and_Wristband_Architecture.md
 │   └── Form_Factor_Evaluation_Pendant_vs_Patch.md
 │
 └── Master_Research_Questionnaire_Expanded.md <-- Master 12-Phase Roadmap (All Questions)

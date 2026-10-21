@@ -5,7 +5,8 @@
 
 > **Purpose**: This document tracks the hard boundaries of our project.  
 > * **PART 1: FIXED REALITIES**: Biophysical laws, clinical timelines, and engineering constraints that are **100% locked in by research** and cannot be changed without breaking the medical validity of the device.  
-> * **PART 2: FLEXIBLE CHOICES**: Product design choices, form factors, styling, battery trade-offs, and business models that are **completely open for the team to choose and customize**.
+> * **PART 2: FLEXIBLE CHOICES**: Product design choices, form factors, styling, battery trade-offs, and business models that are **completely open for the team to choose and customize**.  
+> * 🌟 **LOCKED DECISIONS LOG**: See [`OFFICIAL_TEAM_DECISIONS_LOG.md`](file:///c:/College/Ideathon/Product_Design/OFFICIAL_TEAM_DECISIONS_LOG.md) for the team's official locked architecture choices.
 
 ---
 
@@ -69,68 +70,75 @@ These are the customizable engineering, product, aesthetic, and business options
 ---
 
 ### Choice 1: The Physical Form Factor & System Architecture
-* 🌟 **[OFFICIALLY SELECTED BY TEAM] Option D: The Dual-Node BAN Ecosystem (Sentry Pendant + Companion PulseBand)**:
+* 🌟 **[OFFICIALLY LOCKED TEAM ARCHITECTURE] The Modular "2-in-1" Sentry Pod with On-Contact Dry ECG & Companion PulseBand**:
   * **System Reference**: 📄 [`Dual_Node_Pendant_and_Wristband_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md)
-  * **Chest Pendant**: 38 mm sleek tech pendant mounted on an adjustable tension cord (100% GLUE-FREE, ZERO ECG electrodes). Houses ultra-low-noise 6-axis IMU (LSM6DSOX) for Seismocardiography (SCG) mechanical ejection tracking.
-  * **Wristband**: Minimalist bracelet with optical PPG (MAX30102 / MAX86141) for $SpO_2$, pulse rate, PRV, arm-motion filtering, and haptic alert/display.
-  * **Why Selected**: 100% adhesive-free comfort; ultra-affordable ₹820 BOM; captures mechanical contractility collapse 1-3 hours early; solves user interface and PTT blood pressure tracking without sticky chest patches.
-* **Option A: The Magnetic Snap-to-Skin Pendant (Jewelry / Lifestyle Focus)**
-* **Option B: Contoured Biowearable Sternal Pod (Abbott Lingo / Dexcom Focus)**
-* **Option C: Smart Athleisure / Base Layer (Whoop AnyWear Focus)**
+  * **Core Architectural Decision**:
+    * **Node A: The Modular 2-in-1 Sentry Pod (Lower Sternum)**:
+      * *Mode 1 (Sentry Clinical Mode)*: Worn against the skin via an adjustable soft neck cord (0.8 N preload) or compression undershirt cradle directly over the breastbone. Integrated dry 316L stainless steel back electrodes provide continuous precordial ECG with **zero wet hydrogel glue**, synchronized with mechanical Seismocardiography (SCG).
+      * *Mode 2 (Casual Clothing Clip Mode)*: Magnetically unclips to snap onto an outer shirt collar or pocket. Hardware Lead-Off automatically powers down the ECG front-end to conserve battery, while the IMU tracks chest-wall breathing and fall dynamics through fabric. A front bezel contact enables **30-second on-demand finger spot-check ECG**.
+      * *Primary Motion Sensor*: **ST LSM6DSOX** ($60\ \mu\text{g}/\sqrt{\text{Hz}}$ ultra-low noise, 9 KB FIFO, embedded MLC). Measures Aortic Opening ($F = m \cdot a$) and Left Ventricular Ejection Time (LVET).
+      * *Clinical Breakthrough*: Enables **Pre-Ejection Period (PEP)** measurement (electrical Q-wave to mechanical AO peak delay) to detect ischemic myocardial contractility collapse hours before electrical arrest.
+    * **Node B: The Companion PulseBand (Non-Dominant Wrist)**:
+      * *Sensors*: ADI MAX86141 dual-wavelength optical PPG ($SpO_2$, pulse volume) + **Palmar Galvanic Skin Response (GSR)** to detect autonomic cold-sweat diaphoresis.
+      * *Denoising*: Onboard 3-axis arm IMU acts as an adaptive reference, feeding an on-device NLMS filter to subtract footstrike shockwaves from the chest readings.
+      * *Continuous PTT*: Measures sub-millisecond Pulse Transit Time between sternal AO and radial pulse arrival for continuous cuffless blood pressure.
+      * *Cancellation UX*: OLED micro-display with a 30-second multi-modal cancel window (side-rail squeeze or palm-cover reflex).
+  * **Why This Won**: Eliminates 100% of adhesive skin tears (MARSI-free) and bypasses the Day-5 hydrogel desiccation wall, while preserving true clinical electrical ECG, mechanical contractility, and cold-sweat verification.
+* **Archived Alternative Proposals**:
+  * 📄 [Asmita Two-Node PPG & IMU Clip Proposal](file:///c:/College/Ideathon/Product_Design/Asmita_Two_Node_PPG_IMU_Proposal.md) (Integrated: Palmar GSR, fall detection, and clothing clip mode adopted into modular pod).
+  * Option A: Magnetic Snap-to-Skin Pendant (Jewelry / Lifestyle Focus)
+  * Option B: Contoured Biowearable Sternal Pod (Abbott Lingo / Dexcom Focus)
+  * Option C: Smart Athleisure / Base Layer (Whoop AnyWear Focus)
 
 ---
 
 ### Choice 2: Industrial Design, Casing & Aesthetics
-* **Materials**:
-  * *Aerospace-grade Grade 5 Titanium*: Premium, hypoallergenic, ultra-lightweight, luxury finish.
-  * *Zirconia Ceramic*: Scratch-resistant, glass-like finish (similar to Oura Ring or Apple Watch backplate).
-  * *Medical Polycarbonate*: Durable, cost-effective, high-impact resistance for athletic/sports telemetry.
-* **Finishes & Colorways**:
-  * Matte Stealth Black, Brushed Silver, Rose Gold, or Athletic Graphite.
+* 🌟 **[OFFICIALLY LOCKED TEAM DECISION 2 & 9] Medical-Grade Polycarbonate & Biocompatible Silicone**:
+  * Chest Pod: Injection-molded medical polycarbonate with liquid silicone overmold and stamped 316L surgical stainless steel electrodes. Soft neck cord (0.8 N preload) with magnetic break-away clasp. Featherweight $15\text{ grams}$ total, $6.8\text{ mm}$ thickness.
+  * Companion PulseBand: Hypoallergenic medical silicone strap with integrated palmar stainless steel / conductive elastomer GSR contacts and side tactile click button.
 
 ---
 
 ### Choice 3: Battery Capacity vs. Thickness & Weight
-* **Ultra-Lightweight Profile**:
-  * *Battery*: 150 mAh rechargeable LiPo cell.
-  * *Dimensions*: ~6.5 mm thick, total weight ~18 grams.
-  * *Runtime*: 3 to 4 days of continuous multi-modal monitoring.
-* **Extended Endurance Profile**:
-  * *Battery*: 250 mAh rechargeable LiPo cell.
-  * *Dimensions*: ~8.5 mm thick, total weight ~26 grams.
-  * *Runtime*: 7 to 10 days of continuous monitoring on a single charge.
+* 🌟 **[OFFICIALLY LOCKED TEAM DECISION 9] Asymmetric 150 mAh Chest Pod + 240 mAh Wristband**:
+  * Sternal Pod: 150 mAh LiPo pouch cell (Model 502025: 3.2g, 5mm thick) delivers 5–7 days of continuous monitoring with minimal pendulum inertia for clean SCG detection.
+  * PulseBand: 240 mAh LiPo pouch cell (Model 502030: 5.4g) comfortably powers high-current optical PPG LEDs and display for 5–7 days.
+  * Charging: Single dual-dock magnetic pogo-pin cradle recharges both nodes simultaneously in under 45 minutes every Sunday. Power BOM: $3.50.
 
 ---
 
 ### Choice 4: User Alerting & Emergency Escalation UX
-* **Alert Trigger Protocol**:
-  * *Discreet Haptic Interlock*: On-device silent vibration alert with a 30-second double-tap countdown to cancel accidental false alarms before anyone else is notified.
-  * *Smartphone Escalation*: Paired smartphone sounds a high-decibel alarm and automatically displays hospital routing and bystander CPR instructions.
-  * *Zero-Touch Cloud Dispatch*: Automatic encrypted transmission of GPS coordinates, patient history, and telemetry to emergency EMS dispatch (911) if the user loses consciousness (syncope).
+* 🌟 **[OFFICIALLY LOCKED TEAM DECISIONS 7 & 8] Tactile Cancel Button + Syncope-Gated 85 dB Siren & Bystander CPR Metronome**:
+  * 30-Second Cancel Window: Haptic vibration + visual OLED countdown on wrist; cancelled via intentional 2-second hold of a physical textured click button.
+  * Hardware Fall Lockout: $>3.0\ g$ impact followed by stillness automatically locks out the button so an unconscious patient on the floor cannot abort emergency dispatch.
+  * Syncope-Gated Siren: 85 dB alarm and 110 BPM AHA CPR voice coach sound ONLY if physical collapse (horizontal posture + loss of pulsatile flow) is confirmed. If ambulatory/conscious, siren remains muted and silent SMS dispatch is routed to family and doctor.
 
 ---
 
-### Choice 5: Go-to-Market Beachhead & Business Strategy
-* **Option A: Post-PCI / CABG Hospital Discharge Pilot (The B2B Medical Route)**:
-  * Target 1.2 million angioplasty and bypass surgery patients during their high-risk 30-day recovery window.
-  * Sold to hospital cardiology networks to reduce 30-day readmission penalties under Remote Patient Monitoring (RPM) insurance codes.
-* **Option B: Cardiology Clinic Outpatient Prescription (The Specialist Route)**:
-  * Prescribed by cardiologists for patients with unexplained syncope, high calcium scores, or family history of sudden death.
-* **Option C: High-Risk Consumer Direct-to-Consumer (The D2C Wellness Route)**:
-  * Sold directly to health-conscious consumers with diabetes, hypertension, or high athletic cardiovascular stress.
+### Choice 5: Go-to-Market Beachhead & Commercial Strategy
+* 🌟 **[OFFICIALLY LOCKED TEAM DECISION 10] Two-Tiered Clinical Rollout**:
+  * Primary Beachhead: 30-Day Post-PCI / Stent Discharges (~4.3M annual US/India cases) to prevent lethal stent thrombosis and shield hospitals from Medicare 30-day HRRP readmission penalties.
+  * Secondary Beachhead: The 40-to-90-Day Post-Infarction ICD Waiting Gap ($LVEF \le 35\%$), displacing the suffocating $3,500–$4,000/month ZOLL LifeVest rental.
 
 ---
 
-### Choice 6: Poster Block Selection for the Competition
-* Your team can open [`A0_Poster_Modular_Canvas.md`](../Ideathon_Poster_and_Pitch/A0_Poster_Modular_Canvas.md) and pick which candidate blocks, tables, and diagrams to highlight on your final visual presentation.
+### Choice 6: Unit Economics & Bill of Materials Presentation
+* 🌟 **[OFFICIALLY LOCKED TEAM DECISION 11] Unified Lab-to-Factory & 6x Hospital Reusability Model**:
+  * Benchtop Lab Prototype: Functional proof-of-concept built for ₹4,595 (~$55) using COTS modules.
+  * Factory 10k SMT Scale: Scaled kit BOM drops to $33.50 (~₹2,775) including chest pod, wristband, charger, and packaging.
+  * Reusable Hospital Economics: 100% glue-free design sanitizes with 70% isopropyl wipes and re-issues across 6 patients/year, yielding an unbeatable clinical cost of **$5.58 (~₹460) per patient**.
 
 ---
 
 ### Summary Table: Fixed vs. Flexible at a Glance
 
-| Category | What is FIXED (Non-Negotiable Science) | What is FLEXIBLE (Team Choices) |
+| Category | What is FIXED (Non-Negotiable Science) | Officially Locked Team Decisions |
 | :--- | :--- | :--- |
-| **Anatomy & Location** | Must be placed on the breastbone (8 cm axis, LLSB 4th ICS, suprasternal notch). | Whether it is held there by a magnetic necklace dock, a direct adhesive pod, or an undershirt. |
-| **Electronics & Sensors** | Requires 24-bit ECG/Bio-Z (ADS1292R), dual-IMUs for walking cancellation, and optical AFE. | Enclosure styling, casing material (titanium vs. ceramic), and exact PCB layout shape. |
-| **Clinical Mission** | Intercepting the 1-to-6-hour pre-infarction countdown before irreversible tissue necrosis. | Target launch market (Post-PCI discharge hospital sales vs. direct-to-consumer subscription). |
-| **Motion Noise** | Walking creates -27 dB noise; requires dual-IMU NLMS adaptive filtering. | Visual branding, product name, companion app user interface, and poster color scheme. |
+| **Anatomy & Location** | Must be placed on breastbone (8 cm axis, LLSB 4th ICS) + wrist radial artery. | Modular 2-in-1 Sentry Pod (Mode 1 Sentry on sternum + Mode 2 Casual clip) + Companion PulseBand. |
+| **Electronics & Sensors** | Ultra-low-noise IMU ($<100\ \mu\text{g}/\sqrt{\text{Hz}}$), optical PPG, palmar cold sweat. | ST LSM6DSOX + ADI MAX86141 + Knowles MEMS Mic + 316L Dry ECG + Palmar GSR. |
+| **Compute & Algorithms** | Dual-core processing, motion-compensated DSP, baseline adaptation. | Nordic nRF5340 + Hybrid NLMS/DWT ($28\ \mu\text{s}$, $38\ \mu\text{W}$) + Foundational CNN + Personalized Autoencoder. |
+| **Emergency Telemetry** | Low-latency dispatch without heavy 2A cellular modem bulk. | Smartphone BLE 5.3 Gateway (uses phone GPS/cellular; $0 hardware SIM fees). |
+| **False-Alarm & Alert UX** | Tremor-resistant cancellation, high-decibel bystander intervention. | Physical click button (2s hold + fall lockout) + syncope-gated 85 dB siren with 110 BPM CPR coach. |
+| **Power Profile** | Minimum 5–7 day clinical window; lightweight sternal node. | Asymmetric: 150 mAh Pod (15g, 6.8mm) + 240 mAh Wristband (synchronized 7-day recharge). |
+| **Clinical Beachhead** | High-density acute mortality window with hospital economic alignment. | Tiered: 30-Day Post-PCI Stent Discharges primary + 90-Day Weak Heart ICD Waiting Gap secondary. |
+| **Unit Economics** | Accessible healthcare cost structure without single-use waste. | ₹4,595 prototype BOM $\rightarrow$ $33.50 factory kit BOM $\rightarrow$ $5.58/patient across 6 hospital reuses. |

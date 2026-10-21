@@ -1,51 +1,54 @@
-# Dual-Node Body Area Network: Sentry Pendant & PulseBand Ecosystem
-## Team Architectural Blueprint: Zero-Adhesive, ECG-Free Mechanical-Optical Dual Telemetry
+# Dual-Node Body Area Network: Modular 2-in-1 Sentry Pod & PulseBand Ecosystem
+## Team Architectural Blueprint: Zero-Adhesive, On-Contact Dry ECG & Mechanical-Optical Dual Telemetry
 
 ---
 
 > **Status**: **OFFICIALLY LOCKED TEAM ARCHITECTURE** (Decided by Team)  
-> **Core Innovation**: First consumer-grade **Dual-Node Body Area Network (BAN)** for cardiovascular ischemia and cardiac arrest prediction without skin adhesives or electrical ECG electrodes.  
+> **Core Innovation**: First consumer-grade **Dual-Node Body Area Network (BAN)** combining **On-Contact Dry ECG**, precordial **Seismocardiography (SCG)**, and wrist **Optical PPG with Palmar GSR (Cold Sweat)**—operating 100% free of sticky chemical adhesives or consumable hydrogel pads.  
 > **Hardware Distribution**:
-> - **Node A (The Sentry Pendant)**: Sternal Seismocardiography (SCG) mechanical accelerometer + micro-acoustics. Zero glue, worn on an adjustable tension cord.
-> - **Node B (The PulseBand)**: Wrist-worn optical Photoplethysmography (PPG) + $SpO_2$ + arm motion IMU + user alert display & cancellation interface.  
-> **Repository Path**: `c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md`
+> - **Node A (The Modular 2-in-1 Sentry Pod)**: Sternal bone / clothing-clip dual-mode pod. Houses ST LSM6DSOX 6-axis IMU + Knowles MEMS acoustic mic + dry 316L stainless steel on-contact ECG electrodes.
+> - **Node B (The Companion PulseBand)**: Wrist-worn optical Photoplethysmography (MAX86141) + Palmar Galvanic Skin Response (GSR cold sweat) + arm motion IMU + user alert display & 30-second cancellation interface.  
+> **Repository Path**: c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md
 
 ---
 
 ## 🏗️ 1. Executive Systems Topology
 
-```
+`
 ===================================================================================================================
                              DUAL-NODE WIRELESS BODY AREA NETWORK TOPOLOGY
 ===================================================================================================================
 
-      [ NODE A: THE SENTRY PENDANT ]                           [ NODE B: THE COMPANION PULSEBAND ]
-   ─────────────────────────────────────                    ───────────────────────────────────────
-    Location: Lower Sternal Breastbone                       Location: Non-Dominant Dorsal Wrist
-    Form: Sleek 38 mm Tech Pendant / Locket                  Form: Minimalist Smart Bracelet / Strap
-    Mounting: 100% GLUE-FREE (Tension Cord)                  Mounting: Standard Breathable Wrist Strap
+       [ NODE A: THE MODULAR 2-IN-1 SENTRY POD ]               [ NODE B: THE COMPANION PULSEBAND ]
+    ─────────────────────────────────────────────           ───────────────────────────────────────
+     Location: Lower Sternal Breastbone / Collar             Location: Non-Dominant Dorsal Wrist & Palm
+     Form: 38 mm Modular Tech Pod (Cord / Clip)              Form: Minimalist Smart Bracelet / Strap
+     Mounting: 100% GLUE-FREE (Tension Cord / Clip)          Mounting: Standard Breathable Wrist Strap
 
-    ACTIVE SENSORS:                                          ACTIVE SENSORS:
-    • 6-Axis Low-Noise IMU (ST LSM6DSOX)                     • Dual-Wavelength Optical PPG (MAX30102 / MAX86141)
-      - Aortic Opening (AO) Peak Acceleration                  - Red (660nm) & IR (940nm) SpO2 Oxygenation
-      - Left Ventricular Ejection Time (LVET)                  - Pulse Rate & Pulse Rate Variability (PRV)
-      - Mechanical Heart Rate & HRV (AO-to-AO)                 - Microvascular Vasoconstriction Index
-      - Chest Wall Respiration & Posture/Tilt                • 3-Axis Arm IMU (Motion Denoising)
-    • Microcontroller: Nordic nRF5340 (BLE 5.3)              • Microcontroller: Nordic nRF52840 (BLE 5.3)
-    • Micro-Haptic Motor (Local Alert)                       • OLED Micro-Display / Touch Interface
-    • 150 mAh LiPo Battery (5-7 Day Life)                    • 120 mAh LiPo Battery (5-7 Day Life)
-                      │                                                        │
-                      └────────────────── WIRELESS BLE 5.3 ────────────────────┘
-                                     (Isochronous Time Sync <15 µs)
-                                                    │
-                                                    ▼
-                       [ CORE BIOMARKER: MECHANICAL-OPTICAL PULSE TRANSIT TIME ]
-                          PTT = t_wrist_pulse - t_sternal_AO ──► Real-Time Arterial Stiffness
+     ACTIVE SENSORS:                                         ACTIVE SENSORS:
+     • Integrated On-Contact Dry ECG (316L Stainless)        • Dual-Wavelength Optical PPG (MAX86141)
+       - Back-plate pads for continuous sternal ECG            - Red (660nm) & IR (940nm) SpO2 Oxygenation
+       - Front bezel for 30s finger-touch spot-check           - Pulse Rate & Pulse Rate Variability (PRV)
+       - Auto Lead-Off power down in clothing clip mode        - Peripheral Vasoconstriction Index
+     • 6-Axis Low-Noise IMU (ST LSM6DSOX)                    • Palmar Galvanic Skin Response (GSR)
+       - Aortic Opening (AO) Peak Recoil Force (=m\cdot a$)  - Autonomic Cold-Sweat Diaphoresis Surge
+       - Left Ventricular Ejection Time (LVET)               • 3-Axis Arm IMU (Motion Denoising)
+       - Chest Wall Respiration Rate & Fall Dynamics         • Microcontroller: Nordic nRF52840 (BLE 5.3)
+     • Digital MEMS Acoustic Mic (Knowles PCG)               • OLED Micro-Display / Tactile Cancel Interface
+     • Microcontroller: Nordic nRF5340 (BLE 5.3)             • Micro-Haptic Motor & 85 dB Piezo Buzzer
+     • 150 mAh LiPo Battery (5-7 Day Life)                   • 200 mAh LiPo Battery (5-7 Day Life)
+                       │                                                       │
+                       └────────────────── WIRELESS BLE 5.3 ───────────────────┘
+                                      (Isochronous Time Sync <15 µs)
+                                                     │
+                                                     ▼
+     ┌───────────────────────────────────────────────┴───────────────────────────────────────────────┐
+     │ DUAL CLINICAL BIOMARKERS (THE ELECTROMECHANICAL WINDOW):                                      │
+     │ 1. PRE-EJECTION PERIOD: PEP = t_AO (IMU) - t_Q (Dry ECG) ──► Myocardial Contractility Decay   │
+     │ 2. PULSE TRANSIT TIME:  PTT = t_wrist_pulse - t_sternal_AO ──► Continuous Cuffless BP          │
+     └───────────────────────────────────────────────────────────────────────────────────────────────┘
 ===================================================================================================================
-```
-
----
-
+`
 ## ⏱️ 2. The 1-to-3-Hour Pre-Infarction Detection Pipeline (Without ECG)
 
 Judges will ask: *"How can you catch a heart attack and predict sudden cardiac arrest without an ECG ST-segment?"*
