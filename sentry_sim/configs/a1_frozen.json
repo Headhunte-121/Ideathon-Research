@@ -1,0 +1,35 @@
+{
+  "experiment": "A1 LTSTDB drift",
+  "chosen_on": "TUNE subjects (40): 43 records",
+  "selected": [
+    "rest",
+    25,
+    10
+  ],
+  "selected_name": "rest_proxy +25% for 10 min",
+  "any_config_met_1_per_24h": true,
+  "selection_rule": "<=1 false check-in per 24 h on tune, then highest ischemic-episode sensitivity; else lowest false rate",
+  "tune_row": {
+    "config": "rest_proxy +25% for 10 min",
+    "records": 43,
+    "ischemic_episodes": 389,
+    "ischemic_caught": 38,
+    "ischemic_sens": 0.098,
+    "median_lead_min": 9.3,
+    "rate_episodes": 47,
+    "rate_caught": 11,
+    "false_checkins": 27,
+    "nonepisode_hours": 669.6,
+    "false_per_24h": 0.97,
+    "records_with_false": 6,
+    "fraction_records_with_false": 0.14
+  },
+  "baseline": [
+    "rtl",
+    "3.8"
+  ],
+  "annotation_set": ".stc (100 uV, 60 s)",
+  "log2n": 13,
+  "frozen_at": "2026-11-06T20:04:15",
+  "split_file_sha256": "dce9c5eca51fc503a3d1f29ea729838750c4bcdffabe4ace7bb6f7bc3f2dabdc"
+}
