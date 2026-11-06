@@ -1,0 +1,26 @@
+{
+  "dataset": "PPG-DaLiA",
+  "rule": "seeded random 50/50 by subject (8 tune / 7 test); no labels to stratify on",
+  "seed": 20261107,
+  "written": "2026-11-06T19:36:09",
+  "note": "Written BEFORE any round-2 experiment. The round-1 tweaks used S1-S8 / S9-S15; this split replaces it for round 2.",
+  "tune": [
+    "S2",
+    "S4",
+    "S6",
+    "S9",
+    "S12",
+    "S13",
+    "S14",
+    "S15"
+  ],
+  "test": [
+    "S1",
+    "S3",
+    "S5",
+    "S7",
+    "S8",
+    "S10",
+    "S11"
+  ]
+}

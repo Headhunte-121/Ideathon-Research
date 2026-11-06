@@ -1,0 +1,20 @@
+{
+  "experiment": "B3 arming conditions",
+  "chosen_on": "TUNE people only: S2,S4,S6,S9,S12,S13,S14,S15",
+  "loss_frac": 0.15,
+  "chest_moving_x": 5.0,
+  "hold_s": 3,
+  "wrist_still_x": null,
+  "ecg_veto": false,
+  "ecg_veto_rule": "a Verilog-detector beat at 30-180 bpm in the last 3 s",
+  "tune_result": {
+    "false_arms": 0,
+    "per_person_hour": 0.0
+  },
+  "baseline_tune": {
+    "false_arms": 0,
+    "per_person_hour": 0.0
+  },
+  "frozen_at": "2026-11-06T19:40:13",
+  "split_file_sha256": "5826ad8e74d4415218c5e3857bca676f9d880ab9aaae849c650bbfaca53650e6"
+}
