@@ -1,0 +1,4 @@
+NLMS (synthetic walking noise, last half of 5000 samples)
+SNR before: -18.33 dB   SNR after: 6.22 dB   gain: 24.54 dB
+PASS: gain above 3 dB
+tb/tb_nlms.sv:63: $finish called at 20011000 (1ps)

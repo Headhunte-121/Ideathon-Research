@@ -1,0 +1,4 @@
+SNR before            : -18.33 dB
+SNR float NLMS (exact):   4.78 dB
+SNR RTL (fixed point) :   6.22 dB
+RMS gap RTL vs float  : 0.0074  (signal RMS 0.0332)

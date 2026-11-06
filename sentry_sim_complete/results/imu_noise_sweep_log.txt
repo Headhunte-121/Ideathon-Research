@@ -1,0 +1,8 @@
+Chest-accelerometer noise sweep (arrest scenario S5; fixed still-threshold SCG_THR=5)
+noise 350 ug rms: === 7 passed, 0 failed; BLE packets lost in last run: 0 ===
+noise 500 ug rms: === 7 passed, 0 failed; BLE packets lost in last run: 0 ===
+noise 650 ug rms: === 2 passed, 5 failed; BLE packets lost in last run: 0 ===
+noise 800 ug rms: === 0 passed, 7 failed; BLE packets lost in last run: 0 ===
+noise 1000 ug rms: === 0 passed, 7 failed; BLE packets lost in last run: 0 ===
+noise 2000 ug rms: === 0 passed, 7 failed; BLE packets lost in last run: 0 ===
+noise 4000 ug rms: === 0 passed, 7 failed; BLE packets lost in last run: 0 ===

@@ -1,0 +1,35 @@
+=== END-TO-END virtual device test (raw 250 Hz sensor models -> full chain) ===
+E1 walking at 105 bpm after a resting baseline (rest-only gate vs no gate)
+  PASS  baseline learned from 32 resting beats
+   info: motion energy 3329, wrist pulse size 7562, chest energy 381, last HR 102 bpm
+  PASS  gated device: no check-in, no call while walking
+  PASS  ablation: ungated device DOES raise a false drift check-in when walking
+E2 resting heart rate drifts from 70 to 100 bpm
+  PASS  baseline learned from 32 resting beats
+  PASS  sustained resting drift gives a haptic check-in
+  PASS  drift alone never calls or sounds the siren
+E3 cardiac arrest at rest (heart stops)
+  PASS  baseline learned from 32 resting beats
+   timeline: arrest at t=290.0 s, armed at +3.0 s, call at +33.0 s
+  PASS  armed within 2 to 12 s of the heart stopping
+  PASS  call requested about 30 s after arming
+  PASS  siren on
+  PASS  CPR coach beating at 110 BPM
+E4 arrest detected, wearer cancels inside the window
+  PASS  baseline learned from 32 resting beats
+  PASS  armed
+  PASS  cancel stops the call
+E5 walking with the watch loose (wrist pulse unreadable)
+  PASS  baseline learned from 32 resting beats
+   info: chest energy 403 (threshold 40), wrist pulse size 653
+  PASS  heartbeat still seen in the chest (after noise cancelling): no false arming
+E6 resting with the watch off
+  PASS  baseline learned from 32 resting beats
+   info: chest energy 249
+  PASS  chest heartbeat vetoes a missing wrist pulse
+E7 chest electrode lifts off while alive
+  PASS  baseline learned from 32 resting beats
+  PASS  wrist pulse vetoes a lost ECG
+=== 20 passed, 0 failed ===
+ALL TESTS PASSED
+tb/tb_e2e.sv:181: $finish called at 1422115000 (1ps)

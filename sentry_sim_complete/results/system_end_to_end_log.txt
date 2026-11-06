@@ -1,0 +1,52 @@
+=== SYSTEM END-TO-END TEST (patient -> chips -> pod + band + BLE + phone) ===
+S1: normal resting, 3 minutes
+  PASS  S1 pod stays in MONITOR
+      dbg: hap=0 call=0 siren=0 dsent=0 dpk=0 dack=0 dseq=0 st=0
+  PASS  S1 no wrist buzz, no call, no siren
+  PASS  S1 heart rate near 70 bpm (from chest ECG)
+  PASS  S1 band telemetry is reaching the pod
+  PASS  S1 phone receives telemetry from pod and band
+  PASS  S1 breathing rate near 15 /min (from chest impedance)
+  PASS  S1 skin temperature near 33.4 C (334 tenths)
+  PASS  S1 rest drift baseline learned
+S2: walking at 105 bpm for 60 s
+  PASS  S2 walking: no arming, no call, no siren
+  PASS  S2 motion detected by gyro
+S3: wrist watch loose (no PPG) but the heart is fine, 60 s
+  PASS  S3 pulse-loss seen at the wrist
+  PASS  S3 chest still shows heartbeat -> NO arming
+S4: chest electrodes lifted off, 60 s
+  PASS  S4 wrist pulse healthy -> NO arming
+S5: cardiac arrest, nobody cancels
+  PASS  S5 arms after about 3 s of pulse loss + still chest
+  PASS  S5 wrist buzzes during countdown
+  PASS  S5 dispatch after the 30 s countdown
+  PASS  S5 siren starts
+  PASS  S5 phone acknowledged the dispatch
+  PASS  S5 call placed, GPS and SMS sent
+  PASS  S5 call within 45 s of arrest
+      timeline: armed +5 s, dispatch +35 s, siren +36 s, call +37 s
+S6: arrest-like pulse loss, user holds cancel for 2 s during countdown
+  PASS  S6 armed (countdown running)
+  PASS  S6 back to MONITOR after cancel
+  PASS  S6 no call, no siren
+S7: fall (4.5 g impact) then arrest at the same moment
+  PASS  S7 fall flag raised (impact then still)
+  PASS  S7 dispatch well before the 30 s countdown would finish
+  PASS  S7 call placed
+      timeline: armed +5 s, dispatch +5 s
+S8: arrest while the band link is down
+  PASS  S8 band marked stale
+  PASS  S8 pod falls back to chest-ECG pulse check and still dispatches
+  PASS  S8 band reports link lost
+S9: arrest with the phone switched off
+  PASS  S9 siren still sounds locally
+  PASS  S9 pod keeps retrying (several dispatch sends, none acknowledged)
+  PASS  S9 phone returns -> acknowledged and call placed
+S10: siren running, user cancels with 2 s hold
+  PASS  S10 siren on
+  PASS  S10 siren stops, pod back to MONITOR
+S11: sweating / stress, HR up to 100 bpm at rest, 60 s
+  PASS  S11 no call, no siren
+=== 35 passed, 0 failed; BLE packets lost in last run: 0 ===
+tb/tb_system_end_to_end.sv:205: $finish called at 3366445000 (1ps)
