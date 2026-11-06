@@ -1,0 +1,15 @@
+{
+  "experiment": "B4 rest-only drift",
+  "chosen_on": "TUNE people only: S2,S4,S6,S9,S12,S13,S14,S15",
+  "K": "4.5",
+  "K2X16": 324,
+  "LOG2N": 10,
+  "rest_rule": "chest motion <= 5x own sitting median",
+  "steps_tested": [
+    10,
+    15,
+    25
+  ],
+  "frozen_at": "2026-11-06T19:40:37",
+  "split_file_sha256": "5826ad8e74d4415218c5e3857bca676f9d880ab9aaae849c650bbfaca53650e6"
+}
