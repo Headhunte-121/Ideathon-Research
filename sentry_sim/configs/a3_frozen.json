@@ -1,0 +1,67 @@
+{
+  "experiment": "A3 PTB-XL MI vs NORM",
+  "chosen_on": "fold 9 (validation); trained on folds 1-8",
+  "models": {
+    "I|ST only": {
+      "C": 1.0,
+      "threshold": 0.4842915998296736,
+      "val_auc": 0.7755
+    },
+    "I|all five": {
+      "C": 0.01,
+      "threshold": 0.5740472692854317,
+      "val_auc": 0.8417
+    },
+    "I|heart rate only": {
+      "C": 0.01,
+      "threshold": 0.527501061755004,
+      "val_auc": 0.6261
+    },
+    "II|ST only": {
+      "C": 0.01,
+      "threshold": 0.5355906766871988,
+      "val_auc": 0.6675
+    },
+    "II|all five": {
+      "C": 0.01,
+      "threshold": 0.5111662714269393,
+      "val_auc": 0.8766
+    },
+    "II|heart rate only": {
+      "C": 0.01,
+      "threshold": 0.5309697546165799,
+      "val_auc": 0.626
+    },
+    "V2|ST only": {
+      "C": 0.01,
+      "threshold": 0.5181419332746747,
+      "val_auc": 0.6145
+    },
+    "V2|all five": {
+      "C": 0.1,
+      "threshold": 0.5569807233819714,
+      "val_auc": 0.7058
+    },
+    "V2|heart rate only": {
+      "C": 0.01,
+      "threshold": 0.530278382900357,
+      "val_auc": 0.6239
+    },
+    "V5|ST only": {
+      "C": 0.01,
+      "threshold": 0.5469549712767083,
+      "val_auc": 0.7018
+    },
+    "V5|all five": {
+      "C": 0.01,
+      "threshold": 0.566729059685814,
+      "val_auc": 0.8622
+    },
+    "V5|heart rate only": {
+      "C": 0.01,
+      "threshold": 0.5304708986984648,
+      "val_auc": 0.6214
+    }
+  },
+  "frozen_at": "2026-11-06T20:09:25"
+}
