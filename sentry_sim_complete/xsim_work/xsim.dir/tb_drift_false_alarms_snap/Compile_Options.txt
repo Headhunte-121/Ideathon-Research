@@ -1,0 +1,1 @@
+"work.tb_drift_false_alarms" -s "tb_drift_false_alarms_snap" --timescale "1ns/1ps" -debug "off" 

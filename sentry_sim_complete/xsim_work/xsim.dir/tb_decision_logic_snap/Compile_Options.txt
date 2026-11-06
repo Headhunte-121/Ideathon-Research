@@ -1,0 +1,1 @@
+"work.tb_decision_logic" -s "tb_decision_logic_snap" --timescale "1ns/1ps" -debug "off" 

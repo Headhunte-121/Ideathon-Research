@@ -1,0 +1,1 @@
+"work.tb_system_end_to_end" -s "sys_snap" --timescale "1ns/1ps" -debug "off" 

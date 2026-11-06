@@ -1,0 +1,1 @@
+"work.tb_signal_chain" -s "tb_signal_chain_snap" --timescale "1ns/1ps" -debug "off" 

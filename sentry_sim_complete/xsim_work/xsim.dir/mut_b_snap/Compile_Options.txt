@@ -1,0 +1,1 @@
+"mut_b.tb_system_end_to_end" -s "mut_b_snap" --timescale "1ns/1ps" -debug "off" 

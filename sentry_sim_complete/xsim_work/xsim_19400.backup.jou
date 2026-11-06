@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Nov  6 16:50:18 2026
+# Process ID         : 19400
+# Current directory  : C:/College/Ideathon/sentry_sim_complete/xsim_work
+# Command line       : xsim.exe -mode tcl -source {xsim.dir/tb_drift_false_alarms_snap/xsim_script.tcl}
+# Log file           : C:/College/Ideathon/sentry_sim_complete/xsim_work/xsim.log
+# Journal file       : C:/College/Ideathon/sentry_sim_complete/xsim_work\xsim.jou
+# Running On         : TufF1625
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13450HX
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 16763 MB
+# Swap memory        : 14047 MB
+# Total Virtual      : 30810 MB
+# Available Virtual  : 3637 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_drift_false_alarms_snap/xsim_script.tcl
+run -all

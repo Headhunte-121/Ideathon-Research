@@ -1,0 +1,1 @@
+"work.tb_noise_canceller" -s "tb_noise_canceller_snap" --timescale "1ns/1ps" -debug "off" 

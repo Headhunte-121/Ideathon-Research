@@ -1,0 +1,50 @@
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Fri Nov  6 16:50:29 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/tb_signal_chain_snap/xsim_script.tcl
+# xsim {tb_signal_chain_snap} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+=== END-TO-END virtual device test (raw 250 Hz sensor models -> full chain) ===
+E1 walking at 105 bpm after a resting baseline (rest-only gate vs no gate)
+  PASS  baseline learned from 32 resting beats
+   info: motion energy 3329, wrist pulse size 7562, chest energy 381, last HR 102 bpm
+  PASS  gated device: no check-in, no call while walking
+  PASS  ablation: ungated device DOES raise a false drift check-in when walking
+E2 resting heart rate drifts from 70 to 100 bpm
+  PASS  baseline learned from 32 resting beats
+  PASS  sustained resting drift gives a haptic check-in
+  PASS  drift alone never calls or sounds the siren
+E3 cardiac arrest at rest (heart stops)
+  PASS  baseline learned from 32 resting beats
+   timeline: arrest at t=290.0 s, armed at +3.0 s, call at +33.0 s
+  PASS  armed within 2 to 12 s of the heart stopping
+  PASS  call requested about 30 s after arming
+  PASS  siren on
+  PASS  CPR coach beating at 110 BPM
+E4 arrest detected, wearer cancels inside the window
+  PASS  baseline learned from 32 resting beats
+  PASS  armed
+  PASS  cancel stops the call
+E5 walking with the watch loose (wrist pulse unreadable)
+  PASS  baseline learned from 32 resting beats
+   info: chest energy 403 (threshold 40), wrist pulse size 653
+  PASS  heartbeat still seen in the chest (after noise cancelling): no false arming
+E6 resting with the watch off
+  PASS  baseline learned from 32 resting beats
+   info: chest energy 249
+  PASS  chest heartbeat vetoes a missing wrist pulse
+E7 chest electrode lifts off while alive
+  PASS  baseline learned from 32 resting beats
+  PASS  wrist pulse vetoes a lost ECG
+=== 20 passed, 0 failed ===
+ALL TESTS PASSED
+$finish called at time : 1422115 ns : File "C:/College/Ideathon/sentry_sim_complete/tb/tb_signal_chain.sv" Line 181
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Nov  6 16:50:34 2026...
