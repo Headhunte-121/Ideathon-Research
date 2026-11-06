@@ -1,0 +1,566 @@
+{
+ "sddb/30": {
+  "dataset": "sddb",
+  "record": "30",
+  "fs": 250,
+  "dur_s": 88397.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 28473,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/31": {
+  "dataset": "sddb",
+  "record": "31",
+  "fs": 250,
+  "dur_s": 50320.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 49344,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/32": {
+  "dataset": "sddb",
+  "record": "32",
+  "fs": 250,
+  "dur_s": 87600.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 60318,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/33": {
+  "dataset": "sddb",
+  "record": "33",
+  "fs": 250,
+  "dur_s": 88380.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 17179,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/34": {
+  "dataset": "sddb",
+  "record": "34",
+  "fs": 250,
+  "dur_s": 25520.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 23744,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/35": {
+  "dataset": "sddb",
+  "record": "35",
+  "fs": 250,
+  "dur_s": 89520.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 88496,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/36": {
+  "dataset": "sddb",
+  "record": "36",
+  "fs": 250,
+  "dur_s": 73280.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 68341,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/37": {
+  "dataset": "sddb",
+  "record": "37",
+  "fs": 250,
+  "dur_s": 90480.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 5473,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/38": {
+  "dataset": "sddb",
+  "record": "38",
+  "fs": 250,
+  "dur_s": 65905.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 28914,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/39": {
+  "dataset": "sddb",
+  "record": "39",
+  "fs": 250,
+  "dur_s": 20820.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 16671,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/40": {
+  "dataset": "sddb",
+  "record": "40",
+  "fs": 250,
+  "dur_s": 89580.0,
+  "episodes": []
+ },
+ "sddb/41": {
+  "dataset": "sddb",
+  "record": "41",
+  "fs": 250,
+  "dur_s": 14160.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 10764,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/42": {
+  "dataset": "sddb",
+  "record": "42",
+  "fs": 250,
+  "dur_s": 90490.0,
+  "episodes": []
+ },
+ "sddb/43": {
+  "dataset": "sddb",
+  "record": "43",
+  "fs": 250,
+  "dur_s": 83270.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 56231,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/44": {
+  "dataset": "sddb",
+  "record": "44",
+  "fs": 250,
+  "dur_s": 84000.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 70725,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/45": {
+  "dataset": "sddb",
+  "record": "45",
+  "fs": 250,
+  "dur_s": 86960.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 65357,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/46": {
+  "dataset": "sddb",
+  "record": "46",
+  "fs": 250,
+  "dur_s": 15310.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 13307,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/47": {
+  "dataset": "sddb",
+  "record": "47",
+  "fs": 250,
+  "dur_s": 84950.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 22381,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/48": {
+  "dataset": "sddb",
+  "record": "48",
+  "fs": 250,
+  "dur_s": 88575.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 8980,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/49": {
+  "dataset": "sddb",
+  "record": "49",
+  "fs": 250,
+  "dur_s": 89523.828,
+  "episodes": []
+ },
+ "sddb/50": {
+  "dataset": "sddb",
+  "record": "50",
+  "fs": 250,
+  "dur_s": 83258.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 42343,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/51": {
+  "dataset": "sddb",
+  "record": "51",
+  "fs": 250,
+  "dur_s": 90510.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 82703,
+    "end_s": null
+   }
+  ]
+ },
+ "sddb/52": {
+  "dataset": "sddb",
+  "record": "52",
+  "fs": 250,
+  "dur_s": 27065.0,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 9160,
+    "end_s": null
+   }
+  ]
+ },
+ "cudb/cu01": {
+  "dataset": "cudb",
+  "record": "cu01",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 214.164,
+    "end_s": 508.928
+   }
+  ]
+ },
+ "cudb/cu02": {
+  "dataset": "cudb",
+  "record": "cu02",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": [
+   {
+    "kind": "VT",
+    "start_s": 192.408,
+    "end_s": 193.972
+   },
+   {
+    "kind": "VT",
+    "start_s": 196.908,
+    "end_s": 206.34
+   },
+   {
+    "kind": "VT",
+    "start_s": 488.708,
+    "end_s": 491.816
+   },
+   {
+    "kind": "VT",
+    "start_s": 492.436,
+    "end_s": 495.548
+   },
+   {
+    "kind": "VT",
+    "start_s": 496.308,
+    "end_s": 508.928
+   }
+  ]
+ },
+ "cudb/cu03": {
+  "dataset": "cudb",
+  "record": "cu03",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": [
+   {
+    "kind": "VF",
+    "start_s": 465.72,
+    "end_s": 508.928
+   }
+  ]
+ },
+ "cudb/cu04": {
+  "dataset": "cudb",
+  "record": "cu04",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu05": {
+  "dataset": "cudb",
+  "record": "cu05",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu06": {
+  "dataset": "cudb",
+  "record": "cu06",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu07": {
+  "dataset": "cudb",
+  "record": "cu07",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu08": {
+  "dataset": "cudb",
+  "record": "cu08",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu09": {
+  "dataset": "cudb",
+  "record": "cu09",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu10": {
+  "dataset": "cudb",
+  "record": "cu10",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu11": {
+  "dataset": "cudb",
+  "record": "cu11",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu12": {
+  "dataset": "cudb",
+  "record": "cu12",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu13": {
+  "dataset": "cudb",
+  "record": "cu13",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu14": {
+  "dataset": "cudb",
+  "record": "cu14",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu15": {
+  "dataset": "cudb",
+  "record": "cu15",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu16": {
+  "dataset": "cudb",
+  "record": "cu16",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu17": {
+  "dataset": "cudb",
+  "record": "cu17",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu18": {
+  "dataset": "cudb",
+  "record": "cu18",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu19": {
+  "dataset": "cudb",
+  "record": "cu19",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu20": {
+  "dataset": "cudb",
+  "record": "cu20",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu21": {
+  "dataset": "cudb",
+  "record": "cu21",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu22": {
+  "dataset": "cudb",
+  "record": "cu22",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu23": {
+  "dataset": "cudb",
+  "record": "cu23",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu24": {
+  "dataset": "cudb",
+  "record": "cu24",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu25": {
+  "dataset": "cudb",
+  "record": "cu25",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu26": {
+  "dataset": "cudb",
+  "record": "cu26",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu27": {
+  "dataset": "cudb",
+  "record": "cu27",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu28": {
+  "dataset": "cudb",
+  "record": "cu28",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu29": {
+  "dataset": "cudb",
+  "record": "cu29",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu30": {
+  "dataset": "cudb",
+  "record": "cu30",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu31": {
+  "dataset": "cudb",
+  "record": "cu31",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu32": {
+  "dataset": "cudb",
+  "record": "cu32",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu33": {
+  "dataset": "cudb",
+  "record": "cu33",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu34": {
+  "dataset": "cudb",
+  "record": "cu34",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ },
+ "cudb/cu35": {
+  "dataset": "cudb",
+  "record": "cu35",
+  "fs": 250,
+  "dur_s": 508.928,
+  "episodes": []
+ }
+}

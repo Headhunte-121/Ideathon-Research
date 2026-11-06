@@ -1,0 +1,25 @@
+{
+  "experiment": "A4 arrest ECG logic",
+  "chosen_on": "TUNE records only (11 SDDB + 18 CUDB)",
+  "irregularity_cv_threshold": 2.0,
+  "low_rate_rule": "off",
+  "any_setting_met_1_per_hour": true,
+  "rate_limits_bpm": [
+    30,
+    180
+  ],
+  "rate_window_s": 5,
+  "irr_window_beats": 8,
+  "pod_nobeat_s": 6,
+  "selection_rule": "<=1 false flag/h on tune pre-onset sinus time, then most tune onsets flagged within 60 s",
+  "tune_row": {
+    "low_rate_rule": "off",
+    "c": 2.0,
+    "tune_onsets": 10,
+    "onsets_flagged_within_60s_RATE_or_IRR": 1,
+    "false_RATE_or_IRR_per_h": 0.49,
+    "false_POD_per_h": 5.32
+  },
+  "frozen_at": "2026-11-06T19:55:26",
+  "split_file_sha256": "892879f9525610d88dc2e9651fa985581eba354a3f21199da7bf6ce5d0ed98e3"
+}
