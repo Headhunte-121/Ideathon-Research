@@ -9,6 +9,7 @@
 > **Related Architecture Documents**:
 > * 📄 [Master Fixed Realities vs. Flexible Choices](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md)
 > * 📄 [Dual-Node Modular 2-in-1 Architecture Blueprint](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md)
+> * 📊 [System Decision Trees & Itemized Cost Models](file:///c:/College/Ideathon/Product_Design/System_Decision_Tree_and_Cost_Models.md)
 > * 📄 [Asmita Two-Node Proposal Archive](file:///c:/College/Ideathon/Product_Design/Asmita_Two_Node_PPG_IMU_Proposal.md)
 > * 📄 [Official Ideathon Abstract](file:///c:/College/Ideathon/Ideathon_Poster_and_Pitch/Official_Competition_Abstract.md)
 
@@ -21,8 +22,8 @@
                                       LOCKED ARCHITECTURAL FOUNDATION
 ===================================================================================================================
 
-  [ DECISION 1: FORM FACTOR ] ────► Option C: The Modular "2-in-1" Sentry Pod with On-Contact Dry ECG
-                                    (Mode 1 Sentry on breastbone via soft cord + Mode 2 Clothing Clip)
+  [ DECISION 1: FORM FACTOR ] ────► Option C: The Modular Universal Sentry Pod (Clip + Glue-Free Cord + Optional Adhesive)
+                                    (Tri-Modular Docking: Casual Clothing Clip + Soft Sentry Cord + Optional Skin-Adhesive Dock)
 
   [ DECISION 2: SENSOR BOM ]  ────► ST LSM6DSOX (Chest IMU) + Knowles MEMS Mic (PCG)
                                     + ADI MAX86141 (Wrist PPG) + Palmar GSR (Cold-Sweat Diaphoresis)
@@ -59,18 +60,20 @@
 ---
 
 ### 🌟 DECISION 1: Form Factor & Transduction Mode
-* **Locked Choice**: **Option C — The Modular "2-in-1" Sentry Pod with Integrated On-Contact Dry ECG**.
+* **Locked Choice**: **Option C — The Modular Universal Sentry Pod with Tri-Modular Docking (Clip + Soft Cord + Optional Skin Adhesive)**.
 * **Detailed Specification**:
-  * **Dual-Mode Coupling**:
-    * **Mode 1 (Clinical Sentry Mode — Recovery & Sleep)**:  
-      The 38 mm contoured pod rests flush against the lower sternal breastbone (4th intercostal space) held by an adjustable soft neck cord (0.8 N preload) or inner undershirt pocket. Two dry 316L surgical stainless steel back-plate electrodes capture continuous precordial ECG without wet glue, synchronized with mechanical Seismocardiography (SCG).
-    * **Mode 2 (Casual Mode — Active Daytime & Errands)**:  
-      The pod magnetically unclips and snaps onto an outer shirt collar, lapel, or pocket. An integrated hardware Lead-Off circuit automatically powers down the ECG front-end to conserve battery, while the IMU tracks chest-wall breathing and fall dynamics through fabric. A front bezel contact enables **30-second on-demand finger-touch spot-check ECG**.
+  * **Tri-Modular Universal Docking**:
+    * **Mode 1A (Direct Skin Adhesive Dock — For Users Comfortable with Adhesives)**:  
+      For active patients or those preferring direct skin adhesion, the pod magnetically snaps into a low-profile, hypoallergenic medical adhesive ring on the lower sternum. This provides maximum skin coupling for intense daytime movement and exercise without any cords.
+    * **Mode 1B (Glue-Free Soft Sentry Cord — For Elderly & Fragile Skin)**:  
+      For patients with sensitive skin, eczema, or elderly patients vulnerable to adhesive skin tears (MARSI), the pod rests flush against the lower sternal breastbone held by an adjustable soft neck cord (0.8 N preload) or undershirt cradle. Two dry 316L surgical stainless steel back-plate electrodes capture continuous precordial ECG without any glue, synchronized with mechanical Seismocardiography (SCG).
+    * **Mode 2 (Casual Clothing Clip Mode — Active Daytime & Errands)**:  
+      The pod unclips and snaps onto an outer shirt collar, lapel, or chest pocket. An integrated hardware Lead-Off circuit automatically powers down the continuous ECG front-end to conserve battery, while the IMU tracks chest-wall breathing and fall dynamics through fabric. A front bezel contact enables **30-second on-demand finger-touch spot-check ECG**.
 * **Clinical Breakthrough**:
   * Calculates the **Pre-Ejection Period (PEP = $t_{\text{AO}} - t_{\text{Q}}$)**: The time delay between the electrical spark (ECG Q-wave) and mechanical aortic valve opening (SCG AO-peak). Captures heart muscle pumping delays within minutes of coronary occlusion.
-* **Why This Won**: Eliminates 100% of adhesive skin tears (MARSI-free) and bypasses the Day-5 hydrogel desiccation wall, while preserving medical-grade electrical ECG and mechanical contractility tracking.
+* **Why This Won**: Gives patients and physicians 100% personalized flexibility: elderly patients avoid skin tears via the glue-free cord, active patients enjoy rock-solid skin-adhesive docking, and casual daytime users enjoy the lightweight clothing clip.
 * **30-Second Judge Pitch**:
-  > *"Judges, loose clothing clips cannot feel the heart's microscopic 10 milli-g pumping recoil, while sticky hospital patches tear elderly skin. We engineered a **modular dual-dock design**: during high-risk recovery and sleep, our pod rests flush against the breastbone via an adhesive-free soft cord to capture continuous on-contact dry ECG and mechanical SCG. When out running errands, it magnetically clips to clothing as an activity and fall monitor with on-demand finger spot-check ECG."*
+  > *"Judges, one wear style does not fit all cardiac patients. We engineered a **tri-modular universal docking pod**: patients comfortable with adhesives can use our direct skin-adhesive dock for maximum stability during exercise; elderly patients vulnerable to skin tears can switch to our glue-free soft neck cord with dry stainless steel ECG contacts; and casual users can magnetically clip it to their clothing with a front bezel for 30-second on-demand finger ECG spot checks."*
 
 ---
 

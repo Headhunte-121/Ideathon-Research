@@ -1,0 +1,36 @@
+=== Sentry virtual-device test (1 s = 1000 clocks) ===
+T1 normal heart rate, no false check-in
+  PASS  baseline learned after 64 beats
+  PASS  200 normal beats: no drift, no check-in
+T2 drift gives check-in only
+  PASS  sustained +25 bpm raises drift flag and haptic check-in
+  PASS  no call or siren from drift alone
+  PASS  acknowledge returns to monitoring
+T3 pulse loss with still chest dispatches after 30 s
+  PASS  armed after about 3 s of pulse loss + still chest
+  PASS  call requested about 30 s after arming
+  PASS  siren on
+  PASS  CPR beat toggles about 7 times in 2 s (110 BPM)
+  PASS  acknowledge stops siren
+T4 cancel inside the window
+  PASS  armed
+  PASS  cancel returns to monitoring
+  PASS  no call after cancel (re-arm hold)
+T5 moving chest with weak wrist signal does not arm
+  PASS  never armed
+T6 phone out of range
+  PASS  siren on, call_req stays low
+  PASS  CPR coach still beating
+T7 short dropout ignored
+  PASS  2 s dropout never arms
+T8 pulse returns mid-countdown
+  PASS  armed
+  PASS  returns to monitoring, no call
+T9 pulse loss during a check-in still arms
+  PASS  in check-in
+  PASS  arming overrides check-in
+T10 still chest but healthy pulse does not arm
+  PASS  never armed when the pulse is present
+=== 22 passed, 0 failed ===
+ALL TESTS PASSED
+tb/tb_system.sv:172: $finish called at 469527000 (1ps)

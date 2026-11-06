@@ -44,7 +44,9 @@ To keep our massive research easily understandable, the repository is organized 
 ## 🎯 Quick Navigation & Key Deliverables
 
 ### 💡 Product Architecture & Design (The Device)
+* 📖 **Complete Master Conversation & Decisions Archive**: [`Product_Design/COMPLETE_MASTER_CONVERSATION_AND_DECISIONS_ARCHIVE.md`](file:///c:/College/Ideathon/Product_Design/COMPLETE_MASTER_CONVERSATION_AND_DECISIONS_ARCHIVE.md) — The comprehensive record of all discussions, decisions, circuit schematics, 8 mathematical proofs, and health economics.
 * 🔒 **Official Team Decisions Log**: [`Product_Design/OFFICIAL_TEAM_DECISIONS_LOG.md`](file:///c:/College/Ideathon/Product_Design/OFFICIAL_TEAM_DECISIONS_LOG.md) — The single master ledger recording all 11 officially locked engineering, clinical, UX, and economic decisions.
+* 📊 **System Decision Trees & Itemized Cost Models**: [`Product_Design/System_Decision_Tree_and_Cost_Models.md`](file:///c:/College/Ideathon/Product_Design/System_Decision_Tree_and_Cost_Models.md) — Runtime firmware state machine, Mermaid flowcharts, distributor BOMs (Robu/Evelta/Mouser), and 6x hospital reusability ROI models.
 * 🌟 **Master Product Knowledge Hub**: [`MASTER_PRODUCT_AND_RESEARCH_HUB.md`](file:///c:/College/Ideathon/MASTER_PRODUCT_AND_RESEARCH_HUB.md) — What the device is, what we've proven, and where every fact references back to.
 * 📄 **Dual-Node Modular Architecture Blueprint**: [`Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Dual_Node_Pendant_and_Wristband_Architecture.md) — Detailed specifications for the Sternal Sentry Pod and Companion PulseBand.
 * **Locked Science vs. Open Team Choices**: [`Product_Design/Master_Fixed_vs_Flexible_Architecture.md`](file:///c:/College/Ideathon/Product_Design/Master_Fixed_vs_Flexible_Architecture.md) — Separates non-negotiable biophysics from open team design choices.

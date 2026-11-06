@@ -23,7 +23,7 @@
     ─────────────────────────────────────────────           ───────────────────────────────────────
      Location: Lower Sternal Breastbone / Collar             Location: Non-Dominant Dorsal Wrist & Palm
      Form: 38 mm Modular Tech Pod (Cord / Clip)              Form: Minimalist Smart Bracelet / Strap
-     Mounting: 100% GLUE-FREE (Tension Cord / Clip)          Mounting: Standard Breathable Wrist Strap
+     Mounting: Tri-Modular (Cord / Clip / Optional Adhesive)          Mounting: Standard Breathable Wrist Strap
 
      ACTIVE SENSORS:                                         ACTIVE SENSORS:
      • Integrated On-Contact Dry ECG (316L Stainless)        • Dual-Wavelength Optical PPG (MAX86141)
@@ -150,3 +150,4 @@ Our dual-node cross-verification provides a complete defense:
 ### Question 3: *"How does the pendant stay on the chest if there is zero glue?"*
 * **Knockout Answer**:
   > *"We engineered an adjustable soft-elastic tension cord that holds the 18-gram pendant gently against the sternal bone with just 0.8 Newtons of pre-load tension—identical to how sports sunglasses or compression athletic wear stay in place. For active wearers, it also slides directly into the inner sternal pocket of standard compression undershirts. Zero adhesives, zero skin irritation, and 100% daily compliance."*
+
