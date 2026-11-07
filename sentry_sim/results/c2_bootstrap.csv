@@ -1,0 +1,12 @@
+quantity,point,lo,hi,note
+R0 sens@1%FPR (curve),0.12415106027755324,0.061798176264566684,0.2841288845831395,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+R1 sens@1%FPR (curve),0.11964856350711259,0.08116827456483017,0.2044482849574525,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M1 sens@1%FPR (curve),0.23204478322291136,0.16232221970033459,0.4142673423786366,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 (mean of 3 seeds) sens@1%FPR (curve),0.08986107228924765,0.06946516746228122,0.22272345869031435,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 seed 0 sens@1%FPR (curve),0.10901934713796829,0.07396978761946423,0.2489582229880956,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 seed 1 sens@1%FPR (curve),0.09083560598620544,0.06481114025377299,0.23479310119327748,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 seed 2 sens@1%FPR (curve),0.0697282637435692,0.048408891553623296,0.21847961897203266,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 - better rule (R0),-0.034289987988305584,-0.16110879911175818,0.08887588647218927,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 - R0,-0.034289987988305584,-0.16110879911175818,0.08887588647218927,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 - R1,-0.029787491217864934,-0.07927739371132748,0.07315482314871523,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"
+M2 - M1,-0.14218371093366372,-0.26073461552429167,-0.04767050077340886,"subject bootstrap 2000 resamples, per-fold 1% FPR thresholds from resampled negatives, pooled over 5 folds"

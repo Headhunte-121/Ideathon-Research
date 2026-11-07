@@ -1,0 +1,43 @@
+method,group,value,positive_beats,beat_sensitivity,note
+R0,heart-rate band,hr<60,12769,0.1373639282637638,
+R0,heart-rate band,hr 60-80,30778,0.06845798947300019,
+R0,heart-rate band,hr 80-100,48123,0.15437524676350187,
+R0,heart-rate band,hr>=100,40701,0.06631286700572467,
+R0,lead (channel 0),D3,695,0.0,
+R0,lead (channel 0),MLIII,20118,0.06044338403419823,
+R0,lead (channel 0),V1,4556,0.11347673397717296,
+R0,lead (channel 0),V2,18824,0.16372715682107947,
+R0,lead (channel 0),V3,1311,0.034324942791762014,
+R0,lead (channel 0),V4,14155,0.005227834687389615,
+R0,lead (channel 0),V5,72712,0.12453240180437893,
+R0,5 lowest-sensitivity subjects,s00,709,0.0,
+R0,5 lowest-sensitivity subjects,s03,1277,0.0,
+R0,5 lowest-sensitivity subjects,s70,76,0.0,
+R0,5 lowest-sensitivity subjects,s10,529,0.0,
+R0,5 lowest-sensitivity subjects,s37,630,0.0,
+R0,episode ST sign,ST depression (mean ST<0),203,0.059113300492610835,episode-level
+R0,episode ST sign,ST elevation (mean ST>0),161,0.049689440993788817,episode-level
+R0,episode duration,shortest third (0.5-1.8 min),122,0.040983606557377046,episode-level
+R0,episode duration,middle third (1.9-5.0 min),121,0.024793388429752067,episode-level
+R0,episode duration,longest third (5.0-88.0 min),121,0.09917355371900827,episode-level
+M2_s0,heart-rate band,hr<60,12769,0.02490406453128671,
+M2_s0,heart-rate band,hr 60-80,30778,0.0319708882968354,
+M2_s0,heart-rate band,hr 80-100,48123,0.04390831826777217,
+M2_s0,heart-rate band,hr>=100,40701,0.1183754698901747,
+M2_s0,lead (channel 0),D3,695,0.0028776978417266188,
+M2_s0,lead (channel 0),MLIII,20118,0.023262749776319713,
+M2_s0,lead (channel 0),V1,4556,0.16593503072870938,
+M2_s0,lead (channel 0),V2,18824,0.07968550786230344,
+M2_s0,lead (channel 0),V3,1311,0.07932875667429443,
+M2_s0,lead (channel 0),V4,14155,0.031084422465559872,
+M2_s0,lead (channel 0),V5,72712,0.06825558367257124,
+M2_s0,5 lowest-sensitivity subjects,s00,709,0.0,
+M2_s0,5 lowest-sensitivity subjects,s10,529,0.0,
+M2_s0,5 lowest-sensitivity subjects,s37,630,0.0,
+M2_s0,5 lowest-sensitivity subjects,s46,981,0.0,
+M2_s0,5 lowest-sensitivity subjects,s48,221,0.0,
+M2_s0,episode ST sign,ST depression (mean ST<0),203,0.054187192118226604,episode-level
+M2_s0,episode ST sign,ST elevation (mean ST>0),161,0.08074534161490683,episode-level
+M2_s0,episode duration,shortest third (0.5-1.8 min),122,0.02459016393442623,episode-level
+M2_s0,episode duration,middle third (1.9-5.0 min),121,0.05785123966942149,episode-level
+M2_s0,episode duration,longest third (5.0-88.0 min),121,0.11570247933884298,episode-level
