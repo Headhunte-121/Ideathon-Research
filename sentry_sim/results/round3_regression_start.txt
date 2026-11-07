@@ -1,0 +1,61 @@
+=== compiling ===
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/alarm_state_machine.sv" into library work
+INFO: [VRFC 10-311] analyzing module alarm_state_machine
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/band_node.sv" into library work
+INFO: [VRFC 10-311] analyzing module band_node
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/baseline_drift_detector.sv" into library work
+INFO: [VRFC 10-311] analyzing module baseline_drift_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/decision_chain_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module decision_chain_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/ecg_beat_detector.sv" into library work
+INFO: [VRFC 10-311] analyzing module ecg_beat_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/motion_noise_canceller.sv" into library work
+INFO: [VRFC 10-311] analyzing module motion_noise_canceller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/pod_alarm_fsm.sv" into library work
+INFO: [VRFC 10-311] analyzing module pod_alarm_fsm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/pod_node.sv" into library work
+INFO: [VRFC 10-311] analyzing module pod_node
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/sentry_device_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module sentry_device_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/signal_chain_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module signal_chain_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/rtl/signal_summary_1s.sv" into library work
+INFO: [VRFC 10-311] analyzing module signal_summary_1s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/model/afe_chip_models.sv" into library work
+INFO: [VRFC 10-311] analyzing module afe_ads1292r_model
+INFO: [VRFC 10-311] analyzing module afe_lsm6dsox_model
+INFO: [VRFC 10-311] analyzing module afe_max86141_model
+INFO: [VRFC 10-311] analyzing module afe_gsr_adc_model
+INFO: [VRFC 10-311] analyzing module afe_tmp117_model
+INFO: [VRFC 10-311] analyzing module afe_sph0645_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/model/ble_link_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module ble_link_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/model/body_physiology_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module body_physiology_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/model/phone_app_model.sv" into library work
+INFO: [VRFC 10-311] analyzing module phone_app_model
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_decision_logic.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_decision_logic
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_drift_false_alarms.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_drift_false_alarms
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_noise_canceller.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_noise_canceller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_real_ecg_beats.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_real_ecg_beats
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_signal_chain.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_signal_chain
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/College/Ideathon/sentry_sim/tb/tb_system_end_to_end.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_system_end_to_end
+=== running tb_decision_logic ===
+=== 22 passed, 0 failed ===
+=== running tb_drift_false_alarms ===
+=== running tb_noise_canceller ===
+=== running tb_signal_chain ===
+=== 20 passed, 0 failed ===
+=== running tb_system_end_to_end (takes a few minutes) ===
+=== 35 passed, 0 failed; BLE packets lost in last run: 0 ===
+=== mutation A (must FAIL many checks) ===
+=== 19 passed, 16 failed; BLE packets lost in last run: 0 ===
+=== mutation B (must FAIL at least one check) ===
+=== 34 passed, 1 failed; BLE packets lost in last run: 0 ===
+Done. Full logs are in the results folder (vivado_*.txt).
