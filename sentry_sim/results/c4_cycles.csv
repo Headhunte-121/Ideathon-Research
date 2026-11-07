@@ -1,0 +1,2 @@
+vectors,min,median,max,calculated_MACs,overhead_cycles,overhead_pct,note
+2064,44962,44962.0,44962,43144,1818,4.2137956610420915,"compute cycles = clocks after the 75-sample load until done; 1 MAC per cycle (zero-padding taps counted as MAC cycles); overhead = 1 init cycle/output element (1,512) + 304 GAP adds + 2 fc init + 0 other; Simulated"

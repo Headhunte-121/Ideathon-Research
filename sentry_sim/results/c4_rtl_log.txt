@@ -1,0 +1,49 @@
+# edge_cnn_beat vs Python integer model, xsim 2025.2, 12 parallel chunks, wall 23 s
+
+##### chunk m0
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m1
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m2
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m3
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m4
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m5
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m6
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m7
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m8
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m9
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m10
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
+
+##### chunk m11
+compute_cycles min 44962 max 44962
+=== 172 passed, 0 failed ===
