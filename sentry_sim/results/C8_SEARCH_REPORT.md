@@ -80,3 +80,13 @@ Nothing about early warning, lead time or ischemia: labels are ST episodes marke
 
 ## Allowed poster wording
 Only if the verdict line says adds value: "A search over about 1600 model variants, selected on validation patients only, reached sensitivity X at a 1 % false-alarm rate on unseen patients (Replayed, public EDB data; feasibility, not detection)." Otherwise: "A search over about 1600 model variants did not beat a simple personal-baseline ST rule on unseen patients (Replayed)."
+
+---
+
+## Interpretation (added after reading the numbers; the verdict line above is the literal pre-written rule only)
+
+1. **The rule is met, but read it carefully.** Nested pick minus R1 = +0.152 (95 % range +0.065 to +0.318). But the simple six-number logistic model M1 (no search at all) already scored 0.232 (0.162-0.414) against the nested pick's 0.272 (0.203-0.464): the ranges overlap almost completely. The search did not clearly beat a simple feature model; both beat R1.
+2. **The picks are not one model.** Each outer fold chose a different configuration (small MLPs and boosted trees on window residuals with 5-30 beat smoothing). The fold-0 pick reached AUROC 0.52 and sensitivity 0.000 on its test patients; folds 2 and 3 did very well (0.88, 0.93). Mean test AUROC of the picks is 0.767, **below** the hand-designed calibrated CNN A3 (0.79-0.81, C7) and only a little above R1 (0.726).
+3. **Winner's curse is large.** Best validation AUROC 0.93 (tabular) / 0.90 (CNN); the same configurations scored 0.77 / 0.79 on their test patients; the average configuration scored 0.71 / 0.78. Validation rank predicts test rank only moderately for AUROC (Spearman 0.63 tabular, 0.47 CNN) and barely for sensitivity at 1 % FPR (0.29, 0.07). Anyone quoting the validation number would overstate performance by about 0.15 AUROC.
+4. **What the search did teach us (factor table, `results/c8_factor_breakdown.csv`, mean over configurations):** per-person calibration is what matters. CNN test AUROC: raw window 0.64 vs calibrated residual windows 0.77-0.83; tabular: raw window 0.59 vs residual 0.75. Longer smoothing (15-30 beats) and a longer feature calibration span (1800 s) help; plain logistic regression on windows is poor (0.59); boosted trees and small MLPs are similar (0.75).
+3. **Status of the claim:** a hypothesis. The same 79 EDB subjects were test folds in C2, C7 and here; labels are circular; no fresh ST-labelled data could be downloaded. Safe wording: "searching about 1,600 model variants, per-person calibration was the factor that mattered most; the best validation-picked models scored well on some patients and failed on others (Replayed, public EDB data)." Do not quote 0.272 as a performance figure without the winner's-curse caveat.
