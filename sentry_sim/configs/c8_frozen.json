@@ -1,0 +1,19 @@
+{
+ "name": "c8_frozen", "written": "2026-11-07, before any C8 search result was looked at",
+ "purpose": "Large random search over per-person-calibration / model / smoothing choices on EDB, with a nested protocol so the winner's curse can be measured.",
+ "protocol": {
+  "folds": "same outer folds as C1; outer fold k: train = three folds, inner validation = fold (k+1)%5, test = fold k",
+  "selection": "for each outer fold SEPARATELY, the configuration with the highest inner-validation AUROC is picked. Selection code never reads test columns. Test metrics of ALL configurations are logged only to measure how well validation rank predicts test rank (winner's curse).",
+  "secondary_selection": "highest inner-validation sensitivity at 1% FPR (reported, not primary)",
+  "final_claim_rule": "Search adds value only if the lower end of the 95% subject-bootstrap range of (nested-selected pooled test sensitivity at 1% FPR minus R1 = 0.120 from C2) is above 0. AUROC of the nested picks is descriptive.",
+  "config_prefix_rule": "configs are random draws in one seeded order; the analysis uses the first N configs for which all 5 folds finished, N fixed by wall-clock time, not by looking at results",
+  "bootstrap": {"unit": "subject", "resamples": 2000, "seed": 7}
+ },
+ "search_space": {
+  "feature_set": ["H", "HC", "HCz", "H+HC", "W", "WR", "WR+HC", "H+WR", "HCz+WR"],
+  "span_features_s": [120, 300, 600, 1800], "span_window_s": [300, 600, 1800],
+  "model": {"lr": {"C": [0.01, 0.1, 1, 10]}, "hgb": {"max_depth": [2, 3, 4, 6], "learning_rate": [0.03, 0.1, 0.3], "max_iter": [50, 100, 200], "l2": [0, 1, 10]}, "mlp": {"hidden": [[16], [32, 16], [64, 32]], "alpha": [0.0001, 0.001, 0.01]}},
+  "smooth_beats": [1, 5, 15, 30], "train_per_class": [5000, 20000], "seed_rule": "config seed = 8000 + config id"
+ },
+ "calibration": "causal running median / MAD over previous span seconds of the person's own eligible beats (py/c8_prep.py), no labels"
+}
