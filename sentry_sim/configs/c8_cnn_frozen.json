@@ -1,0 +1,10 @@
+{
+ "name": "c8_cnn_frozen", "written": "2026-11-07, before any C8 CNN search result was looked at",
+ "protocol": "identical to c8_frozen.json (per-outer-fold selection by inner-validation AUROC only; test metrics logged for winner's-curse measurement; same final claim rule vs R1). Combined pick = max inner-validation AUROC over tabular + CNN configs together.",
+ "device": "NVIDIA GeForce RTX 5050 Laptop GPU, PyTorch 2.11.0+cu128 installed in .torch_cuda (the CPU torch 2.14.1 used for all earlier frozen results is untouched)",
+ "search_space": {
+  "input": ["W", "WR300", "WR600", "WR1800", "W+WR600"], "arch": {"channels": [[4, 8, 8], [8, 16, 16], [16, 32, 32], [8, 16, 32], [16, 16]], "kernels": [[7, 5, 3], [5, 5, 3], [9, 5, 3], [7, 3, 3]], "strides": [[1, 2, 2], [2, 2, 2], [1, 1, 2]]},
+  "lr": [0.0003, 0.001, 0.003], "weight_decay": [0.0, 0.0001, 0.001], "dropout": [0.0, 0.2], "batch": [512, 2048], "epochs_max": 12,
+  "per_epoch_train_per_class": [20000, 60000], "augment": ["none", "amp+shift"], "smooth_beats": [1, 5, 15, 30], "seed_rule": "config seed = 9000 + id", "model_selection_within_job": "best epoch by inner-validation AUROC"
+ }
+}
