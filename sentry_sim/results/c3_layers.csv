@@ -1,0 +1,6 @@
+layer,out_channels,out_length,macs,weights,biases,int8_weight_bytes,int32_bias_bytes,requant_const_bytes,out_activation_bytes,label,peak_pingpong_activation_bytes,total_flash_bytes,ideal_cycles_2MAC,ideal_time_us_at_128MHz
+conv1,8.0,75.0,4200,56,8,56,32,40,600.0,Calculated,,,,
+conv2,16.0,38.0,24320,640,16,640,64,80,608.0,Calculated,,,,
+conv3,16.0,19.0,14592,768,16,768,64,80,304.0,Calculated,,,,
+fc (after GAP sum),2.0,1.0,32,32,2,32,8,0,8.0,Calculated,,,,
+TOTAL,,,43144,1496,42,1496,168,200,,"Calculated, ideal lower bound; real firmware is slower",1208.0,1864.0,21572.0,168.53125
