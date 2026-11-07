@@ -1,0 +1,16 @@
+{
+ "name": "c7_frozen", "written": "2026-11-07, before any C7 outer-test scoring (round 3 follow-up)",
+ "question": "Does 'pretrain + calibrate to the person as you go' help? Same EDB folds, same labels, same operating-point and persistence rules as c2_frozen.json (not changed).",
+ "calibration_rule": "causal, label-free: for each eligible beat, the running MEDIAN over the previous 600 s of that record's eligible beats (needs >=30 beats; same history rule as R1), current beat excluded. No label, episode time or future sample is used.",
+ "methods": {
+  "A1": "frozen C2 network (same seed), score minus running median of its own score",
+  "A2": "frozen C2 network, 16-d pooled features minus their running median, then the frozen final layer (feature-level calibration)",
+  "A3": "PRIMARY. same architecture, retrained on residual windows = clip(window_int8 - running median window, -128..127); 3 seeds, same optimiser/epochs/early-stop/balancing as c2_frozen; job seed = 1000*fold + seed + 500",
+  "M1c": "frozen M1 logistic model fed (six features minus their running median)"
+ },
+ "references": ["R0", "R1", "M1", "M2 frozen (3 seeds)"],
+ "operating_point": "1% FPR threshold on inner-validation negatives for every method, recomputed on the scored set (t>=60 s, history available, label 0/1)",
+ "bootstrap": {"unit": "subject", "resamples": 2000, "seed": 7},
+ "pass_rule": "Calibration ADDS VALUE only if the lower end of the 95% subject-bootstrap range of (A3 mean-of-seeds sens@1%FPR - R1 sens@1%FPR) is above 0. Otherwise: 'no added value shown'. Everything else descriptive.",
+ "episode_rule": "24 of last 30 eligible beats above threshold, as in c2_frozen"
+}
