@@ -218,6 +218,39 @@ INT8 vs float (seed 0, fold-9 operating point): sensitivity 0.756 vs 0.743, spec
 
 ---
 
+## 7b. C7 follow-up: "pretrain + calibrate to the person as you go" (EDB). *Replayed.*
+
+**Why.** The team asked whether pretraining plus on-device per-person calibration could fix the patient-wise failure. Settings and the pass rule were frozen in `configs/c7_frozen.json` before any scoring (committed before the run). Same folds, labels, 1 % operating-point rule, persistence rule and bootstrap as C2; the C2 numbers above are unchanged.
+
+**Method.** `py/c7_prep.py`, `c7_train.py`, `c7_score_eval.py`. Calibration = a causal, label-free running **median over the previous 10 minutes of that person's own beats** (needs >= 30 beats; current beat excluded). A1: frozen C2 network, its score minus its own running median. A2: frozen network, its 16 pooled features minus their running median, then the frozen final layer. A3 (**primary**): the same tiny network **retrained on residual windows** (window minus the person's running-median window, int8), 3 seeds, same recipe. M1c: the six-feature model fed (features minus running median). **Pass rule (fixed in advance):** calibration adds value only if the lower end of the 95 % subject-bootstrap range of (A3 sensitivity at 1 % FPR minus R1) is above 0.
+
+**Result** (`results/c7_bootstrap.csv`, `c7_beat_metrics.csv`, `c7_episode_metrics.csv`):
+
+| Quantity (sensitivity at 1 % FPR, pooled) | point | 95 % range |
+|---|---:|---:|
+| R1 personal-baseline ST rule | 0.120 | 0.081-0.204 |
+| M2 frozen (3 seeds) | 0.090 | 0.069-0.223 |
+| A1 score-level calibration | 0.066 | 0.050-0.114 |
+| A2 feature-level calibration | 0.065 | 0.050-0.114 |
+| **A3 retrained on residual windows (seeds 0/1/2: 0.122 / 0.108 / 0.066)** | **0.099** | 0.073-0.186 |
+| M1c (six features + calibration) | 0.077 | 0.057-0.123 |
+| **PRIMARY: A3 - R1** | **-0.021** | **-0.058 to +0.025** |
+| A3 - M2 frozen | +0.009 | -0.079 to +0.053 |
+| A1 - R1 / A2 - R1 | -0.054 / -0.054 | -0.111 to -0.014 |
+| M1c - M1 (calibration hurt the six-feature model) | -0.155 | -0.313 to -0.085 |
+
+**Pass rule outcome: the lower end (-0.058) is not above 0, so "no added value shown" at the pre-written metric.**
+
+**But the full ranking improved a lot (descriptive, not a pre-written test).** Per-fold AUROC on unseen patients, folds 0-4: M2 frozen 0.389 / 0.702 / 0.564 / 0.800 / 0.747 (mean 0.640); R1 0.617 / 0.765 / 0.724 / 0.737 / 0.785 (mean 0.726); **A3 seed 0 0.701 / 0.840 / 0.794 / 0.825 / 0.867 (mean 0.805)**; seeds 1 and 2 similar (0.64-0.86). A3 also no longer falls below 0.5 on fold 0 (0.64-0.70), and its validation AUPRC was higher than the uncalibrated network's on every fold. Score-only or feature-only calibration (A1, A2) did not help (AUROC 0.54-0.59). Episode level (24 of 30 rule, 31.0 episode-free hours): A3 caught 66 / 79 / 55 of 364 (18 / 22 / 15 %) with 20 / 12 / 19 false alerts; R1 caught 73 (20 %) with 1 false alert; A2 seed 0 caught 73 with 7 false; the other methods are in the CSV. Note: C7 recomputes every method's threshold on the same scored validation set, so the re-listed M2 episode counts differ from section 3 (e.g. seed 0: 36 vs 24 caught), which shows how unstable single-threshold episode counts are.
+
+**What it shows.** Calibration has to be built into the *training* (A3 learns from "difference from this person's normal"); bolting it on afterwards (A1, A2, M1c) did not work. With that built in, the tiny network ranks beats on new people clearly better than before and better than R1 on 4 of 5 folds, yet at the deployable operating point (1 % false-positive rate) it still does not beat the simple personal-baseline rule with any confidence.
+
+**What it does NOT show.** The AUROC gain is a single pass over five folds with no bootstrap; it may be partly the network measuring ST better (circular labels); episode catches stay low (about 20 %); the baseline here is a 10-minute running median that would also absorb a slow real change in an ischemic person (not tested); the on-chip cost of keeping a rolling median window is not estimated. No lead time, no detection claim.
+
+**Allowed poster wording.** "Learning each person's own normal helped when built into training: area-under-curve on unseen patients rose from 0.64 to about 0.80 (mean over 5 folds, public EDB data, Replayed). At a fixed 1 % false-alarm rate it still did not beat a simple personal-baseline ST rule with confidence. Feasibility on public recordings, not detection."
+
+---
+
 ## 8. What the poster may say (exact sentences, with evidence labels)
 
 Fill only with the numbers in the tables above. The three pre-written rules fell as: **AI adds value (EDB): no added value shown. INT8 acceptable: not acceptable. Verilog: bit-exact.**
@@ -262,4 +295,4 @@ Start (`results/round3_regression_start.txt`) and end (`results/round3_regressio
 - Whether to spend more time on the model (other input shifts, longer context than one beat, more leads) or to present the honest negative result.
 
 ## 13. Files
-Scripts: `py/c0_dossier_arithmetic.py`, `c1_lib.py`, `c1_make_split.py`, `c1_edb_windows.py`, `edge_nets.py`, `c2_train.py`, `c2_score.py`, `c2_eval.py`, `c2_leakage.py`, `c2_secondary_detector.py`, `c2_figs.py`, `edge_int_model.py`, `c3_quantize.py`, `c3_freeze.py`, `c4_make_vectors.py`, `c4_run.py`, `c5_windows.py`, `c5_ptbxl_cnn.py`, `c6_prelead.py`. Verilog: `rtl_edge/rtl/edge_cnn_beat.sv`, `rtl_edge/tb/tb_edge_cnn.sv`, vectors, `rtl_edge/weights/*.mem`, `run_edge_vivado.bat`. Split/configs: `splits/c1_edb_split.json`, `configs/c2_frozen.json`, `c3_quant_frozen.json`, `c5_frozen.json`. Results: `results/c0_*`, `c1_*`, `c2_*` (beat metrics, bootstrap, episode metrics, failure analysis, leakage, secondary detector, train log, thresholds), `c3_*`, `c4_*`, `c5_ptbxl_*`, `c6_prelead.csv`, `round3_regression_*.txt`, figures `fig_c0_edb_check`, `fig_c2_roc_pr`, `fig_c2_episode`, `fig_c2_leakage`, `fig_c3_int8`, `fig_c4_cycles`, `fig_c5_ptbxl` (.png). Intermediate data (windows, scores, models) are under `data/edge/` (not committed).
+Scripts: `py/c0_dossier_arithmetic.py`, `c1_lib.py`, `c1_make_split.py`, `c1_edb_windows.py`, `edge_nets.py`, `c2_train.py`, `c2_score.py`, `c2_eval.py`, `c2_leakage.py`, `c2_secondary_detector.py`, `c2_figs.py`, `edge_int_model.py`, `c3_quantize.py`, `c3_freeze.py`, `c4_make_vectors.py`, `c4_run.py`, `c5_windows.py`, `c5_ptbxl_cnn.py`, `c6_prelead.py`. Verilog: `rtl_edge/rtl/edge_cnn_beat.sv`, `rtl_edge/tb/tb_edge_cnn.sv`, vectors, `rtl_edge/weights/*.mem`, `run_edge_vivado.bat`. Split/configs: `splits/c1_edb_split.json`, `configs/c2_frozen.json`, `c3_quant_frozen.json`, `c5_frozen.json`. Results: `results/c0_*`, `c1_*`, `c2_*` (beat metrics, bootstrap, episode metrics, failure analysis, leakage, secondary detector, train log, thresholds), `c3_*`, `c4_*`, `c5_ptbxl_*`, `c6_prelead.csv`, `round3_regression_*.txt`, figures `fig_c0_edb_check`, `fig_c2_roc_pr`, `fig_c2_episode`, `fig_c2_leakage`, `fig_c3_int8`, `fig_c4_cycles`, `fig_c5_ptbxl` (.png). C7 follow-up: `py/c7_*.py`, `configs/c7_frozen.json`, `results/c7_*`, `fig_c7_calibration.png`. Intermediate data (windows, scores, models) are under `data/edge/` (not committed).

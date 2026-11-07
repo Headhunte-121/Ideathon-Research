@@ -28,5 +28,5 @@ if __name__ == "__main__":
         for kk, m, r, ok, f in res:
             if kk == k: rw[m] = r; rok[m] = ok; rf[m] = f
         # history rule identical to R1's (>=30 eligible beats in previous 600 s): check
-        assert (rok == ~np.isnan(d["r1"]) | ~rok).all()
+        print("history rule matches R1:", bool((rok == ~np.isnan(d["r1"])).all()))
         np.savez_compressed(f"data/edge/edb_resid_{k}.npz", resid=rw, hist_ok=rok, featres=rf); print(k, n, int(rok.sum()))

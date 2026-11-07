@@ -13,3 +13,5 @@ Deviations and notes
 - Not done: optional Artix-7 synthesis estimate; optional two-MAC-per-cycle Verilog variant; channel-1 sensitivity run on EDB; CUDA PyTorch (not installed; all training on CPU).
 
 Bugs / traps handled: NaN samples (none found in EDB; forward-fill coded and counted); Windows multiprocessing `__main__` guards; quoted xsim plusargs through `Sim.run`; one key-name clash (`st`) in the windows script found on the first run and fixed before any result.
+
+C7 follow-up (per-person calibration): added `py/c7_prep.py, c7_train.py, c7_score_eval.py`, `configs/c7_frozen.json` (committed before scoring), `results/c7_*`. Pass rule not met (A3 - R1 = -0.021, range -0.058 to +0.025); AUROC gain reported as descriptive. C7 recomputes thresholds for all methods, so its M2 episode counts differ from C2's.
