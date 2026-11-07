@@ -1,0 +1,12 @@
+{
+ "name": "c5_frozen", "written": "2026-11-07, before any fold-10 scoring (round 3)",
+ "data": "PTB-XL, labels MI vs NORM as in py/a3_ptbxl.py labels(); folds train 1-8, validate 9, test 10; windows from py/c5_windows.py (median beat per lead, same int8 pre-processing as C1, causal 0.5 Hz high-pass)",
+ "leads": ["I", "II", "V2", "V5"], "model": "beatnet-tiny (same architecture as C2), one network per lead, 3 seeds (0,1,2; job seed = 100*lead_index + seed)",
+ "optimiser": {"name": "Adam", "lr": 0.001, "weight_decay": 0.0001, "batch": 256, "max_epochs": 30}, "epoch_sampling": "all MI + equal number of NORM per epoch",
+ "early_stopping": "AUPRC on fold 9, patience 5, restore best", "lead_selection": "highest mean (over seeds) fold-9 AUROC; chosen lead written to this file (chosen_lead) before fold 10 is scored",
+ "threshold": "Youden point on fold 9 for the sensitivity/specificity rows (float seed 0); INT8 uses the threshold giving the same positive fraction on fold 9",
+ "comparators": "A3 frozen logistic models (configs/a3_frozen.json) re-fit on folds 1-8 and scored on fold 10 with patient-level bootstrap: ST only, all five, heart rate only, per lead (zero-phase filtering as in A3)",
+ "bootstrap": {"unit": "patient_id", "resamples_final": 2000, "seed": 7},
+ "int8": "post-training INT8 of the chosen lead's seed-0 model, py/c3_quantize.quantize (per-tensor), calibration on 4000 training-fold windows",
+ "chosen_lead": null
+}
