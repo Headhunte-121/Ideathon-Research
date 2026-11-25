@@ -1,6 +1,6 @@
 # Tweaks report: five changes tried after the real-data replay
 
-Built by `py/build_tweaks_report.py` from the CSVs in `results/` (files starting `tweak`). **The original results are untouched** (`results/REAL_DATA_REPORT.md` and its CSVs); every number below is a new run, and "before" is quoted next to "after". No RTL file was changed: tweaks 1, 2, 4 and 5 are Python models of a proposed change, and tweak 3 re-ran the unchanged RTL with different input scaling. Nothing here says anything about detecting cardiac arrest or ischemia.
+Numbers come from the CSVs in `results/` (files starting `tweak`). **The original results are untouched** (`results/REAL_DATA_REPORT.md` and its CSVs); every number below is a new run, and "before" is quoted next to "after". No RTL file was changed: tweaks 1, 2, 4 and 5 are Python models of a proposed change, and tweak 3 re-ran the unchanged RTL with different input scaling. Nothing here says anything about detecting cardiac arrest or ischemia.
 
 Evidence labels: **Replayed** = run on public recordings; **Simulated** = something added to a real recording (a step in heart rate, extra sensor noise, a no-heartbeat signal); **Assumed** = a value without a source.
 
@@ -9,11 +9,11 @@ Evidence labels: **Replayed** = run on public recordings; **Simulated** = someth
 - **Tune on some people, test on others.** PPG-DaLiA people S1-S8 = tune, S9-S15 = test (fixed before looking at any result). NSTDB record 118 = tune, record 119 and the 18 clean NSRDB people = test. Selections were made on the tune people only.
 - **Before and after side by side**, with the people used named.
 - **Judged by false starts (or false alarms) per person-hour, with detection delay as the cost.**
-- Poster wording for any improved number: *"tuned on 8 people, tested on 7 other people, public recordings"*. Still no claim about arrest or ischemia.
+- Reporting note for any improved number: *"tuned on 8 people, tested on 7 other people, public recordings"*. Still no claim about arrest or ischemia.
 
 ## 1. Verdict in one table
 
-| # | Tweak | Result | Safe to put on the poster as |
+| # | Tweak | Result | Supported summary |
 |---|---|---|---|
 | 1 | Stop living people starting the countdown | A longer hold or an "ECG shows no beats" condition removes all 13 false starts; "wrist is still" alone barely helps. **The test people never had a false start, so the test group cannot confirm the fix** (section 2). | "13 false starts in 18.7 person-hours on 8 people; none after the change; the other 7 people had none either way" |
 | 2 | Resting-only drift warning | Works only when the baseline is learned in the **same context** (working), which the device cannot know. With one pooled resting baseline it false-alarms 2-4 times per resting hour. | "Resting-only warning is an open problem: heart rate at rest differs by about 29 % (median) between sitting and working" |
@@ -60,7 +60,7 @@ What the table tells:
 - **Hold longer:** 5 s leaves 0.27 per person-hour on the tune people; **10 s removes all 13** (the longest false run was 8 s) at a cost of 7 s of dispatch delay.
 - **Wrist still:** only reduces 0.70 to 0.48 per person-hour at the strictest setting (3x); person 8's wrist was mostly still while the pulse signal dropped.
 - **ECG no-beat:** in the 36 person-hours of living people the longest gap between detected chest-ECG beats was 4.4 s, and gaps of 3 s or more covered under 0.04 % of seconds (`results/tweak1_ecg_gap_living.csv`). This is the strongest guard and costs no time.
-- **The trade-off the poster must state:** the ECG condition assumes an arrest shows *no electrical beats*. In pulseless electrical activity (PEA) the heart still produces electrical activity but no pulse, so this condition would **block** the countdown for those arrests. A longer hold has no such blind spot but is slower. This is a decision for the team, not something the data decides.
+- **Trade-off:** the ECG condition assumes an arrest shows *no electrical beats*. In pulseless electrical activity (PEA) the heart still produces electrical activity but no pulse, so this condition would **block** the countdown for those arrests. A longer hold has no such blind spot but is slower. This is a decision for the team, not something the data decides.
 - Limits: 15 healthy adults, one wrist device, activity labels from the dataset; the ECG detector port agrees with the Verilog's scores within 0.12 points on clean ECG (py/beat_model.py), but ECG under real chest motion was only tested on these 15 people.
 
 ## 3. Tweak 2: resting heart-rate drift warning (PPG-DaLiA, Replayed + Simulated step)
@@ -92,7 +92,7 @@ Resting = chest not moving and (POOLED) activity sitting or working, or (WORKING
 
 ## 4. Tweak 3: beat detector at a smaller ECG scale (NSTDB, Replayed on the unchanged RTL)
 
-The plan said part of the heavy-noise loss was my 16 codes/uV scaling clipping the signal. The same 12 NSTDB recordings were replayed at 16 (as before), 8 and 4 codes/uV through the unchanged `rtl/ecg_beat_detector.sv`, with the detector's `MIN_THR` floor kept at the same microvolts (1500, 750, 375). Noisy minutes only; mean of records 118 and 119. The 16 codes/uV rows reproduce the original E1 numbers exactly.
+The plan said part of the heavy-noise loss was the 16 codes/uV scaling clipping the signal. The same 12 NSTDB recordings were replayed at 16 (as before), 8 and 4 codes/uV through the unchanged `rtl/ecg_beat_detector.sv`, with the detector's `MIN_THR` floor kept at the same microvolts (1500, 750, 375). Noisy minutes only; mean of records 118 and 119. The 16 codes/uV rows reproduce the original E1 numbers exactly.
 
 | Variant | Noise SNR (dB) | Samples at the rail % | Sensitivity % | PPV % |
 |---|---|---|---|---|
@@ -114,7 +114,7 @@ The plan said part of the heavy-noise loss was my 16 codes/uV scaling clipping t
 | scale8_thr750 | -6 | 5.8 | 64.1 | 45.8 |
 
 - Clipping did go down (19 % of samples at -6 dB with scale 16, 1.5 % at scale 4), but **sensitivity did not improve**: at 0 dB it fell from 80 % to 71 % and at -6 dB from 60 % to 55 %; PPV moved by 0.4-3 points, slightly down. Scale 8 sits in between with no clear gain.
-- So **the earlier statement that the low-SNR loss was partly my scaling is not supported by this test** and has been corrected in `results/REAL_DATA_REPORT.md` and `results/POSTER_EVIDENCE_SUMMARY.md`. (Clipping even limits the size of noise spikes, which may explain the small advantage of the high scale.)
+- So **the earlier statement that the low-SNR loss was partly the scaling is not supported by this test** and has been corrected in `results/REAL_DATA_REPORT.md`. (Clipping even limits the size of noise spikes, which may explain the small advantage of the high scale.)
 - `MIN_THR` rescaling made no difference at all (identical counts): the floor is not what limits the detector in noise. The loss is the threshold following the noise bursts, as diagnosed in the original report.
 
 ## 5. Tweak 4: adaptive "chest still" threshold (CEBS, Replayed + Simulated noise)
@@ -158,4 +158,4 @@ Selection on the tune record (best PPV with at most 1 point of sensitivity lost)
 
 ## 8. Files
 
-Scripts: `py/tweak1_features.py`, `py/tweak1_rules.py`, `py/tweak2_resting_drift.py`, `py/tweak3_scale.py` (+ `tb/tb_real_ecg_beats_scaled.sv`), `py/tweak4_adaptive_still.py`, `py/tweak5_early_beat.py`, `py/beat_model.py`, `py/build_tweaks_report.py`. Results: `results/tweak*.csv`, `results/tweak*_selection.txt`, `results/tweak_beat_model_vs_rtl.csv`.
+Scripts: `py/tweak1_features.py`, `py/tweak1_rules.py`, `py/tweak2_resting_drift.py`, `py/tweak3_scale.py` (+ `tb/tb_real_ecg_beats_scaled.sv`), `py/tweak4_adaptive_still.py`, `py/tweak5_early_beat.py`, `py/beat_model.py`. Results: `results/tweak*.csv`, `results/tweak*_selection.txt`, `results/tweak_beat_model_vs_rtl.csv`.

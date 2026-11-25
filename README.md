@@ -38,16 +38,6 @@ Two rules shape the design:
 1. **A slow change never calls anyone.** Drift from the wearer's own baseline only produces a gentle check-in on the wrist.
 2. **An emergency needs agreement.** The wrist pulse must be lost *and* the chest must show no heartbeat vibration, followed by a cancel window.
 
-<details>
-<summary><b>Concept hardware diagram</b></summary>
-<br>
-
-![Concept hardware block diagram of the chest pod and wristband](docs/competition/assets/hardware_block_diagram.png)
-
-*A concept illustration, not a verified schematic. Some parts shown, including the second ECG chip and the wrist motion sensor, are still undecided.*
-
-</details>
-
 ## How it works
 
 ### Signal chain
@@ -187,10 +177,9 @@ To replay public recordings, first [get the datasets](data/README.md), then foll
 ```
 .
 ├── docs/
-│   ├── design/        Architecture, form-factor analysis, decision log
-│   ├── research/      12-phase literature review
+│   ├── design/        Architecture and design decisions
 │   ├── reports/       Test reports (the source of truth)
-│   └── competition/   Abstract, poster content, pitch guide
+│   └── competition/   Abstract and poster content
 ├── simulation/
 │   ├── rtl/           Verilog design of both nodes
 │   ├── model/         Simulated patient, sensor chips, radio and phone
@@ -209,10 +198,9 @@ To replay public recordings, first [get the datasets](data/README.md), then foll
 |---|---|
 | [Report index](docs/reports/README.md) | What was tested and what the numbers do not show |
 | [Simulation guide](simulation/README.md) | Design blocks and testbenches |
-| [Decision log](docs/design/OFFICIAL_TEAM_DECISIONS_LOG.md) | Design choices and their reasoning |
-| [Research dossier](docs/research/README.md) | Background literature |
+| [System design](docs/design/DESIGN.md) | Architecture, design decisions and open questions |
 
-Design, research and competition documents set out the **design vision** and background, including planned features and literature figures we have not verified. For measured results, the reports are the reference.
+Design and competition documents set out the **design vision**, including planned features. For measured results, the reports are the reference.
 
 <!-- Team section: add member names, roles, college and registration ID here. -->
 
@@ -222,4 +210,4 @@ Recordings come from [PhysioNet](https://physionet.org) (Goldberger et al., *Cir
 
 ## License
 
-Code and original documentation are released under the [MIT License](LICENSE). Datasets, cited publications and the organiser's presentation template remain under their own terms.
+Code and original documentation are released under the [MIT License](LICENSE). Datasets and cited publications remain under their own terms.

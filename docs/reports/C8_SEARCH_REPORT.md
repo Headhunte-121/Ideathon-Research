@@ -78,11 +78,6 @@ A big gap between "best_val" and "test_of_best_val" is the optimism of picking t
 ## What this does NOT show
 Nothing about early warning, lead time or ischemia: labels are ST episodes marked by an amplitude rule (circular), all 79 subjects were already used as test folds before, and no fresh data exists. The drift-absorption risk of a running baseline in a truly ischemic person is untested.
 
-## Allowed poster wording
-Only if the verdict line says adds value: "A search over about 1600 model variants, selected on validation patients only, reached sensitivity X at a 1 % false-alarm rate on unseen patients (Replayed, public EDB data; feasibility, not detection)." Otherwise: "A search over about 1600 model variants did not beat a simple personal-baseline ST rule on unseen patients (Replayed)."
-
----
-
 ## Interpretation (added after reading the numbers; the verdict line above is the literal pre-written rule only)
 
 1. **The rule is met, but read it carefully.** Nested pick minus R1 = +0.152 (95 % range +0.065 to +0.318). But the simple six-number logistic model M1 (no search at all) already scored 0.232 (0.162-0.414) against the nested pick's 0.272 (0.203-0.464): the ranges overlap almost completely. The search did not clearly beat a simple feature model; both beat R1.

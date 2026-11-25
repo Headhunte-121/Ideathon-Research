@@ -35,5 +35,5 @@ simulation/real_data/
 *.log
 *.tmp
 *.zip
-simulation/results/*_stdout.txt
-simulation/results/*_stderr.txt
+simulation/results/*.txt
+!simulation/results/tweak*_selection.txt

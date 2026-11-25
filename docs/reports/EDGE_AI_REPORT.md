@@ -4,7 +4,7 @@ Written 7 Nov 2026 for the Autonomous Sternal Sentry ideathon entry (no hardware
 
 ---
 
-## 0. Plain-English summary (read this first)
+## 0. Summary
 
 **What we built.** A very small neural network ("beatnet-tiny": 1,538 numbers, 43,144 multiply-adds per heartbeat). It looks at one heartbeat's shape (0.6 s of ECG) and says "this beat looks like it is inside a cardiologist-marked ST-change episode" or "ordinary beat". We trained it on public ECG recordings (European ST-T Database, EDB), shrank it to 8-bit whole numbers, and wrote a Verilog copy of those 8-bit calculations.
 
@@ -23,7 +23,7 @@ Written 7 Nov 2026 for the Autonomous Sternal Sentry ideathon entry (no hardware
 
 ## 1. Inventory (C0)
 
-**Machine.** 16 logical CPUs; NVIDIA GeForce RTX 5050 Laptop GPU present, but PyTorch is `2.14.1+cpu` (CUDA unavailable). I did not install the CUDA build (large download, not needed): **every model of the final run was trained on CPU**, one process per (fold, seed), 1 torch thread each (53-208 s per model). Python 3.14.3, numpy/scipy/pandas/wfdb/scikit-learn/matplotlib present. Vivado xsim 2025.2 (`C:\AMDDesignTools\2025.2`). Free disk 165 GB. Nothing was downloaded; no `real_data` size scan was run. `git status` at the start already showed many modified/deleted files outside this task (e.g. old `rtl/drift_det.sv`, `rtl/nlms16.sv`, `rtl/sentry_fsm.sv`, `rtl/sentry_top.sv`, `tb/tb_drift.sv` etc. deleted, `../sentry_sim*.zip` modified); I did not touch them.
+**Machine.** 16 logical CPUs; NVIDIA GeForce RTX 5050 Laptop GPU present, but PyTorch is `2.14.1+cpu` (CUDA unavailable). The CUDA build was not installed (large download, not needed): **every model of the final run was trained on CPU**, one process per (fold, seed), 1 torch thread each (53-208 s per model). Python 3.14.3, numpy/scipy/pandas/wfdb/scikit-learn/matplotlib present. Vivado xsim 2025.2 (`C:\AMDDesignTools\2025.2`). Free disk 165 GB. Nothing was downloaded; no `real_data` size scan was run. `git status` at the start already showed many modified/deleted files outside this task (e.g. old `rtl/drift_det.sv`, `rtl/nlms16.sv`, `rtl/sentry_fsm.sv`, `rtl/sentry_top.sv`, `tb/tb_drift.sv` etc. deleted, `../sentry_sim*.zip` modified); I did not touch them.
 
 **Baseline regression** (`results/round3_regression_start.txt`): 22/22, 20/20, 35/35, mutation A 19 passed 16 failed, mutation B 34 passed 1 failed. Identical at the end (`results/round3_regression_end.txt`). (The first launch of the regression failed because a relative `run_vivado.bat` call did not resolve; it was re-launched with the full path. No result was kept from the failed launch.)
 
@@ -64,8 +64,6 @@ Per fold (positive / negative scored beats): fold 0 26,502 / 24,666; fold 1 26,4
 **What it shows.** The data set, labels and split are in place; each fold has tens of thousands of positive beats from only 43-101 episodes, so the effective sample is the *episodes and subjects*, not the beats.
 
 **What it does NOT show.** Anything about performance. Beats inside one episode are strongly correlated.
-
-**Allowed poster wording.** "EDB: 79 subjects, 90 two-hour recordings, 364 ST-change episodes marked by cardiologists (Replayed)."
 
 ---
 
@@ -132,8 +130,6 @@ The gap is about **0.57 in AUROC**; the mixed split also lets the network pass t
 
 **What it does NOT show.** That a larger or better-trained network, a different input shift, other leads, or more data would not help (the early-stopped epochs were 0-22; the network overfits subjects quickly). Nothing about early warning: these are labels *during* ST episodes. Because the labels came from an ST-amplitude rule, even a win would not show understanding of ischemia, and EDB does not say which ST changes were ischemic. R0's poor result probably partly reflects the labels being measured against each record's first-30 s reference beat, which an absolute-level rule cannot know.
 
-**Allowed poster wording (outcome: no added value shown).** "On 79 subjects of a public ECG database (EDB), a tiny network was **not better** than a simple ST-amplitude rule at the same false-alarm rate on patients it had not seen (Replayed). Mixing beats of the same person across training and test raised its score from 0.39 to 0.95 area-under-curve, which is why we split by patient."
-
 ---
 
 ## 4. C3: shrink to 8-bit integers. *Replayed (integer model on public recordings) + Calculated.*
@@ -158,8 +154,6 @@ Fallback a (per-channel) agreement: 93.1, 98.0, 93.4, 98.8, 99.9 %; fallback b (
 
 **What it does NOT show.** That the shrunk model is better or worse at detecting anything (the float model itself did not beat the rules); the pass rule's decision-agreement requirement was not met.
 
-**Allowed poster wording (outcome: INT8 not acceptable under our pre-written rule).** "The 8-bit version ranked heartbeats almost the same as the 32-bit one (AUROC within 0.04), but its alarm decisions agreed on only 93-99.9 % of beats (first attempt), so it did **not** pass our rule (>= 99 % agreement) (Replayed). Size: 1.5 KB of weights, 43,144 multiply-adds per beat (Calculated)."
-
 ---
 
 ## 5. C4: Verilog copy of the integer network, bit-exact. *Simulated.*
@@ -179,8 +173,6 @@ Fallback a (per-channel) agreement: 93.1, 98.0, 93.4, 98.8, 99.9 %; fallback b (
 **What it shows.** The 8-bit arithmetic is simple and fixed-point enough to be reproduced exactly by a small, readable Verilog block with one multiplier.
 
 **What it does NOT show.** The block is a **separate stand-alone copy of the network arithmetic. It is not wired into `pod_node.sv` or the alarm logic**, and the nRF5340 is a microcontroller, not an FPGA. No area, timing, power or "milliseconds on the chip" figure exists. It is what the design would use if the Pod's model moved to dedicated silicon (a **NEXT**-tier idea).
-
-**Allowed poster wording (outcome: Verilog bit-exact).** "A Verilog copy matched a Python integer model on 2,000 of 2,000 held-out test beats and 64 of 64 extreme patterns, and took 44,962 clock cycles per beat at one multiply-add per cycle (Simulated). It is a stand-alone block, not part of the alarm logic."
 
 ---
 
@@ -204,8 +196,6 @@ INT8 vs float (seed 0, fold-9 operating point): sensitivity 0.756 vs 0.743, spec
 
 **What it does NOT show.** Early warning, a wearable result, or anything about ischemia before an event: these are resting-ECG diagnosis labels in hospital recordings. The seed-to-seed spread (0.869-0.891) is as large as the gap to the five-feature model.
 
-**Allowed poster wording.** "On PTB-XL (resting 10-second hospital ECGs, heart-attack diagnosis vs normal), the tiny network reached AUROC 0.87-0.89 on lead II across three seeds versus 0.86 for a five-number model and 0.66 for ST alone; its 8-bit version matched the float version (0.892) (Replayed). This is a diagnosis task, not early warning, and not a chest-patch signal."
-
 ---
 
 ## 7. C6 (optional): "an hour before", a weak hypothesis test. *Replayed, hypothesis only.*
@@ -220,7 +210,7 @@ INT8 vs float (seed 0, fold-9 operating point): sensitivity 0.756 vs 0.743, spec
 
 ## 7b. C7 follow-up: "pretrain + calibrate to the person as you go" (EDB). *Replayed.*
 
-**Why.** The team asked whether pretraining plus on-device per-person calibration could fix the patient-wise failure. Settings and the pass rule were frozen in `configs/c7_frozen.json` before any scoring (committed before the run). Same folds, labels, 1 % operating-point rule, persistence rule and bootstrap as C2; the C2 numbers above are unchanged.
+**Why.** To test whether pretraining plus on-device per-person calibration could fix the patient-wise failure. Settings and the pass rule were frozen in `configs/c7_frozen.json` before any scoring (committed before the run). Same folds, labels, 1 % operating-point rule, persistence rule and bootstrap as C2; the C2 numbers above are unchanged.
 
 **Method.** `py/c7_prep.py`, `c7_train.py`, `c7_score_eval.py`. Calibration = a causal, label-free running **median over the previous 10 minutes of that person's own beats** (needs >= 30 beats; current beat excluded). A1: frozen C2 network, its score minus its own running median. A2: frozen network, its 16 pooled features minus their running median, then the frozen final layer. A3 (**primary**): the same tiny network **retrained on residual windows** (window minus the person's running-median window, int8), 3 seeds, same recipe. M1c: the six-feature model fed (features minus running median). **Pass rule (fixed in advance):** calibration adds value only if the lower end of the 95 % subject-bootstrap range of (A3 sensitivity at 1 % FPR minus R1) is above 0.
 
@@ -247,29 +237,9 @@ INT8 vs float (seed 0, fold-9 operating point): sensitivity 0.756 vs 0.743, spec
 
 **What it does NOT show.** The AUROC gain is a single pass over five folds with no bootstrap; it may be partly the network measuring ST better (circular labels); episode catches stay low (about 20 %); the baseline here is a 10-minute running median that would also absorb a slow real change in an ischemic person (not tested); the on-chip cost of keeping a rolling median window is not estimated. No lead time, no detection claim.
 
-**Allowed poster wording.** "Learning each person's own normal helped when built into training: area-under-curve on unseen patients rose from 0.64 to about 0.80 (mean over 5 folds, public EDB data, Replayed). At a fixed 1 % false-alarm rate it still did not beat a simple personal-baseline ST rule with confidence. Feasibility on public recordings, not detection."
-
 ---
 
-## 8. What the poster may say (exact sentences, with evidence labels)
-
-Fill only with the numbers in the tables above. The three pre-written rules fell as: **AI adds value (EDB): no added value shown. INT8 acceptable: not acceptable. Verilog: bit-exact.**
-
-- "A 1,538-parameter 8-bit network (43,144 multiply-adds per heartbeat) was trained on 47-48 subjects per model and tested on 15-16 other subjects per fold (five folds covering all 79 subjects) of the European ST-T database. Its 8-bit version agreed with the 32-bit version on 93-99.9 % of beats (by fold) (the 8-bit version did not meet our >= 99 % agreement rule). A Verilog copy matched a Python integer model on 2,064 of 2,064 test patterns and took 44,962 clock cycles per beat at one multiply-add per cycle (Simulated). Compared with a simple ST-amplitude rule at the same false-alarm rate, the network was **not better** on held-out patients (Replayed). This is a feasibility test on public recordings, not detection of heart attacks."
-- Pass-rule outcomes as separate lines: "AI vs rule (EDB): no added value shown (Replayed)." "8-bit vs 32-bit: did not meet our pre-written agreement rule (Replayed)." "Verilog vs Python: bit-exact on 2,064 of 2,064 (Simulated)."
-- If the team wants one more honest line: "Beats of one person mixed between training and test gave AUROC 0.95; split by patient it was 0.39 on the first test fold (Replayed)."
-- "Public data has no recording with chest vibration, ECG and wrist pulse during a heart attack, so none of this shows that early ischemia or arrest is sensed with our sensor set."
-- Tiers: the 8-bit arithmetic and Verilog copy = **NOW (Simulated)**; running it on a real Pod = **NEXT**; any clinical use = **FUTURE**.
-
-## 9. What the poster must not say
-
-- Never claim or imply that we detect, predict, validate or give lead time for early ischemia, heart attack or cardiac arrest; never "validated", "clinically tested", "predicts", "detects heart attacks"; never "the AI works", "detects" or "adds value" (rule 1 did not pass).
-- Never say the Verilog block is part of the device, is on the nRF5340, or gives milliseconds, energy or battery figures; never say Decision 6 (CNN-LSTM foundation + baseline adaptation) is validated or built; never "trained on 40,000 patients".
-- Never quote the C6 result as lead time, the PTB-XL result as early warning, or the leakage number as our detection score.
-- From the research notes (do not print): "1.8 ms", "0.74 ms", "410 KB", "94% sensitivity", "98% false alarms eliminated", "99.4% -> 52.1%", "AUROC 0.912", "trained on 40,000 patients", dataset counts copied from notes (e.g. "21,801"), a cath-lab result "45-90 s earlier, 42.6% drop", a 960-patient trial with named hospitals, US reimbursement figures, PulsePoint/GoodSAM, the 2 % alarm threshold, the Mamba head, battery 7.5/7.8/14/30 days, 911.
-- Any competitor claim must say "as of 5 Nov 2026".
-
-## 10. Assumptions
+## 8. Assumptions
 A1. EDB subjects = records with identical age/sex/diagnosis header comments (79 groups, equals the published 79).
 A2. ST-episode labels come from `(STn` / `STn)` auxiliary notes; episodes counted per marker (364 total, ST1/ST2 overlapping markers counted separately); the older drift evaluation merges overlaps (247).
 A3. Channel 0 only; its lead differs by record (V5, MLIII, V4, V2, V1, V3, D3). Channel 1 not run.
@@ -285,14 +255,8 @@ A12. QAT (fallback b) ran 3 epochs at lr 1e-4 with activation scales fixed from 
 A13. The Verilog block uses combinational-read arrays (simulation oriented); no synthesis was run.
 A14. 'Parallel equals serial' checked on C1 (record e0103: identical windows and features) and on one C2 training job (fold 4, seed 2: identical validation AUPRC and threshold). C4 is integer-exact by construction.
 
-## 11. Regression
+## 9. Regression
 Start (`results/round3_regression_start.txt`) and end (`results/round3_regression_end.txt`) are identical: 22/22, 20/20, 35/35; mutation A 19 passed / 16 failed; mutation B 34 passed / 1 failed. No file was edited in `rtl/`, `model/`, `tb/` or `run_vivado.bat` by this round; their pre-existing git changes are listed in section 1.
 
-## 12. Open decisions for the team (not decided here)
-- Whether the AI proof appears on the poster at all (all three outcomes are negative or arithmetic-only: no added value shown, 8-bit rule not met, Verilog exact).
-- Whether to keep, change or drop Team Decision 6 (this round tested only a much smaller stand-in and does not verify it).
-- Whether a 3 s or 10 s chest-still hold, electrode count and the other open items in the round 3 task plan (not touched by these results).
-- Whether to spend more time on the model (other input shifts, longer context than one beat, more leads) or to present the honest negative result.
-
-## 13. Files
+## 10. Files
 Scripts: `py/c0_dossier_arithmetic.py`, `c1_lib.py`, `c1_make_split.py`, `c1_edb_windows.py`, `edge_nets.py`, `c2_train.py`, `c2_score.py`, `c2_eval.py`, `c2_leakage.py`, `c2_secondary_detector.py`, `c2_figs.py`, `edge_int_model.py`, `c3_quantize.py`, `c3_freeze.py`, `c4_make_vectors.py`, `c4_run.py`, `c5_windows.py`, `c5_ptbxl_cnn.py`, `c6_prelead.py`. Verilog: `rtl_edge/rtl/edge_cnn_beat.sv`, `rtl_edge/tb/tb_edge_cnn.sv`, vectors, `rtl_edge/weights/*.mem`, `run_edge_vivado.bat`. Split/configs: `splits/c1_edb_split.json`, `configs/c2_frozen.json`, `c3_quant_frozen.json`, `c5_frozen.json`. Results: `results/c0_*`, `c1_*`, `c2_*` (beat metrics, bootstrap, episode metrics, failure analysis, leakage, secondary detector, train log, thresholds), `c3_*`, `c4_*`, `c5_ptbxl_*`, `c6_prelead.csv`, `round3_regression_*.txt`, figures `fig_c0_edb_check`, `fig_c2_roc_pr`, `fig_c2_episode`, `fig_c2_leakage`, `fig_c3_int8`, `fig_c4_cycles`, `fig_c5_ptbxl` (.png). C7 follow-up: `py/c7_*.py`, `configs/c7_frozen.json`, `results/c7_*`, `fig_c7_calibration.png`. Intermediate data (windows, scores, models) are under `data/edge/` (not committed).

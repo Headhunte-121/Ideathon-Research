@@ -1,16 +1,16 @@
 # Real-data report, round 2: heart-attack / ischemia / arrest datasets and the tweaks
 
-Built by `py/build_report2.py` from the CSVs in `results/` (re-run it after any experiment). Date of runs: 6 Nov 2026. Round 1: `results/REAL_DATA_REPORT.md`. Simulator: Vivado xsim 2025.2.
+Numbers come from the CSVs in `results/`. Date of runs: 6 Nov 2026. Round 1: `results/REAL_DATA_REPORT.md`. Simulator: Vivado xsim 2025.2.
 
 **Evidence labels used everywhere:** **Replayed** = ran the Verilog (or its Python copy, said where) on a public recording. **Calculated** = arithmetic on replayed numbers. **Cited** = from a datasheet or paper named in place. **Simulated** = something made up or added to a real recording (noise, a step in heart rate, the scenario testbench). **Assumed** = a value without a source.
 
-## 0. Summary for a first-year student (one page)
+## 1. Summary
 
 **What we did.** We took recordings of real people from public databases and ran our alarm logic on them. Round 2 added databases that contain real heart trouble: ST-segment changes that doctors marked as ischemia (the heart muscle short of blood), real heart attacks on 12-lead ECGs, and real ventricular fibrillation (VF, the heart quivering instead of pumping, the typical sudden-arrest rhythm). **Nothing here shows that our device senses a heart attack or an arrest early.** No public recording has our sensors (chest ECG + chest vibration + wrist pulse) during a heart attack. What the data can show is where the logic breaks.
 
 **What worked.**
 - Living people in daily life sometimes had the wrist pulse lost while the chest was quiet (13 false starts of the 30-second countdown in 7 people over 17.9 hours; all from two people). Requiring that the chest ECG shows no heartbeats for 3 seconds removed all 13 at no time cost, and holding the condition for 10 seconds instead of 3 also removed them (it makes dispatch 7 seconds slower). *(B3, Replayed.)*
-- The beat detector's loss in heavy noise is **not** caused by my ADC scaling: shrinking the scale 8-fold removed the clipping and did not help. *(B2, Replayed.)*
+- The beat detector's loss in heavy noise is **not** caused by the ADC scaling: shrinking the scale 8-fold removed the clipping and did not help. *(B2, Replayed.)*
 - A drift check that watches heart rate against the person's own recent resting level caught 4.5% of marked ischemic episodes with about 1 false alarm per day on 40 people it was not tuned on. *(A1, Replayed.)*
 
 **What did not work, and matters more.**
@@ -19,36 +19,7 @@ Built by `py/build_report2.py` from the CSVs in `results/` (re-run it after any 
 - **ST level alone is a weak heart-attack sign** on resting 10-second 12-lead ECGs (area under the curve 0.59 to 0.77 depending on the lead; 0.5 would be a coin flip); adding T-wave, Q-wave and heart-rate features helped (up to 0.86). This is a diagnostic ECG on a bed, not a wearable. *(A3, Replayed in Python.)*
 - **An adaptive "chest still" threshold looks like a fix in the simulator but is unsafe on real people.** In the simulator a threshold that follows the sensor noise (set at 1.75 times a running low percentile of the chest energy) kept the arrest scenario working up to 1000 micro-g of noise, where the fixed threshold fails from 650. When the same rule is emulated on the real resting recordings it would call 95% or more of living seconds "still" at the setting that works in the simulator. The settings that are safe on real data behave exactly like the fixed threshold in the simulator. Nothing here fixes the problem, and the chip's real noise figure could not be checked (datasheet unreachable). *(B5, B6.)*
 
-**Bottom line for the team.** The honest poster claim is "alarm logic simulated and replayed on public recordings, with its failure modes measured". The strongest new findings are failures, and they are useful: they say exactly what the final design must add (a second condition beyond the ECG, a longer hold, a real noise figure for the chest sensor).
-
-## 1. What the poster may say, and must not say
-
-### 1.1 May say (exact wording, with label)
-
-| Result | Exact wording | Label |
-|---|---|---|
-| B3 | In 17.9 person-hours of living people (7 test people), wrist pulse loss with a quiet chest held for 3 s occurred 13 times (2 people); an ECG-beat veto removed all 13 and a 10 s hold removed them at the default threshold (7 s slower). The veto would also suppress pulseless electrical activity. Not an independent test. | Replayed (PPG-DaLiA) |
-| B2 | The beat detector misses about 20% (0 dB) to 40% (-6 dB) of beats in heavy real noise and 40-55% of its detections are wrong; this is not an ADC-scaling artefact. | Replayed (NSTDB, 2 records) |
-| B4 | Feeding only resting beats to the unchanged drift detector did not let it detect +10 to +25% heart-rate steps in 7 people (about 2 h each). | Replayed + Simulated step (PPG-DaLiA) |
-| A1 | A heart-rate drift check (tuned on 40 patients, tested on 40 other patients, 43 records) caught 8 of 178 ischemic ST episodes at 1.07 false check-ins per 24 h; catching most episodes costs tens of false check-ins per day. Most episodes follow heart-rate rises. | Replayed (LTSTDB) |
-| A2 | The same setting, unchanged, caught 3.8% of ST-change episodes in 75 two-hour recordings of a second database (15 overlapping records excluded); the false-alarm rate is too uncertain to quote. | Replayed (EDB) |
-| A3 | On 10-second resting 12-lead ECGs (test fold 10, 1462 ECGs), ST level and slope alone give an AUC of 0.59 to 0.77 for MI vs normal depending on the lead; five simple features give 0.71 to 0.86. Not early warning, not wearable. | Replayed (PTB-XL, Python) |
-| A4 | On real recordings of ventricular fibrillation (10 test records) the beat detector kept finding beats in the fibrillation waves, so a 6 s 'no beat' rule fired within 5 minutes in only 5 of 10 records. ECG only; not representative of our device. | Replayed (SDDB, Verilog on windows) |
-| B5 | A fixed 'chest still' threshold stops recognising a chest with no heartbeat once simulated sensor noise reaches about 0.65-0.8 mg RMS; the real chip's noise was not verified. | Simulated (end-to-end testbench) |
-| B5 | In the simulator a fixed 'chest still' threshold fails to recognise a chest with no heartbeat once sensor noise reaches about 0.65-0.8 mg RMS. An adaptive threshold that fixes this in the simulator would call 95% of real resting seconds 'still' (emulated on 40 recordings), so it is not adopted. | Simulated + Replayed emulation (CEBS) |
-
-### 1.2 Must not say
-
-| Do not write | Why |
-|---|---|
-| "validated", "clinically tested", "proven" | Nothing here is a clinical test of the device or of the combined sensor set |
-| "detects heart attacks / ischemia / arrest", any sensitivity or specificity for them, any lead time as a capability | No recording has our sensors during a heart attack; the A1 "lead times" are check-ins that follow heart-rate changes, not predictions |
-| "ECG-beat check catches ventricular fibrillation" | A4: the detector keeps finding beats during real VF (half the onsets never triggered the no-beat rule in 5 minutes) |
-| "heart-rate drift detects ischemia" | A1: it caught 4.5% of episodes at about 1 false alarm per day; catching more costs tens of false alarms per day |
-| "ST level detects a heart attack" | A3: ST alone is weak; it is a resting diagnostic ECG, not a wearable or sternal lead |
-| "adaptive threshold fixes the sensor-noise problem" | B5: not shown; the chip's real noise figure is unverified |
-| the ECG-veto's zero false arms as a result without the PEA caveat | The veto would also block the countdown in pulseless electrical activity (PEA); DaLiA cannot test that |
-| any number from the tune sets as a result | Only test-set numbers are results; tune-set numbers are in separate tables |
+**Bottom line.** The supported claim is "alarm logic simulated and replayed on public recordings, with its failure modes measured". The strongest new findings are failures, and they are useful: they say exactly what the final design must add (a second condition beyond the ECG, a longer hold, a real noise figure for the chest sensor).
 
 ## 2. Rules followed, splits and frozen files
 
@@ -316,4 +287,4 @@ No file in `rtl/`, `model/` or `tb/` was edited. New simulation sources live in 
 
 ## 6. Files
 
-Scripts: `py/download_physionet.py` (extended), `py/b2_scales.py`, `py/b3_features.py`, `py/b3_ecg_rtl.py`, `py/b3_arming.py`, `py/b4_rest_drift.py`, `py/a1_ltstdb.py`, `py/a1_hint.py` (not run), `py/b5_cebs_emulation.py`, `py/drift_eval.py`, `py/a2_edb.py`, `py/a3_ptbxl.py`, `py/a4_windows_rtl.py`, `py/a4_beats_py.py`, `py/a4_analysis.py`, `py/beat_model.py`, `py/b5_adaptive_sweep.py`, `py/make_charts2.py`, `py/build_report2.py`. Splits and frozen configs: `splits/`, `configs/`. Results: `results/b2_*`, `b3_*`, `b4_*`, `a1_*`, `a2_*`, `a3_*`, `a4_*`, `b5_*` (CSV), `fig_b2_*`, `fig_b3_*`, `fig_a1_*`, `fig_a3_*`, `fig_a4_*`, `fig_b5_*`. Changelog: `results/CHANGELOG_round2.md`.
+Scripts: `py/download_physionet.py` (extended), `py/b2_scales.py`, `py/b3_features.py`, `py/b3_ecg_rtl.py`, `py/b3_arming.py`, `py/b4_rest_drift.py`, `py/a1_ltstdb.py`, `py/a1_hint.py` (not run), `py/b5_cebs_emulation.py`, `py/drift_eval.py`, `py/a2_edb.py`, `py/a3_ptbxl.py`, `py/a4_windows_rtl.py`, `py/a4_beats_py.py`, `py/a4_analysis.py`, `py/beat_model.py`, `py/b5_adaptive_sweep.py`, `py/make_charts2.py`. Splits and frozen configs: `splits/`, `configs/`. Results: `results/b2_*`, `b3_*`, `b4_*`, `a1_*`, `a2_*`, `a3_*`, `a4_*`, `b5_*` (CSV), `fig_b2_*`, `fig_b3_*`, `fig_a1_*`, `fig_a3_*`, `fig_a4_*`, `fig_b5_*`.

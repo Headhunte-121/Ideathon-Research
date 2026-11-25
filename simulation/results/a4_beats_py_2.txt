@@ -1,7 +1,0 @@
-sddb/32: 121431 beats in 24.3 h, 0.012% on the rail, 988 NaN samples filled, 9 s
-sddb/35: 107779 beats in 24.9 h, 0.112% on the rail, 175 NaN samples filled, 10 s
-sddb/38: 117849 beats in 18.3 h, 0.009% on the rail, 2894 NaN samples filled, 7 s
-sddb/41: 21707 beats in 3.9 h, 0.027% on the rail, 2182 NaN samples filled, 1 s
-sddb/44: 117911 beats in 23.3 h, 0.007% on the rail, 1203 NaN samples filled, 8 s
-sddb/47: 93241 beats in 23.6 h, 1.131% on the rail, 794 NaN samples filled, 8 s
-sddb/50: 62897 beats in 23.1 h, 0.007% on the rail, 224 NaN samples filled, 7 s
