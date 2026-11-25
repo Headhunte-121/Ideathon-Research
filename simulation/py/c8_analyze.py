@@ -139,8 +139,6 @@ A big gap between "best_val" and "test_of_best_val" is the optimism of picking t
 ## What this does NOT show
 Nothing about early warning, lead time or ischemia: labels are ST episodes marked by an amplitude rule (circular), all 79 subjects were already used as test folds before, and no fresh data exists. The drift-absorption risk of a running baseline in a truly ischemic person is untested.
 
-## Allowed poster wording
-Only if the verdict line says adds value: "A search over about {sum(n.values())} model variants, selected on validation patients only, reached sensitivity X at a 1 % false-alarm rate on unseen patients (Replayed, public EDB data; feasibility, not detection)." Otherwise: "A search over about {sum(n.values())} model variants did not beat a simple personal-baseline ST rule on unseen patients (Replayed)."
 """
     open("../docs/reports/C8_SEARCH_REPORT.md" if not DRY else "results/c8dry_report.md", "w", encoding="utf-8").write(txt)
 

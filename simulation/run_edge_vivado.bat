@@ -13,5 +13,5 @@ call xsim edge_snap -runall -testplusarg "VEC_START=0" -testplusarg "VEC_COUNT=%
 findstr /C:"MISMATCH" /C:"passed" /C:"compute_cycles" ..\results\c4_rtl_serial_log.txt
 exit /b 0
 :err
-echo *** A step failed. Send the first error lines above. ***
+echo *** A step failed. See the first error above. ***
 exit /b 1

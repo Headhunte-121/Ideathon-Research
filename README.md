@@ -178,8 +178,7 @@ To replay public recordings, first [get the datasets](data/README.md), then foll
 .
 ├── docs/
 │   ├── design/        Architecture and design decisions
-│   ├── reports/       Test reports (the source of truth)
-│   └── competition/   Abstract and poster content
+│   └── reports/       Test reports (the source of truth)
 ├── simulation/
 │   ├── rtl/           Verilog design of both nodes
 │   ├── model/         Simulated patient, sensor chips, radio and phone
@@ -188,7 +187,7 @@ To replay public recordings, first [get the datasets](data/README.md), then foll
 │   ├── py/            Dataset replay and model training
 │   ├── configs/       Settings frozen before testing
 │   ├── splits/        Patient-wise train and test splits
-│   └── results/       Logs, tables and figures
+│   └── results/       Tables and figures
 └── data/              Dataset sources (recordings are not committed)
 ```
 
@@ -200,9 +199,7 @@ To replay public recordings, first [get the datasets](data/README.md), then foll
 | [Simulation guide](simulation/README.md) | Design blocks and testbenches |
 | [System design](docs/design/DESIGN.md) | Architecture, design decisions and open questions |
 
-Design and competition documents set out the **design vision**, including planned features. For measured results, the reports are the reference.
-
-<!-- Team section: add member names, roles, college and registration ID here. -->
+The design document sets out the **design vision**, including planned features. For measured results, the reports are the reference.
 
 ## Acknowledgements
 

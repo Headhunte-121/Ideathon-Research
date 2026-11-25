@@ -28,5 +28,5 @@ cd ..
 type results\real_drift_%REC%.txt
 exit /b 0
 :err
-echo *** a step failed, send the lines above ***
+echo *** a step failed. See the first error above. ***
 exit /b 1

@@ -1,4 +1,4 @@
-"""Tweak 3: how much of the loud-noise loss in E1 was never the detector's fault (my 16 codes/uV scale clipping the signal)?
+"""Tweak 3: how much of the loud-noise loss in E1 was never the detector's fault (the 16 codes/uV scale clipping the signal)?
 Replays the NSTDB records at several ECG scales through the UNCHANGED rtl/ecg_beat_detector.sv.  The detector's MIN_THR floor is
 set per scale so that it stays the same number of microvolts as in E1 (1500 codes at 16 codes/uV = 93.75 uV), plus one run where it is NOT
 rescaled, to show that effect separately.   Needs settings64.bat in the same window.

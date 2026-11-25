@@ -1,8 +1,8 @@
 @echo off
 REM Run all Sentry simulations with Vivado xsim from a Windows command prompt.
-REM 1) open a prompt and run:  C:\Xilinx\Vivado\<version>\settings64.bat   (path depends on your install)
+REM 1) open a prompt and run:  C:\AMDDesignTools\2025.2\Vivado\settings64.bat   (path depends on the install)
 REM 2) cd into this folder and run:  run_vivado.bat
-REM Not yet tested in xsim by the author -- if anything errors, send the first error lines.
+REM Tested with Vivado 2025.2.
 setlocal enabledelayedexpansion
 if not exist xsim_work mkdir xsim_work
 cd xsim_work
@@ -41,5 +41,5 @@ call xsim mut_b_snap -runall | findstr /C:"passed"
 echo Done. Full logs are in the results folder (vivado_*.txt).
 exit /b 0
 :err
-echo *** A step failed. Send the first error lines above. ***
+echo *** A step failed. See the first error above. ***
 exit /b 1

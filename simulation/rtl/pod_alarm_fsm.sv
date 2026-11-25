@@ -1,4 +1,4 @@
-// Alarm state machine of the Sentry Pod (follows the poster's state diagram, with the two-tier change):
+// Alarm state machine of the Sentry Pod (two-tier: check-in and emergency):
 //   MONITOR  -> CHECKIN : sustained baseline drift (wrist haptic nudge only, never a call)
 //   MONITOR/CHECKIN -> ARMED : wrist pulse lost AND chest shows no heartbeat for ARM_HOLD_S  (30 s countdown on the band)
 //   ARMED -> DISPATCH : countdown ends, OR a detected fall (impact over 3 g, then stillness)

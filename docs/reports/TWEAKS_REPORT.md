@@ -60,7 +60,7 @@ What the table tells:
 - **Hold longer:** 5 s leaves 0.27 per person-hour on the tune people; **10 s removes all 13** (the longest false run was 8 s) at a cost of 7 s of dispatch delay.
 - **Wrist still:** only reduces 0.70 to 0.48 per person-hour at the strictest setting (3x); person 8's wrist was mostly still while the pulse signal dropped.
 - **ECG no-beat:** in the 36 person-hours of living people the longest gap between detected chest-ECG beats was 4.4 s, and gaps of 3 s or more covered under 0.04 % of seconds (`results/tweak1_ecg_gap_living.csv`). This is the strongest guard and costs no time.
-- **Trade-off:** the ECG condition assumes an arrest shows *no electrical beats*. In pulseless electrical activity (PEA) the heart still produces electrical activity but no pulse, so this condition would **block** the countdown for those arrests. A longer hold has no such blind spot but is slower. This is a decision for the team, not something the data decides.
+- **Trade-off:** the ECG condition assumes an arrest shows *no electrical beats*. In pulseless electrical activity (PEA) the heart still produces electrical activity but no pulse, so this condition would **block** the countdown for those arrests. A longer hold has no such blind spot but is slower. This remains a design decision; the data does not settle it.
 - Limits: 15 healthy adults, one wrist device, activity labels from the dataset; the ECG detector port agrees with the Verilog's scores within 0.12 points on clean ECG (py/beat_model.py), but ECG under real chest motion was only tested on these 15 people.
 
 ## 3. Tweak 2: resting heart-rate drift warning (PPG-DaLiA, Replayed + Simulated step)

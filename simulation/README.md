@@ -13,7 +13,7 @@ The logic of the Sentry Pod and PulseBand written in Verilog and tested in a sim
 | `rtl_edge/` | Stand-alone 8-bit neural network block, testbench, weights and vectors |
 | `py/` | Experiments and analysis |
 | `configs/`, `splits/` | Frozen settings and patient-wise splits |
-| `results/` | Logs, tables and figures |
+| `results/` | Tables and figures |
 
 ## Design blocks (`rtl/`)
 
@@ -62,9 +62,9 @@ run_edge_vivado.bat
 | `real_*`, `e5_episodes.py` | 1: public recordings | [REAL_DATA.md](REAL_DATA.md) |
 | `tweak*`, `analyze_drift.py` | Follow-up changes | [Tweaks report](../docs/reports/TWEAKS_REPORT.md) |
 | `a1_*` to `a4_*`, `b2_*` to `b5_*` | 2: ischemia and arrest datasets | [Round 2 report](../docs/reports/REAL_DATA_REPORT_2.md) |
-| `c0_*` to `c8_*`, `edge_*` | 3: edge AI | [Edge-AI report](../docs/reports/EDGE_AI_REPORT.md) |
+| `c1_*` to `c8_*`, `edge_*` | 3: edge AI | [Edge-AI report](../docs/reports/EDGE_AI_REPORT.md) |
 
-Run scripts from this folder, for example `python py/c0_dossier_arithmetic.py`.
+Run scripts from this folder, for example `python py/c2_eval.py`.
 
 ## Limits
 

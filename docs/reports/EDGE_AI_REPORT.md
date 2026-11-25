@@ -1,6 +1,6 @@
-# Edge-AI proof, round 3: a tiny heartbeat-shape network (trained, shrunk to 8-bit, copied into Verilog)
+# Edge-AI study: a tiny heartbeat-shape network (trained, shrunk to 8-bit, copied into Verilog)
 
-Written 7 Nov 2026 for the Autonomous Sternal Sentry ideathon entry (no hardware exists). Every number below comes from a file in `results/`. Evidence labels: **Replayed** (our model or Verilog on a public recording), **Simulated** (xsim), **Calculated** (arithmetic from the design), **Cited**, **Assumed**, **Proposed**, **Target**.
+Written 7 November 2026 for the Autonomous Sternal Sentry project (no hardware has been built). Every number below comes from a file in `results/`. Evidence labels: **Replayed** (our model or Verilog on a public recording), **Simulated** (xsim), **Calculated** (arithmetic from the design), **Cited**, **Assumed**, **Proposed**, **Target**.
 
 ---
 
@@ -17,28 +17,19 @@ Written 7 Nov 2026 for the Autonomous Sternal Sentry ideathon entry (no hardware
 
 **What the numbers do NOT say.** Public data has no recording with chest vibration + ECG + wrist pulse during a heart attack. So **nothing here can show that early ischemia or arrest is sensed with our sensor set.** The Verilog block is a separate stand-alone copy; it is not wired into the Pod's alarm logic, and the nRF5340 is a microcontroller, not an FPGA. No battery, energy or "milliseconds on the chip" figure is claimed.
 
-**The single most important honest sentence about the labels:** the EDB "ST episodes" were marked by cardiologists using an ST-amplitude rule (ST deviation of at least 0.1 mV for at least 30 s), so a rule that measures ST amplitude partly "knows the answer", and a model that beats a crude rule may only be measuring ST better; winning would not mean it understands ischemia (and EDB does not say which ST changes were ischemic).
+**Important note on the labels:** the EDB "ST episodes" were marked by cardiologists using an ST-amplitude rule (ST deviation of at least 0.1 mV for at least 30 s), so a rule that measures ST amplitude partly "knows the answer", and a model that beats a crude rule may only be measuring ST better; winning would not mean it understands ischemia (and EDB does not say which ST changes were ischemic).
 
 ---
 
-## 1. Inventory (C0)
+## 1. Setup and checks
 
-**Machine.** 16 logical CPUs; NVIDIA GeForce RTX 5050 Laptop GPU present, but PyTorch is `2.14.1+cpu` (CUDA unavailable). The CUDA build was not installed (large download, not needed): **every model of the final run was trained on CPU**, one process per (fold, seed), 1 torch thread each (53-208 s per model). Python 3.14.3, numpy/scipy/pandas/wfdb/scikit-learn/matplotlib present. Vivado xsim 2025.2 (`C:\AMDDesignTools\2025.2`). Free disk 165 GB. Nothing was downloaded; no `real_data` size scan was run. `git status` at the start already showed many modified/deleted files outside this task (e.g. old `rtl/drift_det.sv`, `rtl/nlms16.sv`, `rtl/sentry_fsm.sv`, `rtl/sentry_top.sv`, `tb/tb_drift.sv` etc. deleted, `../sentry_sim*.zip` modified); I did not touch them.
+**Setup.** Python 3.14.3 with numpy, scipy, pandas, wfdb, scikit-learn and PyTorch 2.14.1 (CPU); Vivado xsim 2025.2. All models in sections 3 to 7b were trained on CPU, one process per fold and seed.
 
-**Baseline regression** (`results/round3_regression_start.txt`): 22/22, 20/20, 35/35, mutation A 19 passed 16 failed, mutation B 34 passed 1 failed. Identical at the end (`results/round3_regression_end.txt`). (The first launch of the regression failed because a relative `run_vivado.bat` call did not resolve; it was re-launched with the full path. No result was kept from the failed launch.)
-
-**Dossier arithmetic (Calculated; `results/c0_dossier_arithmetic.csv`).**
-
-| Network | MACs | Weights + biases = parameters | int8 weight bytes | ideal cycles (MACs / 2) | ideal time at 128 MHz |
-|---|---:|---:|---:|---:|---:|
-| Dossier Q6.4 "Stage 2" (3->16, 16->32, 32->32 conv k3 over 6,000 samples, + 32->2) | 28,512,064 (28,512,000 conv + 64 final) | 4,816 + 82 = 4,898 | 4,816 (about 4.8 KB) | 14,256,032 | **111.4 ms** |
-| beatnet-tiny (ours, per heartbeat) | 43,144 | 1,496 + 42 = 1,538 | 1,496 | 21,572 | 0.169 ms |
-
-The notes' quoted figures (a stage-2 time of 1.8 ms from 230,400 cycles; 0.74 ms in Q6.1; a 410 KB model) are about 62x too fast and about 80x too big for 4,898 parameters, so they must not be printed. Our network is about 660x smaller in compute than the Q6.4 network. *Both timings are Calculated, ideal lower bound; real firmware is slower.* Nothing else about energy or battery is computed.
+**Baseline regression** (before and after this work): 22/22, 20/20 and 35/35 pass; mutation A 19 passed, 16 failed; mutation B 34 passed, 1 failed.
 
 **EDB record check** (`results/fig_c0_edb_check.png`, record e0103, channel 0 = lead V4, 2.0 h, 7,296 annotated beats, 5 ST episodes, 0 T episodes): the plotted annotation marks and the detected R peaks line up with the QRS complexes.
 
-**EDB facts confirmed from the PhysioNet documentation (not from memory).** ST episode = ST deviation of at least 0.1 mV lasting at least 30 s; T episode = T deviation of at least 0.2 mV for at least 30 s; deviation measured against a reference beat taken from the first 30 s of the record; ischemia is stated only at the subject level ("diagnosed or suspected"), not per episode. Two cardiologists annotated each record independently; a third resolved differences.
+**EDB facts confirmed from the PhysioNet documentation.** ST episode = ST deviation of at least 0.1 mV lasting at least 30 s; T episode = T deviation of at least 0.2 mV for at least 30 s; deviation measured against a reference beat taken from the first 30 s of the record; ischemia is stated only at the subject level ("diagnosed or suspected"), not per episode. Two cardiologists annotated each record independently; a third resolved differences.
 
 ---
 
@@ -256,7 +247,7 @@ A13. The Verilog block uses combinational-read arrays (simulation oriented); no 
 A14. 'Parallel equals serial' checked on C1 (record e0103: identical windows and features) and on one C2 training job (fold 4, seed 2: identical validation AUPRC and threshold). C4 is integer-exact by construction.
 
 ## 9. Regression
-Start (`results/round3_regression_start.txt`) and end (`results/round3_regression_end.txt`) are identical: 22/22, 20/20, 35/35; mutation A 19 passed / 16 failed; mutation B 34 passed / 1 failed. No file was edited in `rtl/`, `model/`, `tb/` or `run_vivado.bat` by this round; their pre-existing git changes are listed in section 1.
+The baseline regression gave the same results before and after this work: 22/22, 20/20 and 35/35; mutation A 19 passed, 16 failed; mutation B 34 passed, 1 failed. No file in `rtl/`, `model/`, `tb/` or `run_vivado.bat` was edited for these experiments.
 
 ## 10. Files
-Scripts: `py/c0_dossier_arithmetic.py`, `c1_lib.py`, `c1_make_split.py`, `c1_edb_windows.py`, `edge_nets.py`, `c2_train.py`, `c2_score.py`, `c2_eval.py`, `c2_leakage.py`, `c2_secondary_detector.py`, `c2_figs.py`, `edge_int_model.py`, `c3_quantize.py`, `c3_freeze.py`, `c4_make_vectors.py`, `c4_run.py`, `c5_windows.py`, `c5_ptbxl_cnn.py`, `c6_prelead.py`. Verilog: `rtl_edge/rtl/edge_cnn_beat.sv`, `rtl_edge/tb/tb_edge_cnn.sv`, vectors, `rtl_edge/weights/*.mem`, `run_edge_vivado.bat`. Split/configs: `splits/c1_edb_split.json`, `configs/c2_frozen.json`, `c3_quant_frozen.json`, `c5_frozen.json`. Results: `results/c0_*`, `c1_*`, `c2_*` (beat metrics, bootstrap, episode metrics, failure analysis, leakage, secondary detector, train log, thresholds), `c3_*`, `c4_*`, `c5_ptbxl_*`, `c6_prelead.csv`, `round3_regression_*.txt`, figures `fig_c0_edb_check`, `fig_c2_roc_pr`, `fig_c2_episode`, `fig_c2_leakage`, `fig_c3_int8`, `fig_c4_cycles`, `fig_c5_ptbxl` (.png). C7 follow-up: `py/c7_*.py`, `configs/c7_frozen.json`, `results/c7_*`, `fig_c7_calibration.png`. Intermediate data (windows, scores, models) are under `data/edge/` (not committed).
+Scripts: `py/c1_lib.py`, `c1_make_split.py`, `c1_edb_windows.py`, `edge_nets.py`, `c2_train.py`, `c2_score.py`, `c2_eval.py`, `c2_leakage.py`, `c2_secondary_detector.py`, `c2_figs.py`, `edge_int_model.py`, `c3_quantize.py`, `c3_freeze.py`, `c4_make_vectors.py`, `c4_run.py`, `c5_windows.py`, `c5_ptbxl_cnn.py`, `c6_prelead.py`. Verilog: `rtl_edge/rtl/edge_cnn_beat.sv`, `rtl_edge/tb/tb_edge_cnn.sv`, vectors, `rtl_edge/weights/*.mem`, `run_edge_vivado.bat`. Split/configs: `splits/c1_edb_split.json`, `configs/c2_frozen.json`, `c3_quant_frozen.json`, `c5_frozen.json`. Results: `results/`c1_*`, `c2_*` (beat metrics, bootstrap, episode metrics, failure analysis, leakage, secondary detector, train log, thresholds), `c3_*`, `c4_*`, `c5_ptbxl_*`, `c6_prelead.csv`, `round3_regression_*.txt`, figures `fig_c0_edb_check`, `fig_c2_roc_pr`, `fig_c2_episode`, `fig_c2_leakage`, `fig_c3_int8`, `fig_c4_cycles`, `fig_c5_ptbxl` (.png). C7 follow-up: `py/c7_*.py`, `configs/c7_frozen.json`, `results/c7_*`, `fig_c7_calibration.png`. Intermediate data (windows, scores, models) are under `data/edge/` (not committed).

@@ -210,11 +210,7 @@ What it shows: while sitting, working or driving, the wrist pulse is almost neve
 **What it does NOT show / caveats:** (1) The Pod's chest condition is "no heartbeat vibration in the chest", **not** "no chest motion"; DaLiA's chest accelerometer is not a seismocardiogram sensor, so the full arming condition cannot be tested on it. E4 shows living supine people always keep their chest vibration above the threshold, which would stop these episodes from arming, but E4 people were lying on a bed. This link is **not tested** for sitting/lunch. (2) Peak-to-peak cannot tell a pulse from motion artefact, so the "pulse lost" figures during walking, cycling and stairs (about 0 %) mean "something large was on the wrist", not "a good pulse was present"; only the still activities are informative. (3) The cancel window (30 s) and the phone link are downstream of these episodes and were not exercised here. (4) 15 healthy adults, 2 h each, one wrist PPG device.
 
 
-## 4. Failures found and fixed while running on real files
-
-In short: no ECG had any detections until the DC offset of real recordings (NSTDB sits near -6 mV) was removed, because it clipped every sample to the 16-bit rail; xsim plus-arguments were being split at `=`; the downloader script named in the brief did not exist; CEBS record names in the README were wrong (`a001` does not exist). None changed the RTL.
-
-## 5. What the numbers do not support
+## 4. What the numbers do not support
 
 *This report is the original; follow-up changes tried afterwards are in `results/TWEAKS_REPORT.md`.*
 
