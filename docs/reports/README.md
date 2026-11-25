@@ -11,3 +11,5 @@ File paths such as `results/...` or `py/...` written inside a report are relativ
 | [C8_SEARCH_REPORT.md](C8_SEARCH_REPORT.md) | Large model search, with the optimism of picking the best measured |
 
 Result tables and figures are in [`simulation/results/`](../../simulation/results). Raw simulator and run logs are not kept in the repository; re-running a test or script regenerates them.
+
+Commit IDs cited in the reports refer to this repository's history. The history was rewritten on 25 November 2026 to edit commit messages; file contents and commit dates in earlier commits are unchanged, and the cited IDs were updated to match.
