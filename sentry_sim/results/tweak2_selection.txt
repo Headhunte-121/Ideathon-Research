@@ -1,0 +1,7 @@
+Excluded (too little rest time): {'POOLED': [(6, 630)], 'WORKING (labels used: upper bound)': [(6, 0)]}
+[POOLED] selected on the TUNE people only (fewest false alarms, then most steps detected): SIGMA K=3.8 (RTL logic)
+    tune (7 people, 2.24 rest-h): false alarms 0 (0.0/rest-h), detected +10%: 0/7, +15%: 0/7, +25%: 0/7
+    test (7 people, 2.16 rest-h): false alarms 0 (0.0/rest-h), detected +10%: 0/7, +15%: 0/7, +25%: 1/7
+[WORKING (labels used: upper bound)] selected on the TUNE people only (fewest false alarms, then most steps detected): PLAIN +10% for 5 min
+    tune (7 people, 1.66 rest-h): false alarms 0 (0.0/rest-h), detected +10%: 0/7, +15%: 0/7, +25%: 6/7
+    test (7 people, 1.58 rest-h): false alarms 0 (0.0/rest-h), detected +10%: 1/7, +15%: 2/7, +25%: 5/7

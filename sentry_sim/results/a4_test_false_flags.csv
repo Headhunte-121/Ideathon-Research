@@ -1,0 +1,13 @@
+record,has_vf_onset,hours,POD_flags,RATE_flags,IRR_flags,PROPOSAL_flags,POD_per_h,PROPOSAL_per_h
+sddb/30,True,7.58,3,0,0,0,0.4,0.0
+sddb/36,True,18.65,0,0,0,0,0.0,0.0
+sddb/37,True,1.19,2,0,1,1,1.68,0.84
+sddb/38,True,7.7,0,4,0,4,0.0,0.52
+sddb/39,True,4.3,0,0,0,0,0.0,0.0
+sddb/41,True,2.66,11,0,2,2,4.14,0.75
+sddb/42,False,24.97,5,0,0,0,0.2,0.0
+sddb/44,True,19.31,6,0,3,3,0.31,0.16
+sddb/46,True,3.36,0,0,0,0,0.0,0.0
+sddb/49,False,24.7,18,611,1,612,0.73,24.78
+sddb/51,True,22.64,5,0,1,1,0.22,0.04
+sddb/52,True,2.21,0,0,0,0,0.0,0.0

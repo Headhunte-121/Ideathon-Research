@@ -15,3 +15,12 @@ $RECYCLE.BIN/
 # Logs and temporary files
 *.log
 *.tmp
+
+# Simulator and Python build output
+xsim_work*/
+__pycache__/
+*.pyc
+.torch_cuda/
+# Downloaded datasets and regenerable intermediates
+sentry_sim/data/
+sentry_sim/real_data/

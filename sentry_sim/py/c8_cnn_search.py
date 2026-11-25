@@ -34,7 +34,15 @@ def data(k, key):
     return _D[(k, key)]
 
 
+_IN = {}
 def inputs(k, c, idx=None):
+    key = (k, c["inp"])
+    if key not in _IN:
+        _IN[key] = _inputs(k, c).half(); _D.pop((k, "win"), None); [_D.pop((k, f"wmed{x}"), None) for x in (300, 600, 1800)]
+    return _IN[key] if idx is None else _IN[key][idx]
+
+
+def _inputs(k, c, idx=None):
     w = data(k, "win").float() / 16.0; i = c["inp"]
     if i == "W": x = w[:, None, :]
     elif i.startswith("WR") and "+" not in i: x = ((w * 16 - torch.nan_to_num(data(k, f"wmed{i[2:]}").float())) / 16.0)[:, None, :]
@@ -50,7 +58,12 @@ def smooth_t(score, start, n):
 
 @torch.no_grad()
 def predict(net, x):
-    net.eval(); return torch.cat([(lambda o: o[:, 1] - o[:, 0])(net(x[i:i + 16384])) for i in range(0, len(x), 16384)])
+    net.eval(); return torch.cat([(lambda o: o[:, 1] - o[:, 0])(net(x[i:i + 16384].float())) for i in range(0, len(x), 16384)])
+
+
+def gpu_auc(k, s):
+    ok = data(k, "ok").bool(); lab = data(k, "label"); m = ok & (lab >= 0); y = (lab[m] == 1); sc = s[m]; r = torch.empty(len(sc), device=DEV); o = torch.argsort(sc); r[o] = torch.arange(1, len(sc) + 1, device=DEV, dtype=torch.float32)
+    npos = y.sum().item(); nneg = len(y) - npos; return ((r[y].sum().item() - npos * (npos + 1) / 2) / (npos * nneg))
 
 
 def metrics(k, s, thr=None):
@@ -68,22 +81,26 @@ def job(c, k):
     for ep in range(12):
         net.train(); n = min(c["per_class"], len(pos), len(neg)); idx = torch.cat([pos[torch.randperm(len(pos), device=DEV)[:n]], neg[torch.randperm(len(neg), device=DEV)[:n]]]); idx = idx[torch.randperm(len(idx), device=DEV)]
         for i in range(0, len(idx), c["batch"]):
-            b = idx[i:i + c["batch"]]; x = X[b]; y = (lab[b] == 1).long()
+            b = idx[i:i + c["batch"]]; x = X[b].float(); y = (lab[b] == 1).long()
             if c["aug"] == "amp+shift":
                 x = x * (0.8 + 0.4 * torch.rand(len(b), 1, 1, device=DEV)); sh = int(torch.randint(-2, 3, (1,))); x = torch.roll(x, sh, dims=2)
             loss = F.cross_entropy(net(x), y); opt.zero_grad(); loss.backward(); opt.step()
-        sv = smooth_t(predict(net, Xv), sv_start, c["smooth"]); a = metrics(val, sv)["auroc"]
+        sv = smooth_t(predict(net, Xv), sv_start, c["smooth"]); a = gpu_auc(val, sv)
         if a > best[0]: best = (a, {n_: v.clone() for n_, v in net.state_dict().items()})
     net.load_state_dict(best[1]); sv = smooth_t(predict(net, Xv), sv_start, c["smooth"]); mv = metrics(val, sv); st = smooth_t(predict(net, Xt), st_start, c["smooth"]); mt = metrics(k, st, mv["thr"])
     return dict(cfg=c["id"], fold=k, val_auroc=mv["auroc"], val_auprc=mv["auprc"], val_sens1=mv["sens1"], test_auroc=mt["auroc"], test_auprc=mt["auprc"], test_sens1=mt["sens1"], test_dep_sens=mt["dep_sens"], test_dep_fpr=mt["dep_fpr"], sec=time.time() - t0), st.cpu().numpy()
 
 
 if __name__ == "__main__":
-    n = int(sys.argv[1]); s0 = int(sys.argv[2]) if len(sys.argv) > 2 else 0; step = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    S8.make_cache(); cfgs = [sample(i) for i in range(n)]; json.dump(cfgs, open("results/c8_cnn_configs.json", "w"))
+    S8.make_cache()
+    if sys.argv[1].endswith(".json"):
+        cfgs = [sample(i) for i in json.load(open(sys.argv[1]))]; s0, step = 0, 1
+    else:
+        n = int(sys.argv[1]); s0 = int(sys.argv[2]) if len(sys.argv) > 2 else 0; step = int(sys.argv[3]) if len(sys.argv) > 3 else 1
+        cfgs = [sample(i) for i in range(n)]; json.dump(cfgs, open("results/c8_cnn_configs.json", "w"))
     for f in range(5): data(f, "start")
     fields = ["cfg", "fold", "val_auroc", "val_auprc", "val_sens1", "test_auroc", "test_auprc", "test_sens1", "test_dep_sens", "test_dep_fpr", "sec"]
-    path = "results/c8_cnn_log.csv"; new = not os.path.exists(path)
+    path = "results/c8_cnn_log%s.csv" % (sys.argv[4] if len(sys.argv) > 4 else ""); new = not os.path.exists(path)
     with open(path, "a", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
         if new: w.writeheader()

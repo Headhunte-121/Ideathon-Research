@@ -1,0 +1,15 @@
+S1: exit
+S2: exit
+S3: exit
+S4: exit
+S5: exit
+S6: $finish called at time : 10500019 ns : File "C:/College/Ideathon/sentry_sim/tb/tb_real_ecg_beats.sv" Line 29
+S7: exit
+S8: exit
+S9: exit
+S10: exit
+S11: exit
+S12: exit
+S13: exit
+S14: exit
+S15: exit

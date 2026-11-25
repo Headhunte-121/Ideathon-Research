@@ -1,0 +1,11 @@
+absent README.txt
+absent info.txt
+skip   RECORDS
+skip   ANNOTATORS
+skip   SHA256SUMS.txt
+absent LICENSE.txt
+skip   00README
+got    s20011.dat     61.78 MB   (2/116)
+got    s20011.atr      0.21 MB   (3/116)
+got    s20011.stc      0.00 MB   (4/116)
+got    s20041.hea      0.00 MB   (5/116)

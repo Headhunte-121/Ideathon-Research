@@ -1,0 +1,42 @@
+absent README.txt
+absent info.txt
+skip   RECORDS
+absent ANNOTATORS
+skip   SHA256SUMS.txt
+skip   LICENSE.txt
+absent 00README
+S3 mode: physionet-open.s3.amazonaws.com/ptb-xl/1.0.3/  threads=12
+  1000/43596 files, 60 MB
+  2000/43596 files, 120 MB
+  3000/43596 files, 181 MB
+  4000/43596 files, 241 MB
+  5000/43596 files, 301 MB
+  6000/43596 files, 362 MB
+  7000/43596 files, 422 MB
+  8000/43596 files, 482 MB
+  9000/43596 files, 543 MB
+  10000/43596 files, 603 MB
+  11000/43596 files, 663 MB
+  12000/43596 files, 723 MB
+  13000/43596 files, 784 MB
+  14000/43596 files, 844 MB
+  15000/43596 files, 904 MB
+  16000/43596 files, 965 MB
+  17000/43596 files, 1025 MB
+  18000/43596 files, 1085 MB
+  19000/43596 files, 1146 MB
+  20000/43596 files, 1206 MB
+  21000/43596 files, 1266 MB
+  22000/43596 files, 1327 MB
+  23000/43596 files, 1387 MB
+  24000/43596 files, 1447 MB
+  25000/43596 files, 1507 MB
+  26000/43596 files, 1568 MB
+  27000/43596 files, 1628 MB
+  28000/43596 files, 1688 MB
+  29000/43596 files, 1749 MB
+  30000/43596 files, 1809 MB
+  31000/43596 files, 1869 MB
+  32000/43596 files, 1929 MB
+  33000/43596 files, 1990 MB
+  34000/43596 files, 2050 MB

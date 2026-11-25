@@ -1,0 +1,79 @@
+absent README.txt
+absent info.txt
+skip   RECORDS
+skip   ANNOTATORS
+skip   SHA256SUMS.txt
+absent LICENSE.txt
+absent 00README
+S3 mode: physionet-open.s3.amazonaws.com/cudb/1.0.0/  threads=8
+done (S3): cudb 1.0.0, 105 files, 7 MB in real_data\cudb
+absent README.txt
+absent info.txt
+got    RECORDS
+got    ANNOTATORS
+got    SHA256SUMS.txt
+absent LICENSE.txt
+absent 00README
+S3 mode: physionet-open.s3.amazonaws.com/sddb/1.0.0/  threads=8
+done (S3): sddb 1.0.0, 92 files, 1212 MB in real_data\sddb
+absent README.txt
+absent info.txt
+got    RECORDS
+got    ANNOTATORS
+got    SHA256SUMS.txt
+absent LICENSE.txt
+absent 00README
+S3 mode: physionet-open.s3.amazonaws.com/edb/1.0.0/  threads=8
+done (S3): edb 1.0.0, 270 files, 488 MB in real_data\edb
+absent README.txt
+absent info.txt
+got    RECORDS
+absent ANNOTATORS
+got    SHA256SUMS.txt
+got    LICENSE.txt
+absent 00README
+S3 mode: physionet-open.s3.amazonaws.com/ptb-xl/1.0.3/  threads=12
+  1000/43600 files, 12 MB
+  2000/43600 files, 25 MB
+  3000/43600 files, 37 MB
+  4000/43600 files, 49 MB
+  5000/43600 files, 61 MB
+  6000/43600 files, 74 MB
+  7000/43600 files, 86 MB
+  8000/43600 files, 98 MB
+  9000/43600 files, 111 MB
+  10000/43600 files, 123 MB
+  11000/43600 files, 135 MB
+  12000/43600 files, 148 MB
+  13000/43600 files, 160 MB
+  14000/43600 files, 172 MB
+  15000/43600 files, 185 MB
+  16000/43600 files, 197 MB
+  17000/43600 files, 209 MB
+  18000/43600 files, 221 MB
+  19000/43600 files, 234 MB
+  20000/43600 files, 246 MB
+  21000/43600 files, 258 MB
+  22000/43600 files, 271 MB
+  23000/43600 files, 283 MB
+  24000/43600 files, 295 MB
+  25000/43600 files, 308 MB
+  26000/43600 files, 320 MB
+  27000/43600 files, 332 MB
+  28000/43600 files, 344 MB
+  29000/43600 files, 357 MB
+  30000/43600 files, 369 MB
+  31000/43600 files, 381 MB
+  32000/43600 files, 394 MB
+  33000/43600 files, 406 MB
+  34000/43600 files, 418 MB
+  35000/43600 files, 431 MB
+  36000/43600 files, 443 MB
+  37000/43600 files, 455 MB
+  38000/43600 files, 467 MB
+  39000/43600 files, 480 MB
+  40000/43600 files, 492 MB
+  41000/43600 files, 504 MB
+  42000/43600 files, 517 MB
+  43000/43600 files, 529 MB
+done (S3): ptb-xl 1.0.3, 43600 files, 543 MB in real_data\ptbxl

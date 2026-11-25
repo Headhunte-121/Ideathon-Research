@@ -1,0 +1,13 @@
+lead,features,C,threshold,val_auc_fold9
+I,ST only,1.0,0.4843,0.7755
+I,all five,0.01,0.574,0.8417
+I,heart rate only,0.01,0.5275,0.6261
+II,ST only,0.01,0.5356,0.6675
+II,all five,0.01,0.5112,0.8766
+II,heart rate only,0.01,0.531,0.626
+V2,ST only,0.01,0.5181,0.6145
+V2,all five,0.1,0.557,0.7058
+V2,heart rate only,0.01,0.5303,0.6239
+V5,ST only,0.01,0.547,0.7018
+V5,all five,0.01,0.5667,0.8622
+V5,heart rate only,0.01,0.5305,0.6214

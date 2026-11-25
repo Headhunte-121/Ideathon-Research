@@ -1,0 +1,7 @@
+stream,K,people_used,false_checkins,stream_hours,false_per_hour,people_with_false,caught_10pct,median_delay_min_10pct,caught_15pct,median_delay_min_15pct,caught_25pct,median_delay_min_25pct
+ALL,3.0,8,1,16.08,0.062,1,1/8,3.0,1/8,3.0,1/8,3.0
+REST,3.0,8,1,10.89,0.092,1,1/8,36.9,1/8,36.9,1/8,36.9
+ALL,3.8,8,1,16.08,0.062,1,1/8,3.4,1/8,3.4,0/8,
+REST,3.8,8,1,10.89,0.092,1,1/8,36.9,1/8,36.9,1/8,36.9
+ALL,4.5,8,0,16.08,0.0,0,0/8,,0/8,,0/8,
+REST,4.5,8,0,10.89,0.0,0,1/8,36.9,1/8,36.9,1/8,36.9

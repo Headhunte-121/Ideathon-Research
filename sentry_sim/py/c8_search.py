@@ -66,7 +66,9 @@ def fit_predict(c, Xtr, ytr, Xs):
     from sklearn.neural_network import MLPClassifier
     from sklearn.preprocessing import StandardScaler
     sc = StandardScaler().fit(Xtr); m = MLPClassifier(tuple(c["hidden"]), alpha=c["alpha"], max_iter=40, random_state=8000 + c["id"]).fit(sc.transform(Xtr), ytr)
-    return [m.decision_function(sc.transform(X)) for X in Xs]
+    def dec(X):
+        q = np.clip(m.predict_proba(sc.transform(X))[:, 1], 1e-6, 1 - 1e-6); return np.log(q / (1 - q))
+    return [dec(X) for X in Xs]
 
 
 def job(a):

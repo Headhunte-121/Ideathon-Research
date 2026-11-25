@@ -1,0 +1,123 @@
+absent README.txt
+absent info.txt
+got    RECORDS
+got    ANNOTATORS
+got    SHA256SUMS.txt
+absent LICENSE.txt
+skip   16265.hea       0.0 MB
+skip   16265.dat      35.2 MB
+skip   16265.atr       0.3 MB
+skip   16272.hea       0.0 MB
+skip   16272.dat      34.6 MB
+got    16272.atr       0.3 MB
+got    16273.hea       0.0 MB
+skip   16273.dat      34.1 MB
+skip   16273.atr       0.3 MB
+skip   16420.hea       0.0 MB
+skip   16420.dat      33.2 MB
+skip   16420.atr       0.3 MB
+skip   16483.hea       0.0 MB
+skip   16483.dat      35.9 MB
+skip   16483.atr       0.3 MB
+skip   16539.hea       0.0 MB
+skip   16539.dat      34.0 MB
+skip   16539.atr       0.3 MB
+skip   16773.hea       0.0 MB
+skip   16773.dat      33.1 MB
+skip   16773.atr       0.5 MB
+skip   16786.hea       0.0 MB
+skip   16786.dat      33.9 MB
+got    16786.atr       0.2 MB
+got    16795.hea       0.0 MB
+got    16795.dat      32.6 MB
+got    16795.atr       0.3 MB
+skip   17052.hea       0.0 MB
+skip   17052.dat      32.0 MB
+skip   17052.atr       0.2 MB
+skip   17453.hea       0.0 MB
+skip   17453.dat      33.7 MB
+skip   17453.atr       0.3 MB
+skip   18177.hea       0.0 MB
+skip   18177.dat      35.9 MB
+skip   18177.atr       0.4 MB
+skip   18184.hea       0.0 MB
+skip   18184.dat      32.8 MB
+skip   18184.atr       0.2 MB
+skip   19088.hea       0.0 MB
+skip   19088.dat      32.9 MB
+skip   19088.atr       0.4 MB
+skip   19090.hea       0.0 MB
+skip   19090.dat      33.4 MB
+skip   19090.atr       0.2 MB
+skip   19093.hea       0.0 MB
+skip   19093.dat      32.1 MB
+skip   19093.atr       0.2 MB
+skip   19140.hea       0.0 MB
+skip   19140.dat      33.4 MB
+skip   19140.atr       0.3 MB
+skip   19830.hea       0.0 MB
+skip   19830.dat      32.1 MB
+skip   19830.atr       0.3 MB
+done: nsrdb 1.0.0, 18 records, 610 MB on disk in real_data\nsrdb
+got    README.txt
+got    info.txt
+got    RECORDS
+absent ANNOTATORS
+got    SHA256SUMS.txt
+absent LICENSE.txt
+got    b001.hea       0.0 MB
+got    b001.dat      10.9 MB
+got    b001.atr       0.0 MB
+got    b002.hea       0.0 MB
+got    b002.dat      12.0 MB
+got    b002.atr       0.0 MB
+got    b003.hea       0.0 MB
+got    b003.dat      12.0 MB
+got    b003.atr       0.0 MB
+got    b004.hea       0.0 MB
+got    b004.dat      12.0 MB
+got    b004.atr       0.0 MB
+got    b005.hea       0.0 MB
+got    b005.dat      12.0 MB
+got    b005.atr       0.0 MB
+got    b006.hea       0.0 MB
+got    b006.dat      12.0 MB
+got    b006.atr       0.0 MB
+got    b007.hea       0.0 MB
+got    b007.dat      12.0 MB
+got    b007.atr       0.0 MB
+got    b008.hea       0.0 MB
+got    b008.dat      12.0 MB
+got    b008.atr       0.0 MB
+got    b009.hea       0.0 MB
+got    b009.dat      12.0 MB
+got    b009.atr       0.0 MB
+got    b010.hea       0.0 MB
+got    b010.dat      12.0 MB
+got    b010.atr       0.0 MB
+got    b011.hea       0.0 MB
+got    b011.dat      12.0 MB
+got    b011.atr       0.0 MB
+got    b012.hea       0.0 MB
+got    b012.dat      12.0 MB
+got    b012.atr       0.0 MB
+got    b013.hea       0.0 MB
+got    b013.dat      12.0 MB
+got    b013.atr       0.0 MB
+got    b014.hea       0.0 MB
+got    b014.dat      12.0 MB
+got    b014.atr       0.0 MB
+got    b015.hea       0.0 MB
+got    b015.dat      12.0 MB
+got    b015.atr       0.0 MB
+got    b016.hea       0.0 MB
+got    b016.dat      12.0 MB
+got    b016.atr       0.0 MB
+got    b017.hea       0.0 MB
+got    b017.dat      12.0 MB
+got    b017.atr       0.0 MB
+got    b018.hea       0.0 MB
+got    b018.dat      12.0 MB
+got    b018.atr       0.0 MB
+got    b019.hea       0.0 MB
+got    b019.dat      12.0 MB

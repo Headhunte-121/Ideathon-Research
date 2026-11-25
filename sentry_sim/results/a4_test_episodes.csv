@@ -1,0 +1,16 @@
+record,kind,onset_s,analysed_s,beats_in_episode,beats_per_min,median_bpm,pct_seconds_with_beat_in_last_6s,t_to_POD_s,t_to_RATE_s,t_to_IRR_s,t_to_PROPOSAL_s,flagged_before_onset_PROPOSAL
+cudb/cu02,VT,192.4,1.6,3,115.1,138.3,100.0,,,,,False
+cudb/cu02,VT,196.9,9.4,19,120.9,142.6,100.0,,,,,False
+cudb/cu02,VT,488.7,3.1,5,96.5,142.7,100.0,,,,,False
+cudb/cu02,VT,492.4,3.1,6,115.7,185.2,100.0,,,,,False
+cudb/cu02,VT,496.3,12.6,30,142.6,159.6,100.0,,,,,False
+sddb/30,VF,28473,300.0,24,4.8,67.9,21.0,9.0,,14.0,14.0,False
+sddb/36,VF,68341,300.0,343,68.6,66.4,99.7,27.0,,,,False
+sddb/37,VF,5473,300.0,174,34.8,90.9,57.3,46.0,,230.0,230.0,False
+sddb/38,VF,28914,300.0,379,75.8,99.3,94.3,77.0,,94.0,94.0,False
+sddb/39,VF,16671,300.0,580,116.0,151.5,95.7,117.0,,127.0,127.0,False
+sddb/41,VF,10764,300.0,548,109.6,120.0,100.0,,,,,False
+sddb/44,VF,70725,300.0,679,135.8,136.4,100.0,,,,,False
+sddb/46,VF,13307,300.0,582,116.4,153.1,100.0,,,,,False
+sddb/51,VF,82703,300.0,299,59.8,63.8,100.0,,,,,False
+sddb/52,VF,9160,300.0,563,112.6,124.0,100.0,,,,,False

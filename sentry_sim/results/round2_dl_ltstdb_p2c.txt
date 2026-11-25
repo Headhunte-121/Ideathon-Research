@@ -1,0 +1,12 @@
+absent README.txt
+absent info.txt
+skip   RECORDS
+skip   ANNOTATORS
+skip   SHA256SUMS.txt
+absent LICENSE.txt
+skip   00README
+got    s20561.16a      7.30 MB   (1/28)
+got    s20571.16a      6.09 MB   (2/28)
+got    s20581.16a      9.25 MB   (3/28)
+got    s20591.16a      9.10 MB   (4/28)
+got    s20601.16a     11.48 MB   (5/28)

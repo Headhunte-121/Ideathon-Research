@@ -1,0 +1,3 @@
+config,records,ischemic_episodes,ischemic_caught,ischemic_sens,median_lead_min,rate_episodes,rate_caught,false_checkins,nonepisode_hours,false_per_24h,records_with_false,fraction_records_with_false
+baseline rtl K=3.8 (untuned),43,178,1,0.006,-2.7,44,0,0,808.9,0.0,0,0.0
+FROZEN rest_proxy +25% for 10 min,43,178,8,0.045,9.5,44,2,36,808.9,1.07,10,0.233

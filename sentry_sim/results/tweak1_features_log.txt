@@ -1,0 +1,15 @@
+S1: 9212 s, 11409 chest-ECG beats found (dataset R-peaks: 11431), ECG at rail 0.00%, sitting wrist std 0.0037 g, sitting chest std 0.0032 g
+S2: 8205 s, 11263 chest-ECG beats found (dataset R-peaks: 11247), ECG at rail 0.00%, sitting wrist std 0.0049 g, sitting chest std 0.0057 g
+S3: 8741 s, 12934 chest-ECG beats found (dataset R-peaks: 12928), ECG at rail 0.00%, sitting wrist std 0.0067 g, sitting chest std 0.0050 g
+S4: 9150 s, 13446 chest-ECG beats found (dataset R-peaks: 13364), ECG at rail 0.00%, sitting wrist std 0.0051 g, sitting chest std 0.0036 g
+S5: 9305 s, 19485 chest-ECG beats found (dataset R-peaks: 19506), ECG at rail 0.00%, sitting wrist std 0.0062 g, sitting chest std 0.0059 g
+S6: 5250 s, 10341 chest-ECG beats found (dataset R-peaks: 10439), ECG at rail 0.00%, sitting wrist std 0.0051 g, sitting chest std 0.0031 g
+S7: 9343 s, 13498 chest-ECG beats found (dataset R-peaks: 13415), ECG at rail 0.00%, sitting wrist std 0.0027 g, sitting chest std 0.0024 g
+S8: 8080 s, 9630 chest-ECG beats found (dataset R-peaks: 9798), ECG at rail 0.00%, sitting wrist std 0.0060 g, sitting chest std 0.0037 g
+S9: 8560 s, 12353 chest-ECG beats found (dataset R-peaks: 12434), ECG at rail 0.00%, sitting wrist std 0.0051 g, sitting chest std 0.0030 g
+S10: 10648 s, 15374 chest-ECG beats found (dataset R-peaks: 15495), ECG at rail 0.00%, sitting wrist std 0.0042 g, sitting chest std 0.0034 g
+S11: 9048 s, 15408 chest-ECG beats found (dataset R-peaks: 15445), ECG at rail 0.00%, sitting wrist std 0.0048 g, sitting chest std 0.0031 g
+S12: 7914 s, 9454 chest-ECG beats found (dataset R-peaks: 9402), ECG at rail 0.00%, sitting wrist std 0.0067 g, sitting chest std 0.0035 g
+S13: 9136 s, 13538 chest-ECG beats found (dataset R-peaks: 13536), ECG at rail 0.00%, sitting wrist std 0.0036 g, sitting chest std 0.0039 g
+S14: 8958 s, 13203 chest-ECG beats found (dataset R-peaks: 13275), ECG at rail 0.02%, sitting wrist std 0.0034 g, sitting chest std 0.0033 g
+S15: 7939 s, 10438 chest-ECG beats found (dataset R-peaks: 10514), ECG at rail 0.00%, sitting wrist std 0.0027 g, sitting chest std 0.0028 g

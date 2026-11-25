@@ -1,0 +1,169 @@
+variant,record,snr_db,segment,pct_samples_clipped,sens,ppv,tp,fn,fp
+scale16_thr1500 (E1 as before),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale16_thr1500 (E1 as before),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale16_thr1500 (E1 as before),118,18,noisy,0.01,99.9,100.0,986,1,0
+scale16_thr1500 (E1 as before),118,18,clean,0.01,99.92,99.85,1289,1,2
+scale16_thr1500 (E1 as before),118,12,noisy,0.22,98.18,95.56,969,18,45
+scale16_thr1500 (E1 as before),118,12,clean,0.22,99.92,99.85,1289,1,2
+scale16_thr1500 (E1 as before),118,6,noisy,1.92,90.17,79.11,890,97,235
+scale16_thr1500 (E1 as before),118,6,clean,1.92,99.92,99.85,1289,1,2
+scale16_thr1500 (E1 as before),118,0,noisy,7.27,79.43,60.92,784,203,503
+scale16_thr1500 (E1 as before),118,0,clean,7.27,99.92,99.85,1289,1,2
+scale16_thr1500 (E1 as before),118,-6,noisy,19.33,57.35,47.72,566,421,620
+scale16_thr1500 (E1 as before),118,-6,clean,19.33,99.69,99.84,1286,4,2
+scale16_thr1500 (E1 as before),119,24,noisy,1.38,100.0,100.0,869,0,0
+scale16_thr1500 (E1 as before),119,24,clean,1.38,100.0,100.0,1118,0,0
+scale16_thr1500 (E1 as before),119,18,noisy,1.39,100.0,99.89,869,0,1
+scale16_thr1500 (E1 as before),119,18,clean,1.39,100.0,100.0,1118,0,0
+scale16_thr1500 (E1 as before),119,12,noisy,1.44,99.08,96.96,861,8,27
+scale16_thr1500 (E1 as before),119,12,clean,1.44,100.0,100.0,1118,0,0
+scale16_thr1500 (E1 as before),119,6,noisy,2.6,92.17,77.02,801,68,239
+scale16_thr1500 (E1 as before),119,6,clean,2.6,100.0,100.0,1118,0,0
+scale16_thr1500 (E1 as before),119,0,noisy,6.58,81.01,56.73,704,165,537
+scale16_thr1500 (E1 as before),119,0,clean,6.58,100.0,100.0,1118,0,0
+scale16_thr1500 (E1 as before),119,-6,noisy,17.8,62.49,45.02,543,326,663
+scale16_thr1500 (E1 as before),119,-6,clean,17.8,99.64,100.0,1114,4,0
+scale8_thr750 (scaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale8_thr750 (scaled),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr750 (scaled),118,18,noisy,0.0,99.9,100.0,986,1,0
+scale8_thr750 (scaled),118,18,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr750 (scaled),118,12,noisy,0.0,98.28,95.66,970,17,44
+scale8_thr750 (scaled),118,12,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr750 (scaled),118,6,noisy,0.14,89.67,78.18,885,102,247
+scale8_thr750 (scaled),118,6,clean,0.14,99.92,99.85,1289,1,2
+scale8_thr750 (scaled),118,0,noisy,1.57,77.1,58.63,761,226,537
+scale8_thr750 (scaled),118,0,clean,1.57,99.84,99.84,1288,2,2
+scale8_thr750 (scaled),118,-6,noisy,6.76,64.94,48.97,641,346,668
+scale8_thr750 (scaled),118,-6,clean,6.76,99.69,99.84,1286,4,2
+scale8_thr750 (scaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale8_thr750 (scaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr750 (scaled),119,18,noisy,0.0,100.0,99.89,869,0,1
+scale8_thr750 (scaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr750 (scaled),119,12,noisy,0.0,99.08,96.96,861,8,27
+scale8_thr750 (scaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr750 (scaled),119,6,noisy,0.06,92.17,77.54,801,68,232
+scale8_thr750 (scaled),119,6,clean,0.06,100.0,100.0,1118,0,0
+scale8_thr750 (scaled),119,0,noisy,1.19,77.79,56.15,676,193,528
+scale8_thr750 (scaled),119,0,clean,1.19,100.0,100.0,1118,0,0
+scale8_thr750 (scaled),119,-6,noisy,4.92,63.29,42.57,550,319,742
+scale8_thr750 (scaled),119,-6,clean,4.92,99.64,100.0,1114,4,0
+scale8_thr1500 (unscaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale8_thr1500 (unscaled),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr1500 (unscaled),118,18,noisy,0.0,99.9,100.0,986,1,0
+scale8_thr1500 (unscaled),118,18,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr1500 (unscaled),118,12,noisy,0.0,98.28,95.66,970,17,44
+scale8_thr1500 (unscaled),118,12,clean,0.0,99.92,99.85,1289,1,2
+scale8_thr1500 (unscaled),118,6,noisy,0.14,89.67,78.18,885,102,247
+scale8_thr1500 (unscaled),118,6,clean,0.14,99.92,99.85,1289,1,2
+scale8_thr1500 (unscaled),118,0,noisy,1.57,77.1,58.63,761,226,537
+scale8_thr1500 (unscaled),118,0,clean,1.57,99.84,99.84,1288,2,2
+scale8_thr1500 (unscaled),118,-6,noisy,6.76,64.94,48.97,641,346,668
+scale8_thr1500 (unscaled),118,-6,clean,6.76,99.69,99.84,1286,4,2
+scale8_thr1500 (unscaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale8_thr1500 (unscaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr1500 (unscaled),119,18,noisy,0.0,100.0,99.89,869,0,1
+scale8_thr1500 (unscaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr1500 (unscaled),119,12,noisy,0.0,99.08,96.96,861,8,27
+scale8_thr1500 (unscaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale8_thr1500 (unscaled),119,6,noisy,0.06,92.17,77.54,801,68,232
+scale8_thr1500 (unscaled),119,6,clean,0.06,100.0,100.0,1118,0,0
+scale8_thr1500 (unscaled),119,0,noisy,1.19,77.79,56.15,676,193,528
+scale8_thr1500 (unscaled),119,0,clean,1.19,100.0,100.0,1118,0,0
+scale8_thr1500 (unscaled),119,-6,noisy,4.92,63.29,42.57,550,319,742
+scale8_thr1500 (unscaled),119,-6,clean,4.92,99.64,100.0,1114,4,0
+scale4_thr375 (scaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale4_thr375 (scaled),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr375 (scaled),118,18,noisy,0.0,99.8,100.0,985,2,0
+scale4_thr375 (scaled),118,18,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr375 (scaled),118,12,noisy,0.0,98.38,95.76,971,16,43
+scale4_thr375 (scaled),118,12,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr375 (scaled),118,6,noisy,0.0,89.97,78.72,888,99,240
+scale4_thr375 (scaled),118,6,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr375 (scaled),118,0,noisy,0.12,69.3,59.38,684,303,468
+scale4_thr375 (scaled),118,0,clean,0.12,99.84,99.84,1288,2,2
+scale4_thr375 (scaled),118,-6,noisy,1.54,55.32,45.35,546,441,658
+scale4_thr375 (scaled),118,-6,clean,1.54,98.68,99.84,1273,17,2
+scale4_thr375 (scaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale4_thr375 (scaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr375 (scaled),119,18,noisy,0.0,100.0,100.0,869,0,0
+scale4_thr375 (scaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr375 (scaled),119,12,noisy,0.0,99.08,96.96,861,8,27
+scale4_thr375 (scaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr375 (scaled),119,6,noisy,0.0,92.06,77.82,800,69,228
+scale4_thr375 (scaled),119,6,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr375 (scaled),119,0,noisy,0.04,73.19,57.4,636,233,472
+scale4_thr375 (scaled),119,0,clean,0.04,100.0,100.0,1118,0,0
+scale4_thr375 (scaled),119,-6,noisy,1.14,54.89,41.55,477,392,671
+scale4_thr375 (scaled),119,-6,clean,1.14,98.93,100.0,1106,12,0
+scale4_thr1500 (unscaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale4_thr1500 (unscaled),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr1500 (unscaled),118,18,noisy,0.0,99.8,100.0,985,2,0
+scale4_thr1500 (unscaled),118,18,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr1500 (unscaled),118,12,noisy,0.0,98.38,95.76,971,16,43
+scale4_thr1500 (unscaled),118,12,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr1500 (unscaled),118,6,noisy,0.0,89.97,78.72,888,99,240
+scale4_thr1500 (unscaled),118,6,clean,0.0,99.92,99.85,1289,1,2
+scale4_thr1500 (unscaled),118,0,noisy,0.12,69.3,59.38,684,303,468
+scale4_thr1500 (unscaled),118,0,clean,0.12,99.84,99.84,1288,2,2
+scale4_thr1500 (unscaled),118,-6,noisy,1.54,55.32,45.35,546,441,658
+scale4_thr1500 (unscaled),118,-6,clean,1.54,98.68,99.84,1273,17,2
+scale4_thr1500 (unscaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale4_thr1500 (unscaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr1500 (unscaled),119,18,noisy,0.0,100.0,100.0,869,0,0
+scale4_thr1500 (unscaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr1500 (unscaled),119,12,noisy,0.0,99.08,96.96,861,8,27
+scale4_thr1500 (unscaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr1500 (unscaled),119,6,noisy,0.0,92.06,77.82,800,69,228
+scale4_thr1500 (unscaled),119,6,clean,0.0,100.0,100.0,1118,0,0
+scale4_thr1500 (unscaled),119,0,noisy,0.04,73.19,57.4,636,233,472
+scale4_thr1500 (unscaled),119,0,clean,0.04,100.0,100.0,1118,0,0
+scale4_thr1500 (unscaled),119,-6,noisy,1.14,54.89,41.55,477,392,671
+scale4_thr1500 (unscaled),119,-6,clean,1.14,98.93,100.0,1106,12,0
+scale2_thr187 (scaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale2_thr187 (scaled),118,24,clean,0.0,99.92,99.85,1289,1,2
+scale2_thr187 (scaled),118,18,noisy,0.0,99.8,100.0,985,2,0
+scale2_thr187 (scaled),118,18,clean,0.0,99.92,99.85,1289,1,2
+scale2_thr187 (scaled),118,12,noisy,0.0,98.38,95.95,971,16,41
+scale2_thr187 (scaled),118,12,clean,0.0,99.92,99.85,1289,1,2
+scale2_thr187 (scaled),118,6,noisy,0.0,90.07,79.38,889,98,231
+scale2_thr187 (scaled),118,6,clean,0.0,99.92,99.85,1289,1,2
+scale2_thr187 (scaled),118,0,noisy,0.0,69.1,60.14,682,305,452
+scale2_thr187 (scaled),118,0,clean,0.0,99.77,99.84,1287,3,2
+scale2_thr187 (scaled),118,-6,noisy,0.11,49.04,45.57,484,503,578
+scale2_thr187 (scaled),118,-6,clean,0.11,98.37,99.84,1269,21,2
+scale2_thr187 (scaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale2_thr187 (scaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr187 (scaled),119,18,noisy,0.0,99.88,100.0,868,1,0
+scale2_thr187 (scaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr187 (scaled),119,12,noisy,0.0,98.96,96.96,860,9,27
+scale2_thr187 (scaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr187 (scaled),119,6,noisy,0.0,91.48,78.25,795,74,221
+scale2_thr187 (scaled),119,6,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr187 (scaled),119,0,noisy,0.0,71.81,57.04,624,245,470
+scale2_thr187 (scaled),119,0,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr187 (scaled),119,-6,noisy,0.03,51.55,42.5,448,421,606
+scale2_thr187 (scaled),119,-6,clean,0.03,98.66,100.0,1103,15,0
+scale2_thr1500 (unscaled),118,24,noisy,0.0,99.9,100.0,986,1,0
+scale2_thr1500 (unscaled),118,24,clean,0.0,99.77,99.84,1287,3,2
+scale2_thr1500 (unscaled),118,18,noisy,0.0,99.8,100.0,985,2,0
+scale2_thr1500 (unscaled),118,18,clean,0.0,99.77,99.84,1287,3,2
+scale2_thr1500 (unscaled),118,12,noisy,0.0,98.48,96.33,972,15,37
+scale2_thr1500 (unscaled),118,12,clean,0.0,99.77,99.84,1287,3,2
+scale2_thr1500 (unscaled),118,6,noisy,0.0,90.98,80.54,898,89,217
+scale2_thr1500 (unscaled),118,6,clean,0.0,99.77,99.84,1287,3,2
+scale2_thr1500 (unscaled),118,0,noisy,0.0,69.2,60.55,683,304,445
+scale2_thr1500 (unscaled),118,0,clean,0.0,99.61,99.84,1285,5,2
+scale2_thr1500 (unscaled),118,-6,noisy,0.11,49.04,45.57,484,503,578
+scale2_thr1500 (unscaled),118,-6,clean,0.11,98.22,99.84,1267,23,2
+scale2_thr1500 (unscaled),119,24,noisy,0.0,100.0,100.0,869,0,0
+scale2_thr1500 (unscaled),119,24,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr1500 (unscaled),119,18,noisy,0.0,99.88,100.0,868,1,0
+scale2_thr1500 (unscaled),119,18,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr1500 (unscaled),119,12,noisy,0.0,99.08,97.51,861,8,22
+scale2_thr1500 (unscaled),119,12,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr1500 (unscaled),119,6,noisy,0.0,91.94,79.98,799,70,200
+scale2_thr1500 (unscaled),119,6,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr1500 (unscaled),119,0,noisy,0.0,72.38,57.87,629,240,458
+scale2_thr1500 (unscaled),119,0,clean,0.0,100.0,100.0,1118,0,0
+scale2_thr1500 (unscaled),119,-6,noisy,0.03,51.55,42.5,448,421,606
+scale2_thr1500 (unscaled),119,-6,clean,0.03,98.66,100.0,1103,15,0

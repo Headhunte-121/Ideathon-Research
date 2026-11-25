@@ -1,0 +1,61 @@
+variant,acc_noise_ug,scenario,passed,failed,failing_checks
+baseline,350,S1 normal rest,8,0,
+baseline,350,S3 watch loose (living),2,0,
+baseline,350,S5 arrest,7,0,
+adaptive KN=8 UP=16 DOWN=144,350,S1 normal rest,8,0,
+adaptive KN=8 UP=16 DOWN=144,350,S3 watch loose (living),2,0,
+adaptive KN=8 UP=16 DOWN=144,350,S5 arrest,7,0,
+baseline,500,S1 normal rest,8,0,
+baseline,500,S3 watch loose (living),2,0,
+baseline,500,S5 arrest,7,0,
+adaptive KN=8 UP=16 DOWN=144,500,S1 normal rest,8,0,
+adaptive KN=8 UP=16 DOWN=144,500,S3 watch loose (living),2,0,
+adaptive KN=8 UP=16 DOWN=144,500,S5 arrest,7,0,
+baseline,650,S1 normal rest,8,0,
+baseline,650,S3 watch loose (living),2,0,
+baseline,650,S5 arrest,2,5,"FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=8 UP=16 DOWN=144,650,S1 normal rest,8,0,
+adaptive KN=8 UP=16 DOWN=144,650,S3 watch loose (living),2,0,
+adaptive KN=8 UP=16 DOWN=144,650,S5 arrest,2,5,"FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+baseline,800,S1 normal rest,8,0,
+baseline,800,S3 watch loose (living),2,0,
+baseline,800,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=8 UP=16 DOWN=144,800,S1 normal rest,8,0,
+adaptive KN=8 UP=16 DOWN=144,800,S3 watch loose (living),2,0,
+adaptive KN=8 UP=16 DOWN=144,800,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+baseline,1000,S1 normal rest,8,0,
+baseline,1000,S3 watch loose (living),2,0,
+baseline,1000,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=8 UP=16 DOWN=144,1000,S1 normal rest,8,0,
+adaptive KN=8 UP=16 DOWN=144,1000,S3 watch loose (living),2,0,
+adaptive KN=8 UP=16 DOWN=144,1000,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=12 UP=16 DOWN=144,350,S1 normal rest,8,0,
+adaptive KN=12 UP=16 DOWN=144,350,S3 watch loose (living),2,0,
+adaptive KN=12 UP=16 DOWN=144,350,S5 arrest,7,0,
+adaptive KN=12 UP=16 DOWN=144,500,S1 normal rest,8,0,
+adaptive KN=12 UP=16 DOWN=144,500,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=12 UP=16 DOWN=144,500,S5 arrest,7,0,
+adaptive KN=12 UP=16 DOWN=144,650,S1 normal rest,8,0,
+adaptive KN=12 UP=16 DOWN=144,650,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=12 UP=16 DOWN=144,650,S5 arrest,2,5,"FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=12 UP=16 DOWN=144,800,S1 normal rest,8,0,
+adaptive KN=12 UP=16 DOWN=144,800,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=12 UP=16 DOWN=144,800,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=12 UP=16 DOWN=144,1000,S1 normal rest,8,0,
+adaptive KN=12 UP=16 DOWN=144,1000,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=12 UP=16 DOWN=144,1000,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=16 UP=16 DOWN=144,350,S1 normal rest,8,0,
+adaptive KN=16 UP=16 DOWN=144,350,S3 watch loose (living),2,0,
+adaptive KN=16 UP=16 DOWN=144,350,S5 arrest,7,0,
+adaptive KN=16 UP=16 DOWN=144,500,S1 normal rest,8,0,
+adaptive KN=16 UP=16 DOWN=144,500,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=16 UP=16 DOWN=144,500,S5 arrest,7,0,
+adaptive KN=16 UP=16 DOWN=144,650,S1 normal rest,8,0,
+adaptive KN=16 UP=16 DOWN=144,650,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=16 UP=16 DOWN=144,650,S5 arrest,2,5,"FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=16 UP=16 DOWN=144,800,S1 normal rest,8,0,
+adaptive KN=16 UP=16 DOWN=144,800,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=16 UP=16 DOWN=144,800,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"
+adaptive KN=16 UP=16 DOWN=144,1000,S1 normal rest,8,0,
+adaptive KN=16 UP=16 DOWN=144,1000,S3 watch loose (living),1,1,FAIL  S3 chest still shows heartbeat -> NO arming
+adaptive KN=16 UP=16 DOWN=144,1000,S5 arrest,0,7,"FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest"

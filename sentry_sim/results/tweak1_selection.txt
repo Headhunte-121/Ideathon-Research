@@ -1,0 +1,7 @@
+BEFORE (as tested in E5: pulse lost AND chest not moving, hold 3 s):
+  tune S1-S8: 13 false starts in 18.7 person-h = 0.696/h, people affected 2, worst person S8 (11)
+  test S9-S15: 0 false starts in 17.3 person-h = 0.0/h, people affected 0, worst person S9 (0)
+
+SELECTED ON THE TUNE PEOPLE ONLY: hold 3 s, wrist-still x=-, ECG no-beat 3 s = yes (added dispatch delay 0 s)
+  tune S1-S8: 0 false starts in 18.7 person-h = 0.0/h, people affected 0, worst person S1 (0)
+  test S9-S15: 0 false starts in 17.3 person-h = 0.0/h, people affected 0, worst person S9 (0)

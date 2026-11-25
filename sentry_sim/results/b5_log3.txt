@@ -1,0 +1,60 @@
+{'variant': 'baseline', 'acc_noise_ug': 350, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 350, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 350, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 500, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 500, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 500, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 650, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 650, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 650, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'baseline', 'acc_noise_ug': 800, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 800, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 800, 'scenario': 'S5 arrest', 'passed': 0, 'failed': 7, 'failing_checks': 'FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S5 arrest', 'passed': 1, 'failed': 6, 'failing_checks': 'FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'baseline', 'acc_noise_ug': 1000, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 1000, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'baseline', 'acc_noise_ug': 1000, 'scenario': 'S5 arrest', 'passed': 0, 'failed': 7, 'failing_checks': 'FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 wrist buzzes during countdown; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=6 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S5 arrest', 'passed': 1, 'failed': 6, 'failing_checks': 'FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=8 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S5 arrest', 'passed': 1, 'failed': 6, 'failing_checks': 'FAIL  S5 arms after about 3 s of pulse loss + still chest; FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 350, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S3 watch loose (living)', 'passed': 1, 'failed': 1, 'failing_checks': 'FAIL  S3 chest still shows heartbeat -> NO arming'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 500, 'scenario': 'S5 arrest', 'passed': 7, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S3 watch loose (living)', 'passed': 1, 'failed': 1, 'failing_checks': 'FAIL  S3 chest still shows heartbeat -> NO arming'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 650, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S3 watch loose (living)', 'passed': 1, 'failed': 1, 'failing_checks': 'FAIL  S3 chest still shows heartbeat -> NO arming'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 800, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S1 normal rest', 'passed': 8, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S3 watch loose (living)', 'passed': 2, 'failed': 0, 'failing_checks': ''}
+{'variant': 'adaptive KN=10 UP=16 DOWN=144', 'acc_noise_ug': 1000, 'scenario': 'S5 arrest', 'passed': 2, 'failed': 5, 'failing_checks': 'FAIL  S5 dispatch after the 30 s countdown; FAIL  S5 siren starts; FAIL  S5 phone acknowledged the dispatch; FAIL  S5 call placed, GPS and SMS sent; FAIL  S5 call within 45 s of arrest'}

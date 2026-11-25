@@ -1,0 +1,8 @@
+config,activity,false_arms
+baseline (round-1 definition),transient,2
+baseline (round-1 definition),lunch,11
+FROZEN variant,transient,2
+FROZEN variant,lunch,11
+PRE-SPECIFIED: hold 5 s,lunch,5
+PRE-SPECIFIED: wrist still 5x,transient,2
+PRE-SPECIFIED: wrist still 5x,lunch,8
