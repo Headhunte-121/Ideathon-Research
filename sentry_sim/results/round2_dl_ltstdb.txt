@@ -1,8 +1,0 @@
-absent README.txt
-absent info.txt
-got    RECORDS
-got    ANNOTATORS
-got    SHA256SUMS.txt
-absent LICENSE.txt
-got    00README
-got    s20011.hea      0.00 MB   (1/344)

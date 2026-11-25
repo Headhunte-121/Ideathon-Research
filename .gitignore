@@ -1,26 +1,39 @@
-# OS generated files
+# Operating system files
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
 
-# Editor and IDE files
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# Logs and temporary files
-*.log
-*.tmp
-
-# Simulator and Python build output
-xsim_work*/
+# Python
 __pycache__/
 *.pyc
+.venv/
+venv/
 .torch_cuda/
-# Downloaded datasets and regenerable intermediates
-sentry_sim/data/
-sentry_sim/real_data/
+
+# Simulator build output
+xsim_work*/
+xsim.dir/
+*.jou
+*.pb
+*.wdb
+*.vvp
+
+# Datasets and regenerable intermediates (see data/README.md)
+simulation/data/
+simulation/real_data/
+
+# Logs, temporary files and archives
+*.log
+*.tmp
+*.zip
+simulation/results/*_stdout.txt
+simulation/results/*_stderr.txt

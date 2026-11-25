@@ -1,0 +1,9 @@
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+wfdb
+# Only for the edge-AI experiments (c2_* to c8_*)
+torch
+psutil

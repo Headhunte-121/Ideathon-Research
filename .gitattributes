@@ -1,0 +1,10 @@
+* text=auto
+
+*.bat text eol=crlf
+# Frozen experiment files are hash-checked by the scripts; keep their line endings identical on every platform.
+simulation/splits/** text eol=crlf
+simulation/rtl_edge/weights/** text eol=crlf
+
+*.png binary
+*.pdf binary
+*.pptx binary

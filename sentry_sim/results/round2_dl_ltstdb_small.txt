@@ -1,9 +1,0 @@
-absent README.txt
-absent info.txt
-skip   RECORDS
-skip   ANNOTATORS
-skip   SHA256SUMS.txt
-absent LICENSE.txt
-skip   00README
-got    s20011.16a     11.31 MB   (4/430)
-got    s20011.cnt      0.00 MB   (5/430)

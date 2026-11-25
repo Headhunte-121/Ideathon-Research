@@ -1,7 +1,0 @@
-C8 progress  19:56:24
-CNN fits   [##################------------] 1207/2000  (240 of 400 configs complete)
-speed      2 fits/min   ETA to search end: 477 min   (then ~10-15 min analysis)
-processes  CNN search: 0   finisher alive: False
-tabular    stopped at 6800 fits (about 1360 configs)
-memory     RAM used 47%  free 8862 MB   CPU 8%
-stage      REPORT WRITTEN: results/C8_SEARCH_REPORT.md
