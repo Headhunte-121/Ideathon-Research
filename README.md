@@ -1,87 +1,176 @@
+<div align="center">
+
 # Autonomous Sternal Sentry
 
-A student concept and simulation study of a two-node wearable for cardiac emergency alerting.
-Prepared for the **MakeInSilicon 2026 Ideathon**, Track 1 (Smart Innovation in AI with Embedded Platforms: Smart Healthcare Systems).
+**A two-node wearable concept that cross-checks the chest and the wrist before calling for help**
 
-> **Project status: concept and simulation only.**
-> No hardware has been built. This is not a medical device, it has not been clinically tested, and nothing in this repository shows that it detects or predicts a heart attack or cardiac arrest.
+![Stage](https://img.shields.io/badge/stage-simulation%20prototype-orange)
+![Hardware](https://img.shields.io/badge/hardware-design%20phase-lightgrey)
+![SystemVerilog](https://img.shields.io/badge/SystemVerilog-Vivado%202025.2-blue)
+![Python](https://img.shields.io/badge/Python-3-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## Overview
+[Idea](#the-idea) · [How it works](#how-it-works) · [Results](#results) · [Quick start](#quick-start) · [Roadmap](#roadmap) · [Documentation](docs/README.md)
 
-The idea is a chest-worn **Sentry Pod** (ECG, chest vibration, optical pulse) and a wrist-worn **PulseBand** (wrist pulse, motion), linked over Bluetooth Low Energy to a phone app. The two nodes cross-check each other before any emergency call is made.
+</div>
 
-![Proposed hardware block diagram](docs/competition/assets/hardware_block_diagram.png)
+> [!NOTE]
+> A student research prototype at the concept and simulation stage, with hardware in the design phase. It is not a medical device. Detection of heart attack or cardiac arrest has not been demonstrated or clinically tested.
 
-*Proposed hardware. Part choices shown here are design intent; some are still open.*
+Prepared for the **MakeInSilicon 2026 Ideathon**, Track 1: Smart Innovation in AI with Embedded Platforms (Smart Healthcare Systems).
 
-### Alert logic (as simulated)
+## The problem
+
+In a sudden cardiac arrest the wearer cannot call for help. A single wrist sensor is also easy to fool: a loose strap or a moving arm can look like a lost pulse. An alarm that is often wrong gets switched off.
+
+We asked a narrow engineering question: **can two body locations check each other well enough to raise an alarm automatically, while staying quiet in ordinary life?**
+
+## The idea
+
+| Node | Worn on | Controller (proposed) | Senses and does |
+|---|---|---|---|
+| **Sentry Pod** | Breastbone | nRF5340 | ECG, chest vibration and motion, breathing (bio-impedance), temperature, sound; runs the alarm logic and siren |
+| **PulseBand** | Wrist | nRF52840 | Optical pulse, skin conductance, vibration motor, countdown screen, cancel button |
+| **Phone app** | Pocket | Any smartphone | Receives the alert over Bluetooth Low Energy, then calls and texts 112 with location |
+
+Two rules shape the design:
+
+1. **A slow change never calls anyone.** Drift from the wearer's own baseline only produces a gentle check-in on the wrist.
+2. **An emergency needs agreement.** The wrist pulse must be lost *and* the chest must show no heartbeat vibration, followed by a cancel window.
+
+<details>
+<summary><b>Concept hardware diagram</b></summary>
+<br>
+
+![Concept hardware block diagram of the chest pod and wristband](docs/competition/assets/hardware_block_diagram.png)
+
+*A concept illustration, not a verified schematic. Some parts shown, including the second ECG chip and the wrist motion sensor, are still undecided.*
+
+</details>
+
+## How it works
+
+### Signal chain
 
 ```mermaid
 flowchart LR
-    M[Monitoring] -->|sustained change from personal baseline| C[Haptic check-in only]
-    C --> M
-    M -->|wrist pulse lost and chest still| W[30 s cancel window]
-    W -->|cancelled by wearer| M
-    W -->|not cancelled| D[Call and SMS to 112]
-    D --> S[Siren and 110 BPM CPR beat]
+    subgraph POD["Sentry Pod"]
+        ECG[ECG] --> BEAT[Beat detector] --> DRIFT[Drift detector]
+        IMU[Chest motion sensor] --> NC[Noise canceller] --> VIB[Heartbeat vibration]
+        IMU --> FALL[Fall detector]
+        DRIFT --> FSM{{Alarm state machine}}
+        VIB --> FSM
+        FALL --> FSM
+    end
+    subgraph BAND["PulseBand"]
+        PPG[Optical pulse] --> PULSE[Pulse size]
+        BTN[Cancel button]
+        UI[Vibration and screen]
+    end
+    PULSE -- BLE --> FSM
+    BTN -- BLE --> FSM
+    FSM -- BLE --> UI
+    FSM -- BLE --> PHONE[Phone app]
+    FSM --> SIREN[Siren and CPR beat]
 ```
 
-## What has been tested
+If the wristband goes silent, the pod falls back to checking for missing ECG beats.
 
-Each result carries an evidence label: **Simulated** (our own signals in a Verilog simulator) or **Replayed** (our logic run on a public recording).
+### Alarm states
 
-| Area | Result | Evidence |
+```mermaid
+stateDiagram-v2
+    [*] --> Monitor
+    Monitor --> CheckIn: sustained drift
+    CheckIn --> Monitor: acknowledged or 60 s timeout
+    Monitor --> Armed: pulse lost and chest still for 3 s
+    CheckIn --> Armed: pulse lost and chest still for 3 s
+    Armed --> Monitor: cancel button held 2 s, or signs return
+    Armed --> Dispatch: 30 s countdown ends, or fall detected
+    Dispatch --> Monitor: movement detected, stand down
+    Dispatch --> Siren: chest still confirmed
+    Siren --> Monitor: cancelled
+```
+
+After a detected fall the cancel button is locked out. Times and thresholds are initial values to be tuned on hardware; the 3 s hold may become 10 s. Source: [`pod_alarm_fsm.sv`](simulation/rtl/pod_alarm_fsm.sv).
+
+## Results
+
+Results are either **Simulated** (our own signals in a Verilog simulator) or **Replayed** (our logic run on public recordings of real people).
+
+### Demonstrated so far
+
+| Capability | Result | Evidence |
 |---|---|---|
-| Alarm logic | Self-checking testbenches pass 22/22, 20/20 and 35/35; deliberately broken versions fail | Simulated |
-| Heartbeat detector, clean ECG | 99.95 % mean sensitivity, 99.64 % mean positive predictivity (18 people, 30 min each) | Replayed (NSRDB) |
-| Heartbeat detector, heavy noise | Falls to 57-62 % sensitivity and 45-48 % positive predictivity at -6 dB | Replayed (NSTDB) |
-| False countdown starts | 13 in 17.9 h of daily-life data (7 test people, all from 2 of them) | Replayed (PPG-DaLiA) |
-| Heart-rate drift check | Caught only 8 of 178 labelled ischemic ST episodes at 1.07 false check-ins per day | Replayed (LTSTDB) |
-| Ventricular fibrillation | The "no heartbeat" ECG rule fired within 5 min in only 5 of 10 onsets | Replayed (SDDB) |
-| Tiny neural network | No added value shown over simple ST rules on unseen patients | Replayed (EDB) |
-| Per-person calibration | Built into training, mean AUROC rose from 0.64 to about 0.80 (descriptive; the pre-set pass rule was still not met) | Replayed (EDB) |
-| 8-bit network in Verilog | Bit-exact on 2,064 of 2,064 vectors, 44,962 cycles per beat | Simulated |
+| Alarm logic | 22/22, 20/20 and 35/35 self-checking tests pass, and the tests catch deliberately broken versions | Simulated |
+| Heartbeat detection on clean ECG | 99.95 % sensitivity, 99.64 % positive predictivity (18 people, 30 min each) | Replayed, NSRDB |
+| False-alarm reduction | An ECG check or a 10 s hold removed all 13 false countdown starts seen in 17.9 h of daily life (from 2 of 7 test people) | Replayed, PPG-DaLiA |
+| 8-bit neural network in Verilog | Matches the software model bit for bit on 2,064 of 2,064 inputs, 44,962 cycles per heartbeat | Simulated |
 
-Full methods, failures and limits are in the [reports](docs/reports/README.md).
+Design note: an ECG check would also hold back the alarm if electrical activity continued without a pulse, so it needs further safeguards.
 
-### Key limitations
+### Engineering findings that shape the next design
 
-- No public recording combines our three sensor types during a heart attack or arrest, so early detection **cannot** be shown with existing data. Arrest remains simulated.
-- The heart-rate drift check misses most labelled ischemic episodes.
-- Real ventricular fibrillation can fool the ECG beat detector.
-- ST-episode labels were assigned using an amplitude criterion, so ST-based results are partly circular.
-- No power, battery life or on-chip timing has been measured.
+| Area | Measured today | Planned response | Evidence |
+|---|---|---|---|
+| Noise robustness | 57-62 % sensitivity and 45-48 % positive predictivity in the heaviest noise (-6 dB) | Better motion rejection and signal-quality checks | Replayed, NSTDB |
+| Ventricular fibrillation | The ECG-only "no heartbeat" rule fired within 5 minutes in 5 of 10 onsets | Do not rely on ECG beats alone | Replayed, SDDB |
+| Early drift warning | Heart rate flagged 8 of 178 labelled ischemic episodes at 1.07 false check-ins per day | Add signals beyond heart rate | Replayed, LTSTDB |
+| Learned model | Did not yet outperform simple ST rules on unseen patients | Build personalisation into training, with simple rules as the benchmark | Replayed, EDB |
 
-## Repository layout
+### Key insights
 
+**1. Accurate on clean signals, with noise as the next target.** Detection stays strong at 18 dB or better; the work ahead is below 12 dB.
+
+![Beat detector sensitivity and positive predictivity against noise level](simulation/results/fig_e1_beat_detector_vs_snr.png)
+
+**2. Heart rate alone is not enough.** Catching more ischemic episodes costs many more false check-ins, which is why the design looks to additional signals.
+
+<p align="center">
+  <img src="simulation/results/fig_a1_sens_vs_false.png" alt="Share of ischemic episodes caught against false check-ins per day" width="680">
+</p>
+
+**3. Personalisation is a promising direction.** Retraining on each beat's difference from that person's recent normal raised mean area under the curve from 0.64 to about 0.80 on unseen patients (purple against blue). Beating a simple personal-baseline rule at a strict false-alarm setting is the next milestone.
+
+![Model ranking quality on unseen patients with and without per-person calibration](simulation/results/fig_c7_calibration.png)
+
+**Rigorous evaluation.** Every reported model result splits data by patient. The same network scored **0.95** when one person's heartbeats appeared in both training and testing, and **0.39** on the first group of unseen patients, so a mixed split would badly overstate performance.
+
+Full methods and numbers: [report index](docs/reports/README.md).
+
+## Scope of the current work
+
+- Demonstrating early detection needs recordings that combine these sensors around cardiac events. No public dataset provides them, so arrest scenarios are simulated.
+- Testbench sensor signals are modelled by us, with assumed noise levels.
+- ST-episode labels were assigned by an amplitude criterion, so ST-based results are partly circular.
+- Power use, battery life, radio behaviour and on-chip timing will be measured on hardware.
+- The neural network block is verified on its own; connecting it to the alarm logic is future work.
+
+## Roadmap
+
+| Stage | Meaning | Work |
+|---|---|---|
+| **Now** | Done in simulation or on public recordings | Alarm logic, dataset replays, patient-wise model tests, 8-bit hardware check |
+| **Next** | Build and measure | A no-heartbeat check that does not rely on ECG alone, both nodes on real hardware, measured sensor noise and battery life, a drift signal beyond heart rate |
+| **Future** | Needs patients, hospitals and approvals | Recording chest and wrist data with a clinical partner, training on it, a supervised study, regulatory review |
+
+## Quick start
+
+**Requirements:** Python 3, and AMD Vivado for the Verilog tests (tested with 2025.2 on Windows).
+
+```bash
+git clone https://github.com/Headhunte-121/Ideathon-Research.git
 ```
-.
-├── docs/
-│   ├── design/        Architecture, form-factor analysis, team decision log
-│   ├── research/      12-phase literature review, takeaways and product translations
-│   ├── reports/       Simulation, real-data and edge-AI reports
-│   └── competition/   Abstract, poster content, pitch guide, hardware booklet
-├── simulation/
-│   ├── rtl/           Verilog design of both nodes
-│   ├── model/         Behavioural models: patient, sensor chips, radio, phone
-│   ├── tb/            Self-checking testbenches
-│   ├── rtl_edge/      Stand-alone 8-bit neural network block and its test
-│   ├── py/            Dataset replay, analysis and model training
-│   ├── configs/       Frozen experiment settings
-│   ├── splits/        Patient-wise train and test splits
-│   └── results/       Logs, tables and figures
-└── data/              How to obtain the public datasets (data is not committed)
+
+```bash
+cd Ideathon-Research
 ```
-
-## Getting started
-
-Requirements: Python 3 and, for the Verilog tests, AMD Vivado (tested with 2025.2).
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Verilog regression from a Windows Command Prompt:
+Run the full Verilog regression from a Windows Command Prompt:
 
 ```bat
 C:\AMDDesignTools\2025.2\Vivado\settings64.bat
@@ -89,18 +178,48 @@ cd simulation
 run_vivado.bat
 ```
 
-Expected: 22, 20 and 35 checks pass; mutation A fails 16 checks and mutation B fails 1.
+Expected: 22, 20 and 35 checks pass. The two deliberately broken builds report 16 failures and 1 failure.
 
-- Simulator guide: [simulation/README.md](simulation/README.md)
-- Replaying public recordings: [simulation/REAL_DATA.md](simulation/REAL_DATA.md)
-- Dataset sources and licences: [data/README.md](data/README.md)
+To replay public recordings, first [get the datasets](data/README.md), then follow the [replay guide](simulation/REAL_DATA.md).
+
+## Repository structure
+
+```
+.
+├── docs/
+│   ├── design/        Architecture, form-factor analysis, decision log
+│   ├── research/      12-phase literature review
+│   ├── reports/       Test reports (the source of truth)
+│   └── competition/   Abstract, poster content, pitch guide
+├── simulation/
+│   ├── rtl/           Verilog design of both nodes
+│   ├── model/         Simulated patient, sensor chips, radio and phone
+│   ├── tb/            Self-checking testbenches
+│   ├── rtl_edge/      8-bit neural network block
+│   ├── py/            Dataset replay and model training
+│   ├── configs/       Settings frozen before testing
+│   ├── splits/        Patient-wise train and test splits
+│   └── results/       Logs, tables and figures
+└── data/              Dataset sources (recordings are not committed)
+```
 
 ## Documentation
 
-Start at the [documentation index](docs/README.md). The design and research documents describe **intent and background reading**; where they differ from a test report, the report is correct.
+| Read this | For |
+|---|---|
+| [Report index](docs/reports/README.md) | What was tested and what the numbers do not show |
+| [Simulation guide](simulation/README.md) | Design blocks and testbenches |
+| [Decision log](docs/design/OFFICIAL_TEAM_DECISIONS_LOG.md) | Design choices and their reasoning |
+| [Research dossier](docs/research/README.md) | Background literature |
+
+Design, research and competition documents set out the **design vision** and background, including planned features and literature figures we have not verified. For measured results, the reports are the reference.
 
 <!-- Team section: add member names, roles, college and registration ID here. -->
 
+## Acknowledgements
+
+Recordings come from [PhysioNet](https://physionet.org) (Goldberger et al., *Circulation* 101(23):e215-e220, 2000) and the [PPG-DaLiA](https://archive.ics.uci.edu/dataset/495/ppg+dalia) dataset. Each dataset keeps its own licence and citation requirements; see [data/README.md](data/README.md).
+
 ## License
 
-Code and original documentation are released under the [MIT License](LICENSE). Public datasets, cited publications and the organiser's presentation template remain under their own terms.
+Code and original documentation are released under the [MIT License](LICENSE). Datasets, cited publications and the organiser's presentation template remain under their own terms.
